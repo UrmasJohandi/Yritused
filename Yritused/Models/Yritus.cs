@@ -3,7 +3,7 @@
     public class Yritus
     {
         public int id { get; set; }
-        public string? yrituse_nimi {  get; set; }
+        public string? yrituse_nimi___ {  get; set; }
         public DateTime? yrituse_aeg { get; set; }
         public string? yrituse_koht { get; set; }
         public string? lisainfo { get; set; }
