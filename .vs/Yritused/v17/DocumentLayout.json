@@ -58,7 +58,7 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -70,8 +70,7 @@
               "RelativeToolTip": "Yritused\\Models\\YritusOsavotja.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T11:03:56.082Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T11:03:56.082Z"
             },
             {
               "$type": "Document",
@@ -83,8 +82,7 @@
               "RelativeToolTip": "Yritused\\Models\\Osavotja.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T10:56:59.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T10:56:59.085Z"
             },
             {
               "$type": "Document",
@@ -96,8 +94,7 @@
               "RelativeToolTip": "Yritused\\Models\\Yritus.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T10:51:53.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T10:51:53.769Z"
             },
             {
               "$type": "Document",
@@ -109,8 +106,7 @@
               "RelativeToolTip": "Yritused\\Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-08T10:42:35.25Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T10:42:35.25Z"
             },
             {
               "$type": "Document",
@@ -120,7 +116,7 @@
               "RelativeDocumentMoniker": "Yritused\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Yritused\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAeAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T10:39:49.327Z",
               "EditorCaption": ""
@@ -135,8 +131,7 @@
               "RelativeToolTip": "Yritused\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-08T10:37:30.747Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T10:37:30.747Z"
             },
             {
               "$type": "Document",
@@ -148,8 +143,7 @@
               "RelativeToolTip": "Yritused\\Views\\_ViewStart.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-08T10:35:33.309Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T10:35:33.309Z"
             },
             {
               "$type": "Document",
@@ -161,21 +155,19 @@
               "RelativeToolTip": "Yritused\\Views\\_ViewImports.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-08T10:31:58.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T10:31:58.025Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Yritused",
+              "Title": "Yritused.csproj",
               "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Yritused.csproj",
               "RelativeDocumentMoniker": "Yritused\\Yritused.csproj",
               "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Yritused.csproj",
               "RelativeToolTip": "Yritused\\Yritused.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-08T09:57:33.977Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T09:57:33.977Z"
             },
             {
               "$type": "Document",
@@ -187,8 +179,7 @@
               "RelativeToolTip": "Yritused\\Properties\\launchSettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-08T10:01:36.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T10:01:36.8Z"
             },
             {
               "$type": "Document",
@@ -200,8 +191,11 @@
               "RelativeToolTip": "Yritused\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T09:59:41.515Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T09:59:41.515Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
