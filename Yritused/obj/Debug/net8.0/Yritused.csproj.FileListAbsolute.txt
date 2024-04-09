@@ -221,3 +221,4 @@ C:\Users\urmas\source\repos\Yritused\Yritused\obj\Debug\net8.0\Yritused.csproj.A
 C:\Users\urmas\source\repos\Yritused\Yritused\obj\Debug\net8.0\Yritused.csproj.Up2Date
 C:\Users\urmas\source\repos\Yritused\Yritused\obj\Debug\net8.0\Yritused.RazorAssemblyInfo.cache
 C:\Users\urmas\source\repos\Yritused\Yritused\obj\Debug\net8.0\Yritused.RazorAssemblyInfo.cs
+C:\Users\urmas\source\repos\Yritused\Yritused\obj\Debug\net8.0\Yritused.sourcelink.json
