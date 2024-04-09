@@ -5,8 +5,8 @@ namespace Yritused.Models
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
-        public DbSet<Yritus> Yritused => Set<Yritus>();
-        public DbSet<Osavotja> Osavotjad => Set<Osavotja>();
-        public DbSet<YritusOsavotja> YritusOsavotjad => Set<YritusOsavotja>();
+        public DbSet<Yritus> Yritused { get; set; }
+        public DbSet<Osavotja> Osavotjad { get; set; }
+        public DbSet<YritusOsavotja> YritusOsavotjad { get; set; }
     }
 }
