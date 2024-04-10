@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "bNRIcYfcTQFTAHOpqPsrQE7N56WOFM+nc8+WSkIPuhTo6nQt+hv+mlgSF573gmGSeeV9ozN2L+fziu/Dj7BmYw==",
+  "dgSpecHash": "L3X+hatLzaKRY+ni1rwDH+ksS7E8CVOVlLIIyCTFdJuf7CS1bVEVPHERrsjgHdY/eh7TgnjMsXaoyxmNHOBClQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused.Tests\\Yritused.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\urmas\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\urmas\\.nuget\\packages\\bootstrap\\5.3.3\\bootstrap.5.3.3.nupkg.sha512",
+    "C:\\Users\\urmas\\.nuget\\packages\\bootstrap.v3.datetimepicker.css\\4.17.49\\bootstrap.v3.datetimepicker.css.4.17.49.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
@@ -118,6 +120,7 @@
     "C:\\Users\\urmas\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\8.0.2\\microsoft.visualstudio.web.codegenerators.mvc.8.0.2.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\urmas\\.nuget\\packages\\moment.js\\2.9.0\\moment.js.2.9.0.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\mono.texttemplating\\2.3.1\\mono.texttemplating.2.3.1.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\moq\\4.18.4\\moq.4.18.4.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
