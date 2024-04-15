@@ -1,15 +1,36 @@
 ﻿
 <!DOCTYPE html>
 
+<style>
+    .small-header {
+        font-size: 0.6rem !important;
+        font-weight: 800;
+    }
+
+    .zeropadding {
+        padding: 0 !important;
+    }
+</style>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Üritused</title>
-    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" asp-href-include="/lib/bootstrap/dist/**/*.min.css" />
+    <link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css" />
 </head>
 <body>
     <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="/lib/jquery/dist/jquery.js"></script>
+
+    <nav class="navbar navbar-inverse bg-inverse fixed-top" role="navigation" style="background-color: #140c30 !important;">
+        <div class="row m-0" style="width: 100%;">
+            <div class="navbar-header col-1 text-left zeropadding">
+                <a class="col navbar-brand small-header zeropadding" href="#"><img id="companylogo" /></a>
+            </div>
+            @await Html.PartialAsync("HeaderMenu")
+        </div>
+    </nav>
     <div>
         @RenderBody()
     </div>

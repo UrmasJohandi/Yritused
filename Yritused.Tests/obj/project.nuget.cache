@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "L3X+hatLzaKRY+ni1rwDH+ksS7E8CVOVlLIIyCTFdJuf7CS1bVEVPHERrsjgHdY/eh7TgnjMsXaoyxmNHOBClQ==",
+  "dgSpecHash": "AscKvyZiwymGDyt7p+2NoqCUMSVFp6Rdkgbow8PVbxbPrrgII88bDns/9/hFH0mjvjVSYgf8mUR978MBiQu+0Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused.Tests\\Yritused.Tests.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\urmas\\.nuget\\packages\\bootstrap.v3.datetimepicker.css\\4.17.49\\bootstrap.v3.datetimepicker.css.4.17.49.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\urmas\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

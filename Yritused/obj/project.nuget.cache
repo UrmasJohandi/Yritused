@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Kv9ul4Je9qHeS/uJeV6BgB2sIYIQK/LG4kgGpuN7CuH0od+Dq+r1U8o302UL7NLcADg9e//KjxDupU/TjpCWcg==",
+  "dgSpecHash": "0xhWissQxYnSZy8rEYeJUBthTZjOPPfw70lFYdYoRkhcW97UVz74hRjt6DJp+CJ5/AwazdZP436sF1BuGXEeAw==",
   "success": true,
   "projectFilePath": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Yritused.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\urmas\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\bootstrap\\5.3.3\\bootstrap.5.3.3.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\bootstrap.v3.datetimepicker.css\\4.17.49\\bootstrap.v3.datetimepicker.css.4.17.49.nupkg.sha512",
+    "C:\\Users\\urmas\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\urmas\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

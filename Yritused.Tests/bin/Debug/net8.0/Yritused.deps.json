@@ -9,6 +9,7 @@
       "Yritused/1.0.0": {
         "dependencies": {
           "Bootstrap.v3.Datetimepicker.CSS": "4.17.49",
+          "FontAwesome": "4.7.0",
           "Microsoft.EntityFrameworkCore.Design": "8.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.3",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.2",
@@ -59,6 +60,7 @@
           "bootstrap": "5.3.3"
         }
       },
+      "FontAwesome/4.7.0": {},
       "Humanizer/2.14.1": {
         "dependencies": {
           "Humanizer.Core.af": "2.14.1",
@@ -1906,6 +1908,13 @@
       "sha512": "sha512-L9cJ+BibhmOw/O40CnuOGlWpgculIszHMR6Kov1GNV8IYijI04LRWl2moSW4ByzN6+toqj3LI+3FF8ff+0YXeQ==",
       "path": "bootstrap.v3.datetimepicker.css/4.17.49",
       "hashPath": "bootstrap.v3.datetimepicker.css.4.17.49.nupkg.sha512"
+    },
+    "FontAwesome/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n4H/brfszElyoZ4kmGh8E75uqvLzLvFr3h2PFVdPH1LwUmWIpeqdaW2pcC4oZAhg7sESyObh0IZpAI8COCNeUg==",
+      "path": "fontawesome/4.7.0",
+      "hashPath": "fontawesome.4.7.0.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",

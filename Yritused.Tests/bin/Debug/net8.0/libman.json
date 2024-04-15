@@ -140,12 +140,11 @@
         "src/var/toString.js",
         "src/var/whitespace.js"
       ]
+    },
+    {
+      "provider": "unpkg",
+      "library": "font-awesome@4.7.0",
+      "destination": "wwwroot/lib/font-awesome/"
     }
-  ,
-{
-  "provider": "unpkg",
-  "library": "fontawesome@5.6.3",
-  "destination": "wwwroot/lib/fontawesome/"
-}
-]
+  ]
 }
