@@ -2,13 +2,14 @@
 {
     public class Yritus
     {
-        public int id { get; set; }
-        public string? yrituse_nimi {  get; set; }
-        public DateTime yrituse_aeg { get; set; }
-        public string? yrituse_koht { get; set; }
-        public string? lisainfo { get; set; }
-        public DateTime loodud {  get; set; }
-        public DateTime? muudetud { get; set; }
-        public DateTime? suletud { get; set; }
+        public int Id { get; set; }
+        public string? YrituseNimi {  get; set; }
+        public DateTime YrituseAeg { get; set; }
+        public string? YrituseKoht { get; set; }
+        public string? Lisainfo { get; set; }
+        public int? Osavotjaid { get; set; }
+        public DateTime Loodud {  get; set; }
+        public DateTime? Muudetud { get; set; }
+        public DateTime? Suletud { get; set; }
     }
 }

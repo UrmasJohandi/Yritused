@@ -1,11 +1,2 @@
 ﻿
 @model IQueryable<Osavotja>
-
-@foreach (var o in Model ?? Enumerable.Empty<Osavotja>())
-{
-    <div>
-        <h3>@o.eesnimi</h3>
-        <h4>@o.perenimi</h4>
-        @o.isikukood
-    </div>
-}

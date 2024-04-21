@@ -3,15 +3,15 @@
     public class Osavotja
     {
         public int id {  get; set; }
-        public string? eesnimi { get; set; }
-        public string? perenimi {  get; set; }
-        public string? taisnimi { get; set;  }
-        public string? liik {  get; set; }
-        public string? isikukood {  get; set; }
-        public string? makseviis { get; set; }
-        public string? lisainfo { get; set; }
-        public DateTime loodud {  get; set; }
-        public DateTime? muudetud { get; set; }
-        public DateTime? suletud {  get; set; }
+        public string? Eesnimi { get; set; }
+        public string? Perenimi {  get; set; }
+        public string? Taisnimi { get; set;  }
+        public string? Liik {  get; set; }
+        public string? Isikukood {  get; set; }
+        public string? Makseviis { get; set; }
+        public string? Lisainfo { get; set; }
+        public DateTime Loodud {  get; set; }
+        public DateTime? Muudetud { get; set; }
+        public DateTime? Suletud {  get; set; }
     }
 }

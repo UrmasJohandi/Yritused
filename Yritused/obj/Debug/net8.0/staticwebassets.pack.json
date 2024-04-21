@@ -10069,6 +10069,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\src\\wrap.js"
     },
     {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\yritusedlist.js",
+      "PackagePath": "staticwebassets\\lib\\yritus\\src\\yritusedlist.js"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Yritused.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

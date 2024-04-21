@@ -10,6 +10,14 @@
     .zeropadding {
         padding: 0 !important;
     }
+
+    .bgcolor {
+        background-color: #f6f6f6;
+    }
+
+    .modal-backdrop {
+        z-index: 1 !important;
+    }
 </style>
 
 <html>
@@ -31,8 +39,10 @@
             @await Html.PartialAsync("HeaderMenu")
         </div>
     </nav>
-    <div>
-        @RenderBody()
+    <div class="row m-1 p-1 bgcolor">
+        <div class="col-12 bgcolor" style="margin-top: 44px !important;">
+            @RenderBody()
+        </div>
     </div>
 </body>
 </html>
