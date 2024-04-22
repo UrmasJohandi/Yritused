@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿$(() => {
     $('[data-toggle="tooltip"]').each(function () {
         var options = {
             html: true

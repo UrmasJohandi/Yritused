@@ -100,6 +100,10 @@
         text-align: center !important;
     }
 
+    .bgcolor {
+        background-color: #f6f6f6;
+    }
+
     .hidden {
         display: none;
     }
@@ -109,7 +113,7 @@
     }
 
     .input-YrituseNimi {
-        width: 200px;
+        width: 300px;
     }
 
     .input-YrituseAeg {
@@ -121,7 +125,7 @@
     }
 
     .input-Lisainfo {
-        width: 800px;
+        width: 900px;
     }
 
     .input-Loodud {
@@ -135,7 +139,7 @@
 
 <script src="/lib/yritus/src/yritusedlist.js"></script>
 
-<div class="table-responsive">
+<div class="table-responsive bgcolor">
     <table class="table table-sm table-hover table-condensed">
         <thead class="thead-light">
             <tr>
@@ -198,7 +202,7 @@
 </div>
 
 @functions {
-    private string OrderHref(string field) => @Url.Action("List", "Yritused", 
+    private string? OrderHref(string field) => @Url.Action("List", "Yritused", 
         new { orderby = field, orderbybefore = Model.orderBy, p = Model.PagingInfo.PageNo, s = Model.PagingInfo.PageSize, 
             filterField = Model.filterField, filterValue = Model.filterValue });
 
@@ -223,7 +227,7 @@
     {
         if (string.IsNullOrEmpty(lisainfo)) return string.Empty;
 
-        if (lisainfo.Length > 150) return lisainfo.Substring(0, 150) + "...";
+        if (lisainfo.Length > 180) return lisainfo.Substring(0, 180) + "...";
 
         return lisainfo;
     }

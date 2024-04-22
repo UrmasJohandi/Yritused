@@ -30,7 +30,7 @@ namespace Yritused.Controllers
 
             if (orderby == null && orderbybefore == null)
             {
-                sortField = "Id";
+                sortField = "id";
                 listOrder = Utilites.Order.Desc;
             }
             else if (orderby != null && orderbybefore == null)
