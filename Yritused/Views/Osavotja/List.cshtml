@@ -6,150 +6,8 @@
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-    .alink {
-        color: #ffffff;
-    }
-
-    .tooltip.info .tooltip-inner {
-        background-color: #140c30;
-    }
-
-    .tooltip.info.top > .tooltip-arrow {
-        border-top-color: #140c30;
-    }
-
-    .tooltip.info.right > .tooltip-arrow {
-        border-right-color: #140c30;
-    }
-
-    .tooltip.info.bottom > .tooltip-arrow {
-        border-bottom-color: #140c30;
-    }
-
-    .tooltip.info.left > .tooltip-arrow {
-        border-left-color: #140c30;
-    }
-
-    .tooltip.nav .tooltip-inner {
-        background-color: #140c30;
-    }
-
-    .tooltip.nav.top .tooltip-arrow {
-        border-top-color: #140c30;
-    }
-
-    .tooltip.nav.right .tooltip-arrow {
-        border-right-color: #140c30;
-    }
-
-    .tooltip.nav.bottom .tooltip-arrow {
-        border-bottom-color: #140c30;
-    }
-
-    .tooltip.nav.left .tooltip-arrow {
-        border-left-color: #140c30;
-    }
-
-    .table-responsive {
-        font-size: 11px;
-    }
-
-    .osavotja-left-justified {
-        font-size: 11px;
-        font-weight: 600;
-        text-align: left;
-    }
-
-    .osavotja-right-justified {
-        font-size: 11px;
-        font-weight: 600;
-        text-align: right;
-    }
-
-    .osavotja-center-justified {
-        font-size: 11px;
-        font-weight: 600;
-        text-align: center;
-    }
-
-    .btn-custom {
-        font-size: .525rem;
-    }
-
-    .darksalmon {
-        color: #140c30;
-    }
-
-    .table .thead-light th {
-        color: #ffffff;
-        background-color: #8bb8e8;
-        border-color: #8bb8e8;
-        text-align: center;
-    }
-
-    .th-align-left {
-        text-align: left !important;
-    }
-
-    .th-align-right {
-        text-align: right !important;
-    }
-
-    .th-align-center {
-        text-align: center !important;
-    }
-
-    .bgcolor {
-        background-color: #f6f6f6;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .input-Id {
-        width: 80px;
-    }
-
-    .input-Eesnimi {
-        width: 300px;
-    }
-
-    .input-Perernimi {
-        width: 350px;
-    }
-
-    .input-Liik {
-        width: 80px;
-    }
-
-    .input-Isikukood {
-        width: 200px;
-    }
-
-    .input-Makseviis {
-        width: 150px;
-    }
-
-    .input-Lisainfo {
-        width: 900px;
-    }
-
-    .input-Yritusi {
-        width: 150px;
-    }
-
-    .input-Loodud {
-        width: 150px;
-    }
-
-    .input-Muudetud {
-        width: 150px;
-    }
-</style>
-
 <script src="/lib/yritus/src/osavotjadlist.js"></script>
+<link rel="stylesheet" href="/lib/yritus/css/osavotja.css" />
 
 <div class="table-responsive bgcolor">
     <table class="table table-sm table-hover table-condensed">
@@ -179,9 +37,9 @@
                     <filtercell class="osavotja-right-justified input-Id" name="Id" id="@o.Id" value="@o.Id" />
                     <filtercell class="osavotja-left-justified input-Eesnimi" name="Eesnimi" id="@o.Id" value="@o.Eesnimi" />
                     <filtercell class="osavotja-left-justified input-Perenimi" name="Perenimi" id="@o.Id" value="@o.Perenimi" />
-                    <filtercell class="osavotja-center-justified input-Liik" name="Liik" id="@o.Id" value="@o.Liik" />
+                    <filtercell class="osavotja-center-justified input-Liik" name="Liik" id="@o.Id" value="@GetLiik(o.Liik)" />
                     <filtercell class="osavotja-left-justified input-Isikukood" name="Isikukood" id="@o.Id" value="@o.Isikukood" />
-                    <filtercell class="osavotja-center-justified input-Makseviis" name="Makseviis" id="@o.Id" value="@o.Makseviis" />
+                    <filtercell class="osavotja-center-justified input-Makseviis" name="Makseviis" id="@o.Id" value="@GetMakseviis(o.Makseviis)" />
                     <filtercelltooltip class="osavotja-left-justified input-Lisainfo" name="Lisainfo" id="@o.Id" value="@GetLisainfo(o.Lisainfo)"
                         toggle="tooltip" placement="top" title="@o.Lisainfo" />
                     <td class="osavotja-right-justified input-Yritusi" id="Yritusi_cell_@o.Id">
@@ -209,23 +67,23 @@
             }
         </tbody>
     </table>
-    <input type="hidden" id="model_orderby" value="@Model.orderBy" />
+    <input type="hidden" id="model_orderby" value="@Model.OrderBy" />
     <input type="hidden" id="model_pageno" value="@Model.PagingInfo.PageNo" />
     <input type="hidden" id="model_pagesize" value="@Model.PagingInfo.PageSize" />
-    <input type="hidden" id="model_filterfield" value="@Model.filterField" />
-    <input type="hidden" id="model_filtervalue" value="@Model.filterValue" />
+    <input type="hidden" id="model_filterfield" value="@Model.FilterField" />
+    <input type="hidden" id="model_filtervalue" value="@Model.FilterValue" />
 </div>
 
 @functions {
-    private string? OrderHref(string field) => @Url.Action("List", "Osavotjad",
+    private string? OrderHref(string field) => @Url.Action("List", "Osavotja",
         new
         {
             orderby = field,
-            orderbybefore = Model.orderBy,
+            orderbybefore = Model.OrderBy,
             p = Model.PagingInfo.PageNo,
             s = Model.PagingInfo.PageSize,
-            filterField = Model.filterField,
-            filterValue = Model.filterValue
+            filterField = Model.FilterField,
+            filterValue = Model.FilterValue
         });
 
     public string CreatedDateTime(DateTime date)
@@ -249,8 +107,44 @@
     {
         if (string.IsNullOrEmpty(lisainfo)) return string.Empty;
 
-        if (lisainfo.Length > 180) return lisainfo.Substring(0, 180) + "...";
+        if (lisainfo.Length > 150) return lisainfo.Substring(0, 150) + "...";
 
         return lisainfo;
+    }
+
+    private string GetLiik(string? liik)
+    {
+        if (string.IsNullOrEmpty(liik)) return string.Empty;
+
+        if (liik == "J")
+        {
+            return "Juriidiline isik";
+        }
+        else if (liik == "F") 
+        {
+            return "Füüsiline isik";
+        }
+        else
+        {
+            return liik;
+        }
+    }
+
+    private string GetMakseviis(string? makseviis)
+    {
+        if (string.IsNullOrEmpty(makseviis)) return string.Empty;
+
+        if (makseviis == "S")
+        {
+            return "Sularahas";
+        }
+        else if (makseviis == "P")
+        {
+            return "Pangaülekandega";
+        }
+        else
+        {
+            return makseviis;
+        }
     }
 }

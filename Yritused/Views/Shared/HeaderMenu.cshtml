@@ -1,162 +1,95 @@
-﻿<style>
-    .tooltip.main .tooltip-inner {
-        background-color: #8bb8e8 !important;
+﻿
+<link rel="stylesheet" href="/lib/yritus/css/headermenu.css" />
+<script>
+    $(() => {
+        $('#yritused_button').on('click', yritusedcookies);
+        $('#yritused_button').on('click', yritusedmousedown);
+
+        $('#osavotjad_button').on('click', osavotjadcookies);
+        $('#osavotjad_button').on('click', osavotjadmousedown);
+
+        modifybuttons();
+    })
+
+    function yritusedcookies() {
+        Cookies.set('menu', 'yritused');
+        Cookies.set('filter', '');
+
+        modifybuttons();
+        gotolink();
     }
 
-    .tooltip.main.top > .tooltip-arrow {
-        border-top-color: #8bb8e8 !important;
+    function yritusedmousedown(e) {
+        if (e.which === 3) {
+            Cookies.set('menu', 'yritused');
+            Cookies.set('filter', '');
+
+            modifybuttons();
+            gotolink();
+        }
     }
 
-    .tooltip.main.right > .tooltip-arrow {
-        border-right-color: #8bb8e8 !important;
+    function osavotjadcookies() {
+        Cookies.set('menu', 'osavotjad');
+        Cookies.set('filter', '');
+
+        modifybuttons();
+        gotolink();
     }
 
-    .tooltip.main.bottom > .tooltip-arrow {
-        border-bottom-color: #8bb8e8 !important;
+    function osavotjadmousedown(e) {
+        if (e.which === 3) {
+            Cookies.set('menu', 'osavotjad');
+            Cookies.set('filter', '');
+
+            modifybuttons();
+            gotolink();
+        }
     }
 
-    .tooltip.main.left > .tooltip-arrow {
-        border-left-color: #8bb8e8 !important;
+    function modifybuttons() {
+        const cookieValue = Cookies.get('menu');
+
+        if (cookieValue === 'yritused') {
+            $('#yritused_button').addClass('show-selected');
+            $('#osavotjad_button').removeClass('show-selected');
+        } else if (cookieValue === 'osavotjad') {
+            $('#yritused_button').removeClass('show-selected');
+            $('#osavotjad_button').addClass('show-selected');
+        }
     }
 
-    .hidden-button {
-        display: none;
-    }
+    function gotolink() {
+        const cookieValue = Cookies.get('menu');
 
-    .hidden-padding-3 {
-        display: none;
-    }
+        if (cookieValue === 'yritused') {
+            const url = '@Url.Action("List", "Yritus")';
 
-    .hidden-link {
-        display: none;
-    }
+            window.location.href = url;
+        } else if (cookieValue === 'osavotjad') {
+            const url = '@Url.Action("List", "Osavotja")';
 
-    .currentuser {
-        color: #FFFFFF;
-        font-size: .8rem;
+            window.location.href = url;
+        }
     }
-
-    .other-menus {
-        color: #ffffff;
-        font-weight: 700;
-        font-size: 1.2rem;
-        font-family: 'Segoe UI';
-    }
-
-    .other-menus-resized {
-        color: #8bb8e8;
-        font-weight: 700;
-        font-size: 1.2rem;
-        font-family: 'Segoe UI';
-    }
-
-    .hide-local {
-        color: #140c30;
-    }
-
-    .show-local {
-        color: #ffffff;
-    }
-
-    .show-local-resized {
-        color: #8bb8e8;
-    }
-
-    .show-selected {
-        color: #ffffff;
-        text-decoration: underline;
-    }
-
-    .show-shopping-cart-not-empty {
-        color: yellow;
-    }
-
-    .quote-text {
-        color: yellow;
-        font-size: 0.6rem !important;
-        font-weight: 400;
-    }
-
-    .width-auto {
-        width: auto !important;
-    }
-
-    .height-30 {
-        height: 30px !important;
-    }
-
-    .no-padding {
-        padding-right: 0 !important;
-        padding-left: 0 !important;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
-
-    .horizontal-menu {
-        flex-direction: row !important;
-        -webkit-flex-direction: row !important;
-    }
-
-    .padding-3 {
-        padding-top: 2px;
-        vertical-align: bottom;
-    }
-
-    .percent60 {
-        flex-grow: 0;
-        flex-shrink: 0;
-        flex-basis: 60%;
-        max-width: 60%;
-    }
-
-    .percent30 {
-        flex-grow: 0;
-        flex-shrink: 0;
-        flex-basis: 30%;
-        max-width: 30%;
-        text-align: right !important;
-    }
-
-    .zeropadding {
-        padding: 0 !important;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .zeropadding-2 {
-        padding-top: 0 !important;
-        padding-right: 0 !important;
-        padding-bottom: 0 !important;
-        padding-left: 100px !important;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hide-local {
-        color: #140c30 !important;
-    }
-
-    .show-local {
-        color: #ffffff !important;
-    }
-</style>
+</script>
 
 <div class="col-6 text-left percent60 zeropadding-2">
     <ul class="nav navbar-nav mr-auto height-30 horizontal-menu" id="menu_ul">
         <li class="nav-item other-menus" id="li_valokyltti_button">
-            <a class="nav-link active show-local no-padding" id="valokyltti_button" href="#">Üritused</a>
+            <a class="nav-link active show-local no-padding" id="yritused_button" href="#">Üritused</a>
         </li>
         <li id="li_after_valokyltti_button">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </li>
         <li class="nav-item other-menus" id="li_quotes_button">
-            <a class="nav-link active show-local no-padding" id="quotes_button" href="#">Osavõtjad</a>
+            <a class="nav-link active show-local no-padding" id="osavotjad_button" href="#">Osavõtjad</a>
         </li>
         <li id="li_after_quotes_button">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </li>
         <li class="nav-item other-menus" id="li_scoro_button">
-            <a class="nav-link active show-local no-padding" id="scoro_button" href="#">Üritustest osavõtjad</a>
+            <a class="nav-link active show-local no-padding" id="yritused_osavotjad_button" href="#">Üritustest osavõtjad</a>
         </li>
         <li id="li_after_scoro_button">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

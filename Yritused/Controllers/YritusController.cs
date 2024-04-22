@@ -87,9 +87,9 @@ namespace Yritused.Controllers
                     TotalRecords = yritused == null ? 0 : yritused.Count()
                 },
                 Path = httpContextAccessor.HttpContext == null ? string.Empty : httpContextAccessor.HttpContext.Request.Path.Value,
-                filterField = filterField,
-                filterValue = filterValue,
-                orderBy = string.IsNullOrEmpty(filterField) ? sortField + " " + (listOrder == Utilites.Order.Asc ? "asc" : "desc") :
+                FilterField = filterField,
+                FilterValue = filterValue,
+                OrderBy = string.IsNullOrEmpty(filterField) ? sortField + " " + (listOrder == Utilites.Order.Asc ? "asc" : "desc") :
                     sortField + " " + (listOrder == Utilites.Order.Asc ? "asc" : "desc")
             };
 

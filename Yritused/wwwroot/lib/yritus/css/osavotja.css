@@ -1,0 +1,140 @@
+﻿.alink {
+    color: #ffffff;
+}
+
+.tooltip.info .tooltip-inner {
+    background-color: #140c30;
+}
+
+.tooltip.info.top > .tooltip-arrow {
+    border-top-color: #140c30;
+}
+
+.tooltip.info.right > .tooltip-arrow {
+    border-right-color: #140c30;
+}
+
+.tooltip.info.bottom > .tooltip-arrow {
+    border-bottom-color: #140c30;
+}
+
+.tooltip.info.left > .tooltip-arrow {
+    border-left-color: #140c30;
+}
+
+.tooltip.nav .tooltip-inner {
+    background-color: #140c30;
+}
+
+.tooltip.nav.top .tooltip-arrow {
+    border-top-color: #140c30;
+}
+
+.tooltip.nav.right .tooltip-arrow {
+    border-right-color: #140c30;
+}
+
+.tooltip.nav.bottom .tooltip-arrow {
+    border-bottom-color: #140c30;
+}
+
+.tooltip.nav.left .tooltip-arrow {
+    border-left-color: #140c30;
+}
+
+.table-responsive {
+    font-size: 11px;
+}
+
+.osavotja-left-justified {
+    font-size: 11px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.osavotja-right-justified {
+    font-size: 11px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.osavotja-center-justified {
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn-custom {
+    font-size: .525rem;
+}
+
+.darksalmon {
+    color: #140c30;
+}
+
+.table .thead-light th {
+    color: #ffffff;
+    background-color: #8bb8e8;
+    border-color: #8bb8e8;
+    text-align: center;
+}
+
+.th-align-left {
+    text-align: left !important;
+}
+
+.th-align-right {
+    text-align: right !important;
+}
+
+.th-align-center {
+    text-align: center !important;
+}
+
+.bgcolor {
+    background-color: #f6f6f6;
+}
+
+.hidden {
+    display: none;
+}
+
+.input-Id {
+    width: 80px;
+}
+
+.input-Eesnimi {
+    width: 200px;
+}
+
+.input-Perernimi {
+    width: 250px;
+}
+
+.input-Liik {
+    width: 350px;
+}
+
+.input-Isikukood {
+    width: 200px;
+}
+
+.input-Makseviis {
+    width: 150px;
+}
+
+.input-Lisainfo {
+    width: 1000px;
+}
+
+.input-Yritusi {
+    width: 150px;
+}
+
+.input-Loodud {
+    width: 150px;
+}
+
+.input-Muudetud {
+    width: 150px;
+}

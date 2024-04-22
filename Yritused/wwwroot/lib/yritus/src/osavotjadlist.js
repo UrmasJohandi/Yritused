@@ -14,4 +14,12 @@
 
         $(this).tooltip(options);
     });
+    $('tr').on('click', function (e) {
+        if (e.target.localName === 'i') return;
+        if (e.target.localName === 'th') return;
+        if (e.target.localName === 'input') return;
+        if (e.target.localName === 'span') return;
+
+        alert($(this).find('td').find('span').html());
+    });
 })

@@ -1,0 +1,140 @@
+﻿.tooltip.main .tooltip-inner {
+    background-color: #8bb8e8 !important;
+}
+
+.tooltip.main.top > .tooltip-arrow {
+    border-top-color: #8bb8e8 !important;
+}
+
+.tooltip.main.right > .tooltip-arrow {
+    border-right-color: #8bb8e8 !important;
+}
+
+.tooltip.main.bottom > .tooltip-arrow {
+    border-bottom-color: #8bb8e8 !important;
+}
+
+.tooltip.main.left > .tooltip-arrow {
+    border-left-color: #8bb8e8 !important;
+}
+
+.hidden-button {
+    display: none;
+}
+
+.hidden-padding-3 {
+    display: none;
+}
+
+.hidden-link {
+    display: none;
+}
+
+.currentuser {
+    color: #FFFFFF;
+    font-size: .8rem;
+}
+
+.other-menus {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI';
+}
+
+.other-menus-resized {
+    color: #8bb8e8;
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI';
+}
+
+.hide-local {
+    color: #140c30;
+}
+
+.show-local {
+    color: #ffffff;
+}
+
+.show-local-resized {
+    color: #8bb8e8;
+}
+
+.show-selected {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.show-shopping-cart-not-empty {
+    color: yellow;
+}
+
+.quote-text {
+    color: yellow;
+    font-size: 0.6rem !important;
+    font-weight: 400;
+}
+
+.width-auto {
+    width: auto !important;
+}
+
+.height-30 {
+    height: 30px !important;
+}
+
+.no-padding {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.horizontal-menu {
+    flex-direction: row !important;
+    -webkit-flex-direction: row !important;
+}
+
+.padding-3 {
+    padding-top: 2px;
+    vertical-align: bottom;
+}
+
+.percent60 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 60%;
+    max-width: 60%;
+}
+
+.percent30 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 30%;
+    max-width: 30%;
+    text-align: right !important;
+}
+
+.zeropadding {
+    padding: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.zeropadding-2 {
+    padding-top: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 100px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hide-local {
+    color: #140c30 !important;
+}
+
+.show-local {
+    color: #ffffff !important;
+}

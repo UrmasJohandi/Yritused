@@ -10069,6 +10069,138 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\src\\wrap.js"
     },
     {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\.gitignore",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\.gitignore"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\.jshintignore",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\.jshintignore"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\.jshintrc",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\.jshintrc"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\.tm_properties",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\.tm_properties"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\.travis.yml",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\.travis.yml"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\CONTRIBUTING.md",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\CONTRIBUTING.md"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\Gruntfile.js",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\Gruntfile.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\README.md",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\SERVER_SIDE.md",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\SERVER_SIDE.md"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\bower.json",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\bower.json"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\package.json",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\package.json"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\src\\.jshintrc",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\src\\.jshintrc"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\src\\js.cookie.js",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\src\\js.cookie.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\.jshintrc",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\.jshintrc"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\amd-config.js",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\amd-config.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\amd.html",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\amd.html"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\amd.js",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\amd.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\encoding.html",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\encoding.html"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\encoding.js",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\encoding.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\environment-with-amd-and-umd.html",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\environment-with-amd-and-umd.html"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\environment-with-amd-and-umd.js",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\environment-with-amd-and-umd.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\index.html",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\malformed_cookie.html",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\malformed_cookie.html"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\missing_semicolon.html",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\missing_semicolon.html"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\node.js",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\node.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\polyfill.js",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\polyfill.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\tests.js",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\tests.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\test\\utils.js",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\test\\utils.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\js-cookie-2.2.0\\travis.sh",
+      "PackagePath": "staticwebassets\\lib\\js-cookie-2.2.0\\travis.sh"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\css\\headermenu.css",
+      "PackagePath": "staticwebassets\\lib\\yritus\\css\\headermenu.css"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\css\\osavotja.css",
+      "PackagePath": "staticwebassets\\lib\\yritus\\css\\osavotja.css"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\css\\yritus.css",
+      "PackagePath": "staticwebassets\\lib\\yritus\\css\\yritus.css"
+    },
+    {
       "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
       "PackagePath": "staticwebassets\\lib\\yritus\\src\\osavotjadlist.js"
     },

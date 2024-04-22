@@ -6,142 +6,8 @@
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-    .alink {
-        color: #ffffff;
-    }
-
-    .tooltip.info .tooltip-inner {
-        background-color: #140c30;
-    }
-
-    .tooltip.info.top > .tooltip-arrow {
-        border-top-color: #140c30;
-    }
-
-    .tooltip.info.right > .tooltip-arrow {
-        border-right-color: #140c30;
-    }
-
-    .tooltip.info.bottom > .tooltip-arrow {
-        border-bottom-color: #140c30;
-    }
-
-    .tooltip.info.left > .tooltip-arrow {
-        border-left-color: #140c30;
-    }
-
-    .tooltip.nav .tooltip-inner {
-        background-color: #140c30;
-    }
-
-    .tooltip.nav.top .tooltip-arrow {
-        border-top-color: #140c30;
-    }
-
-    .tooltip.nav.right .tooltip-arrow {
-        border-right-color: #140c30;
-    }
-
-    .tooltip.nav.bottom .tooltip-arrow {
-        border-bottom-color: #140c30;
-    }
-
-    .tooltip.nav.left .tooltip-arrow {
-        border-left-color: #140c30;
-    }
-
-    .table-responsive {
-        font-size: 11px;
-    }
-
-    .yritus-left-justified {
-        font-size: 11px;
-        font-weight: 600;
-        text-align: left;
-    }
-
-    .yritus-right-justified {
-        font-size: 11px;
-        font-weight: 600;
-        text-align: right;
-    }
-
-    .yritus-center-justified {
-        font-size: 11px;
-        font-weight: 600;
-        text-align: center;
-    }
-
-    .btn-custom {
-        font-size: .525rem;
-    }
-
-    .darksalmon {
-        color: #140c30;
-    }
-
-    .table .thead-light th {
-        color: #ffffff;
-        background-color: #8bb8e8;
-        border-color: #8bb8e8;
-        text-align: center;
-    }
-
-    .th-align-left {
-        text-align: left !important;
-    }
-
-    .th-align-right {
-        text-align: right !important;
-    }
-
-    .th-align-center {
-        text-align: center !important;
-    }
-
-    .bgcolor {
-        background-color: #f6f6f6;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .input-Id {
-        width: 80px;
-    }
-
-    .input-YrituseNimi {
-        width: 300px;
-    }
-
-    .input-YrituseAeg {
-        width: 150px;
-    }
-
-    .input-YrituseKoht {
-        width: 300px;
-    }
-
-    .input-Lisainfo {
-        width: 900px;
-    }
-
-    .input-Osavotjaid {
-        width: 150px;
-    }
-
-    .input-Loodud {
-        width: 150px;
-    }
-
-    .input-Muudetud {
-        width: 150px;
-    }
-</style>
-
 <script src="/lib/yritus/src/yritusedlist.js"></script>
+<link rel="stylesheet" href="/lib/yritus/css/yritus.css" />
 
 <div class="table-responsive bgcolor">
     <table class="table table-sm table-hover table-condensed">
@@ -198,22 +64,22 @@
             }
         </tbody>
     </table>
-    <input type="hidden" id="model_orderby" value="@Model.orderBy" />
+    <input type="hidden" id="model_orderby" value="@Model.OrderBy" />
     <input type="hidden" id="model_pageno" value="@Model.PagingInfo.PageNo" />
     <input type="hidden" id="model_pagesize" value="@Model.PagingInfo.PageSize" />
-    <input type="hidden" id="model_filterfield" value="@Model.filterField" />
-    <input type="hidden" id="model_filtervalue" value="@Model.filterValue" />
+    <input type="hidden" id="model_filterfield" value="@Model.FilterField" />
+    <input type="hidden" id="model_filtervalue" value="@Model.FilterValue" />
 </div>
 
 @functions {
-    private string? OrderHref(string field) => @Url.Action("List", "Yritused", 
+    private string? OrderHref(string field) => @Url.Action("List", "Yritus", 
         new { 
             orderby = field, 
-            orderbybefore = Model.orderBy, 
+            orderbybefore = Model.OrderBy, 
             p = Model.PagingInfo.PageNo, 
             s = Model.PagingInfo.PageSize, 
-            filterField = Model.filterField, 
-            filterValue = Model.filterValue 
+            filterField = Model.FilterField, 
+            filterValue = Model.FilterValue 
         });
 
     public string CreatedDateTime(DateTime date)
