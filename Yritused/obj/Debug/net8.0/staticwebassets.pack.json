@@ -10069,6 +10069,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\src\\wrap.js"
     },
     {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
+      "PackagePath": "staticwebassets\\lib\\yritus\\src\\osavotjadlist.js"
+    },
+    {
       "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\yritusedlist.js",
       "PackagePath": "staticwebassets\\lib\\yritus\\src\\yritusedlist.js"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nFl/i5EA2JUIdhFXlp9MdEUfNquEtXHIUB10YZw5rI4=",
+  "Hash": "gIPfZbLjS6T8nUFjRdZM+PFiCUms9bQLtTadhtytoAI=",
   "Source": "Yritused",
   "BasePath": "_content/Yritused",
   "Mode": "Default",
@@ -47838,6 +47838,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\src\\wrap.js"
+    },
+    {
+      "Identity": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
+      "SourceId": "Yritused",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\",
+      "BasePath": "_content/Yritused",
+      "RelativePath": "lib/yritus/src/osavotjadlist.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\yritus\\src\\osavotjadlist.js"
     },
     {
       "Identity": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\yritusedlist.js",

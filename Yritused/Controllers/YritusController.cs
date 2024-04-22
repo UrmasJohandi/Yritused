@@ -15,13 +15,11 @@ namespace Yritused.Controllers
             httpContextAccessor = httpContextAcc;
             yritusedRepository = yritusedRepo;
         }
-
         public IActionResult List(int p = 1, string? orderby = null, string? orderbybefore = null, int s = 0, string? filterField = null, string? filterValue = null)
         {
-            return View("List", getViewModel(p, orderby, orderbybefore, s, filterField, filterValue));
+            return View("List", GetViewModel(p, orderby, orderbybefore, s, filterField, filterValue));
         }
-
-        private YritusedListViewModel getViewModel(int p, string? orderby, string? orderbybefore, int s, string? filterField, string? filterValue)
+        private YritusedListViewModel GetViewModel(int p, string? orderby, string? orderbybefore, int s, string? filterField, string? filterValue)
         {
             string orderByFieldBefore = "";
             string ascDescBefore = "";
@@ -30,7 +28,7 @@ namespace Yritused.Controllers
 
             if (orderby == null && orderbybefore == null)
             {
-                sortField = "id";
+                sortField = "Id";
                 listOrder = Utilites.Order.Desc;
             }
             else if (orderby != null && orderbybefore == null)
@@ -72,14 +70,8 @@ namespace Yritused.Controllers
             {
                 for (int j = 0; j < filterFields.Length; j++)
                 {
-                    if (j == 0)
-                    {
-                        yritused = filteredYritused(filterFields[j], filterValues[j], sortField, listOrder);
-                    }
-                    else
-                    {
-                        yritused = filteredYritusedSecondRound(yritused, filterFields[j], filterValues[j]);
-                    }
+                    yritused = j == 0 ? filteredYritused(filterFields[j], filterValues[j], sortField, listOrder) :
+                        filteredYritusedSecondRound(yritused, filterFields[j], filterValues[j]);
                 }
             }
 
