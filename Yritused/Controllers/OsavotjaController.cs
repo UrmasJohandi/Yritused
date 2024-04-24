@@ -5,16 +5,11 @@ using Yritused.Models.Viewmodels;
 
 namespace Yritused.Controllers
 {
-    public class OsavotjaController : Controller
+    public class OsavotjaController(IHttpContextAccessor httpContextAcc, IOsavotjaRepository osavotjadRepo) : Controller
     {
-        private readonly IOsavotjaRepository osavotjadRepository;
-        private readonly IHttpContextAccessor httpContextAccessor;
+        private readonly IOsavotjaRepository osavotjadRepository = osavotjadRepo;
+        private readonly IHttpContextAccessor httpContextAccessor = httpContextAcc;
 
-        public OsavotjaController(IHttpContextAccessor httpContextAcc, IOsavotjaRepository osavotjadRepo)
-        {
-            httpContextAccessor = httpContextAcc;
-            osavotjadRepository = osavotjadRepo;
-        }
         public IActionResult List(int p = 1, string? orderby = null, string? orderbybefore = null, int s = 0, string? filterField = null, string? filterValue = null)
         {
             return View("List", GetViewModel(p, orderby, orderbybefore, s, filterField, filterValue));
@@ -51,8 +46,8 @@ namespace Yritused.Controllers
 
             int pageSize = Utilites.GetPageSize(s);
 
-            string[] filterFields = Array.Empty<string>();
-            string[] filterValues = Array.Empty<string>();
+            string[] filterFields = [];
+            string[] filterValues = [];
 
             filterFields = string.IsNullOrEmpty(filterField) ? filterFields : filterField.Split(';');
             filterValues = string.IsNullOrEmpty(filterValue) ? filterValues : filterValue.Split(';');
@@ -64,20 +59,20 @@ namespace Yritused.Controllers
             }
             else if (filterFields.Length == 1)
             {
-                osavotjad = filteredOsavotjad(filterField, filterValue, sortField, listOrder);
+                osavotjad = FilteredOsavotjad(filterField, filterValue, sortField, listOrder);
             }
             else
             {
                 for (int j = 0; j < filterFields.Length; j++)
                 {
-                    osavotjad = j == 0 ? filteredOsavotjad(filterFields[j], filterValues[j], sortField, listOrder) :
-                        filteredOsavotjadSecondRound(osavotjad, filterFields[j], filterValues[j]);
+                    osavotjad = j == 0 ? FilteredOsavotjad(filterFields[j], filterValues[j], sortField, listOrder) :
+                        FilteredOsavotjadSecondRound(osavotjad, filterFields[j], filterValues[j]);
                 }
             }
 
-            OsavotjadListViewModel osavotjadListViewModel = new OsavotjadListViewModel
+            OsavotjadListViewModel osavotjadListViewModel = new()
             {
-                Osavotjad = (osavotjad == null ? new List<Osavotja>() : osavotjad)
+                Osavotjad = (osavotjad ?? [])
                     .Skip((p - 1) * pageSize)
                     .Take(pageSize),
                 PagingInfo = new PagingModel
@@ -109,11 +104,11 @@ namespace Yritused.Controllers
 
             return Json("OK");
         }
-        private IEnumerable<Osavotja> filteredOsavotjad(string? filterField, string? filterValue, string? sortField, Utilites.Order listOrder)
+        private IEnumerable<Osavotja> FilteredOsavotjad(string? filterField, string? filterValue, string? sortField, Utilites.Order listOrder)
         {
             return osavotjadRepository.Osavotjad;
         }
-        private IEnumerable<Osavotja> filteredOsavotjadSecondRound(IEnumerable<Osavotja>? yritused, string? filteredField, string? filterValue)
+        private IEnumerable<Osavotja> FilteredOsavotjadSecondRound(IEnumerable<Osavotja>? yritused, string? filteredField, string? filterValue)
         {
             return osavotjadRepository.Osavotjad;
         }

@@ -21,18 +21,18 @@ namespace Yritused.Infrastructure
             string noHtmlValue = WebUtility.HtmlDecode(Regex.Replace(Value ?? string.Empty, @"<[^>]+>|&nbsp;", "").Trim());
             string noHtmlTitle = WebUtility.HtmlDecode(Regex.Replace(Title ?? string.Empty, @"<[^>]+>|&nbsp;", "").Trim());
 
-            TagBuilder input = new TagBuilder("input");
+            TagBuilder input = new("input");
             input.Attributes["class"] = $"{Class} form-control form-control-sm";
             input.Attributes["id"] = $"input_{Name}_{Id}";
             input.Attributes["value"] = $"{noHtmlTitle}";
             input.Attributes["spellcheck"] = "false";
 
-            TagBuilder hiddenSpan = new TagBuilder("span");
+            TagBuilder hiddenSpan = new("span");
             hiddenSpan.Attributes["id"] = $"span_{Name}_{Id}";
             hiddenSpan.Attributes["style"] = "display: none;";
             hiddenSpan.InnerHtml.AppendHtml(input);
 
-            TagBuilder span = new TagBuilder("span");
+            TagBuilder span = new("span");
             span.Attributes["id"] = $"{Name}_{Id}";
             span.InnerHtml.Append($"{noHtmlValue}");
 

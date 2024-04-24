@@ -13,6 +13,5 @@
         public int? Yritusi { get; set; }
         public DateTime Loodud {  get; set; }
         public DateTime? Muudetud { get; set; }
-        public DateTime? Suletud {  get; set; }
     }
 }

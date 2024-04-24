@@ -1,1 +1,32 @@
 ﻿
+<div class="modal fade" id="yritus-detail" data-backdrop="static" aria-hidden="true" aria-labelledby="yritus-detail-title" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="yritus-detail-title" style="width: 800px;">ÜRITUSE DETAILVAADE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" validate="true" id="yritus-detail-form">
+                    <div class="mb-3">
+                        <label for="yritus-yritusenimi" class="col-form-label">Ürituse nimetus:</label>
+                        <input type="text" class="form-control fw-bold" id="yritus-yritusenimi" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="yritus-yritusekoht" class="col-form-label">Toimumise koht:</label>
+                        <input type="text" class="form-control fw-bold" id="yritus-yritusekoht" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="yritus-lisainfo" class="col-form-label">Lisainfo:</label>
+                        <textarea class="form-control fw-bold" id="yritus-lisainfo"></textarea>
+                    </div>
+                    <input type="hidden" id="yritus-id" value="" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sulge</button>
+                <button type="button" id="submit" class="btn btn-primary">Salvesta</button>
+            </div>
+        </div>
+    </div>
+</div>

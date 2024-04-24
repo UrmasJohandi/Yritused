@@ -8,6 +8,8 @@
         $('#osavotjad_button').on('click', osavotjadcookies);
         $('#osavotjad_button').on('click', osavotjadmousedown);
 
+        $('#new_button').on('click', newitem);
+
         modifybuttons();
     })
 
@@ -74,6 +76,28 @@
             const url = '@Url.Action("List", "Osavotja")';
 
             window.location.href = url;
+        }
+    }
+
+    function newitem() {
+        const options = { options: { backdrop: true, keyboard: true, focus: true, show: true } };
+        const cookieValue = Cookies.get('menu');
+
+        if (cookieValue === 'yritused') {
+
+        } else if (cookieValue === 'osavotjad') {
+            $('#osavotja-id').val('0');
+            $('#osavotja-eesnimi').val('');
+            $('#osavotja-eesnimi').val('');
+            $('#osavotja-perenimi').val('');
+            $('#osavotja-liik').val('');
+            $('#osavotja-makseviis').val('');
+            $('#osavotja-isikukood').val('');
+            $('#osavotja-lisainfo').val('');
+
+            $('#osavotja-detail-title').html('UUS OSAVÕTJA');
+
+            $('#osavotja-detail').modal(options).modal('show');
         }
     }
 </script>

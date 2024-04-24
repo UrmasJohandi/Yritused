@@ -1,14 +1,32 @@
 ﻿namespace Yritused.Models
 {
-    public class EFYritusRepository : IYritusRepository
+    public class EFYritusRepository(ApplicationDbContext ctx) : IYritusRepository
     {
-        private ApplicationDbContext context;
-
-        public EFYritusRepository(ApplicationDbContext ctx)
-        {
-            context = ctx;
-        }
+        private readonly ApplicationDbContext context = ctx;
 
         public IQueryable<Yritus> Yritused => context.Yritused;
+        public Yritus GetYritus(int Id) => context.Yritused.Where(y => y.Id == Id).SingleOrDefault() ?? new Yritus();
+        public void SaveYritus(Yritus yritus)
+        {
+            if (yritus.Id == 0)
+            {
+                yritus.Loodud = DateTime.Now;
+                context.Yritused.Add(yritus);
+            }
+            else
+            {
+                Yritus dbEntry = context.Yritused.FirstOrDefault(y => y.Id == yritus.Id) ?? new Yritus();
+                if (dbEntry != null)
+                {
+                    dbEntry.YrituseNimi = yritus.YrituseNimi;
+                    dbEntry.YrituseAeg = yritus.YrituseAeg;
+                    dbEntry.YrituseKoht = yritus.YrituseKoht;
+                    dbEntry.Lisainfo = yritus.Lisainfo;
+                    dbEntry.Muudetud = DateTime.Now;
+                }
+            }
+
+            context.SaveChanges();
+        }
     }
 }

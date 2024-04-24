@@ -1,13 +1,9 @@
 ﻿namespace Yritused.Models
 {
-    public class EFOsavotjaRepository : IOsavotjaRepository
+    public class EFOsavotjaRepository(ApplicationDbContext ctx) : IOsavotjaRepository
     {
-        private ApplicationDbContext context;
+        private readonly ApplicationDbContext context = ctx;
 
-        public EFOsavotjaRepository(ApplicationDbContext ctx)
-        {
-            context = ctx;
-        }
         public IQueryable<Osavotja> Osavotjad => context.Osavotjad;
         public Osavotja GetOsavotja(int Id) => context.Osavotjad.Where(o => o.Id == Id).SingleOrDefault() ?? new Osavotja();
         public void SaveOsavotja(Osavotja osavotja)

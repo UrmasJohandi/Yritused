@@ -1,13 +1,9 @@
 ﻿namespace Yritused.Models
 {
-    public class EFYritusOsavotjaRepository : IYritusOsavotjaRepository
+    public class EFYritusOsavotjaRepository(ApplicationDbContext ctx) : IYritusOsavotjaRepository
     {
-        private ApplicationDbContext context;
+        private readonly ApplicationDbContext context = ctx;
 
-        public EFYritusOsavotjaRepository(ApplicationDbContext ctx) 
-        {
-            context = ctx;
-        }
         public IQueryable<YritusOsavotja> YritusOsavotjad => context.YritusOsavotjad;
     }
 }

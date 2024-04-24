@@ -22,7 +22,7 @@ namespace Yritused.Infrastructure
             var orderBy = Expression.Call(
                 typeof(Queryable),
                 direction == Order.Asc ? "OrderBy" : "OrderByDescending",
-                new Type[] { typeof(T), memberAccess.Type},
+                [typeof(T), memberAccess.Type],
                 query.Expression,
                 Expression.Quote(keySelector));
 

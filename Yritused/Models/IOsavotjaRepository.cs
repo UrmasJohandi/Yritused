@@ -3,7 +3,7 @@
     public interface IOsavotjaRepository
     {
         IQueryable<Osavotja> Osavotjad { get; }
-        Osavotja GetOsavotja(int id);
+        Osavotja GetOsavotja(int Id);
         void SaveOsavotja(Osavotja osavotja);
     }
 }

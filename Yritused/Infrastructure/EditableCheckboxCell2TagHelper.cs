@@ -14,7 +14,7 @@ namespace Yritused.Infrastructure
         public bool Hidden { get; set; }
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            TagBuilder checkbox = new TagBuilder("input");
+            TagBuilder checkbox = new("input");
             checkbox.Attributes["type"] = "checkbox";
             checkbox.Attributes["id"] = $"checkbox_{Name}_{Index}";
             checkbox.Attributes["class"] = Class;
@@ -29,12 +29,12 @@ namespace Yritused.Infrastructure
                 checkbox.Attributes["style"] = "display: none;";
             }
 
-            TagBuilder span = new TagBuilder("span");
+            TagBuilder span = new("span");
             span.Attributes["id"] = $"{Name}_{Index}";
             span.InnerHtml.AppendHtml(checkbox);
             span.InnerHtml.AppendHtml("&nbsp;");
 
-            TagBuilder select = new TagBuilder("select");
+            TagBuilder select = new("select");
             select.Attributes["class"] = $"{CellClass} form-control form-control-sm";
             select.Attributes["id"] = $"cmb_{Name}_{Index}";
             select.Attributes["autocomplete"] = "off";
@@ -50,7 +50,7 @@ namespace Yritused.Infrastructure
                 select.InnerHtml.AppendHtml($"<option value='No' selected='selected'>No</option>");
             }
 
-            TagBuilder hiddenSpan = new TagBuilder("span");
+            TagBuilder hiddenSpan = new("span");
             hiddenSpan.Attributes["id"] = $"span_{Name}_{Index}";
             hiddenSpan.Attributes["style"] = "display: none;";
             hiddenSpan.InnerHtml.AppendHtml(select);

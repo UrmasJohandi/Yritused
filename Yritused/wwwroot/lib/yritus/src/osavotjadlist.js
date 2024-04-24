@@ -25,7 +25,7 @@ $(() => {
     });
     $('#submit').on('click', function () {
         const osavotja = {
-            Id: $('#osavotja-Id').val(),
+            Id: $('#osavotja-id').val(),
             Eesnimi: $('#osavotja-eesnimi').val(),
             Perenimi: $('#osavotja-perenimi').val(),
             Liik: $('#osavotja-liik').val(),
@@ -62,7 +62,7 @@ function editOsavotja(osavotjaid) {
             'Id': osavotjaid
         }
     }).done(function (result) {
-        $('#osavotja-Id').val(result.id);
+        $('#osavotja-id').val(result.id);
         $('#osavotja-eesnimi').val(result.eesnimi);
         $('#osavotja-perenimi').val(result.perenimi);
         $('#osavotja-liik').val(result.liik);
@@ -70,6 +70,8 @@ function editOsavotja(osavotjaid) {
         $('#osavotja-isikukood').val(result.isikukood);
         $('#osavotja-lisainfo').val(result.lisainfo);
     });
+
+    $('#osavotja-detail-title').html('OSAVÕTJA DETAILVAADE');
 
     $('#osavotja-detail').modal(options).modal('show');
 }

@@ -2,11 +2,10 @@
 {
     public class YritusOsavotja
     {
-        public int id {  get; set; }
-        public int yritus_id { get; set; }
-        public int osavotja_id { get; set; }
-        public DateTime loodud {  get; set; }
-        public DateTime? muudetud { get; set; }
-        public DateTime? suletud { get; set; }
+        public int Id {  get; set; }
+        public int Yritus_Id { get; set; }
+        public int Osavotja_Id { get; set; }
+        public DateTime Loodud {  get; set; }
+        public DateTime? Muudetud { get; set; }
     }
 }

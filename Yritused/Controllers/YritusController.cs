@@ -5,16 +5,11 @@ using Yritused.Models.Viewmodels;
 
 namespace Yritused.Controllers
 {
-    public class YritusController : Controller
+    public class YritusController(IHttpContextAccessor httpContextAcc, IYritusRepository yritusedRepo) : Controller
     {
-        private readonly IYritusRepository yritusedRepository;
-        private readonly IHttpContextAccessor httpContextAccessor;
+        private readonly IYritusRepository yritusedRepository = yritusedRepo;
+        private readonly IHttpContextAccessor httpContextAccessor = httpContextAcc;
 
-        public YritusController(IHttpContextAccessor httpContextAcc, IYritusRepository yritusedRepo) 
-        {
-            httpContextAccessor = httpContextAcc;
-            yritusedRepository = yritusedRepo;
-        }
         public IActionResult List(int p = 1, string? orderby = null, string? orderbybefore = null, int s = 0, string? filterField = null, string? filterValue = null)
         {
             return View("List", GetViewModel(p, orderby, orderbybefore, s, filterField, filterValue));
@@ -51,8 +46,8 @@ namespace Yritused.Controllers
 
             int pageSize = Utilites.GetPageSize(s);
 
-            string[] filterFields = Array.Empty<string>();
-            string[] filterValues = Array.Empty<string>();
+            string[] filterFields = [];
+            string[] filterValues = [];
 
             filterFields = string.IsNullOrEmpty(filterField) ? filterFields : filterField.Split(';');
             filterValues = string.IsNullOrEmpty(filterValue) ? filterValues : filterValue.Split(';');
@@ -64,20 +59,20 @@ namespace Yritused.Controllers
             }
             else if (filterFields.Length == 1)
             {
-                yritused = filteredYritused(filterField, filterValue, sortField, listOrder);
+                yritused = FilteredYritused(filterField, filterValue, sortField, listOrder);
             }
             else
             {
                 for (int j = 0; j < filterFields.Length; j++)
                 {
-                    yritused = j == 0 ? filteredYritused(filterFields[j], filterValues[j], sortField, listOrder) :
-                        filteredYritusedSecondRound(yritused, filterFields[j], filterValues[j]);
+                    yritused = j == 0 ? FilteredYritused(filterFields[j], filterValues[j], sortField, listOrder) :
+                        FilteredYritusedSecondRound(yritused, filterFields[j], filterValues[j]);
                 }
             }
 
-            YritusedListViewModel yritusedListViewModel = new YritusedListViewModel
+            YritusedListViewModel yritusedListViewModel = new()
             {
-                Yritused = (yritused == null ? new List<Yritus>() : yritused)
+                Yritused = (yritused ?? new List<Yritus>())
                     .Skip((p - 1) * pageSize)
                     .Take(pageSize),
                 PagingInfo = new PagingModel
@@ -95,11 +90,11 @@ namespace Yritused.Controllers
 
             return yritusedListViewModel;
         }
-        private IEnumerable<Yritus> filteredYritused(string? filterField, string? filterValue, string? sortField, Utilites.Order listOrder)
+        private IEnumerable<Yritus> FilteredYritused(string? filterField, string? filterValue, string? sortField, Utilites.Order listOrder)
         {
             return yritusedRepository.Yritused;
         }
-        private IEnumerable<Yritus> filteredYritusedSecondRound(IEnumerable<Yritus>? yritused, string? filteredField, string? filterValue)
+        private IEnumerable<Yritus> FilteredYritusedSecondRound(IEnumerable<Yritus>? yritused, string? filteredField, string? filterValue)
         {
             return yritusedRepository.Yritused;
         }

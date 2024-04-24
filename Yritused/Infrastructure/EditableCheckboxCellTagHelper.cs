@@ -14,7 +14,7 @@ namespace Yritused.Infrastructure
         public int RowId { get; set; }
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            TagBuilder checkbox = new TagBuilder("input");
+            TagBuilder checkbox = new("input");
             checkbox.Attributes["type"] = "checkbox";
             checkbox.Attributes["id"] = $"checkbox_{Name}_{Index}";
             checkbox.Attributes["class"] = Class;
