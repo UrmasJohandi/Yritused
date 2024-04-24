@@ -95,6 +95,20 @@ namespace Yritused.Controllers
 
             return osavotjadListViewModel;
         }
+        public IActionResult GetOsavotja(int Id)
+        {
+            var osavotja = osavotjadRepository.Osavotjad.Where(o => o.Id == Id).SingleOrDefault();
+
+            return Json(osavotja);
+        }
+
+        [HttpPost]
+        public IActionResult SaveOsavotja([FromBody]Osavotja osavotja)
+        {
+            osavotjadRepository.SaveOsavotja(osavotja);
+
+            return Json("OK");
+        }
         private IEnumerable<Osavotja> filteredOsavotjad(string? filterField, string? filterValue, string? sortField, Utilites.Order listOrder)
         {
             return osavotjadRepository.Osavotjad;

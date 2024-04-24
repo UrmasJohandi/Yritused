@@ -53,9 +53,13 @@
         if (cookieValue === 'yritused') {
             $('#yritused_button').addClass('show-selected');
             $('#osavotjad_button').removeClass('show-selected');
+
+            $('#new_button').prop('title', 'Uus üritus');
         } else if (cookieValue === 'osavotjad') {
             $('#yritused_button').removeClass('show-selected');
             $('#osavotjad_button').addClass('show-selected');
+
+            $('#new_button').prop('title', 'Uus osavõtja');
         }
     }
 
@@ -102,14 +106,15 @@
     <span id="quote_text" class="currentuser show-shopping-cart-not-empty"></span>
     <span id="quote_text_buffer">&nbsp;&nbsp;&nbsp;</span>
     <span id="filter_off_link">
-        <a href="#"><i class="fas fa-filter show-local" style="font-size: 1.85em;" id="filter_off_button" data-toggle="tooltip" data-placement="left" data-type="main" title="Filter(s) off"></i></a>
+        <a href="#"><i class="fas fa-filter show-local" style="font-size: 1.85em;" id="filter_off_button" data-toggle="tooltip" data-placement="left" data-type="main" title="Filtreerimata andmed"></i></a>
         <span>&nbsp;</span>
     </span>
-    <span id="email_link">
-        <a href="#"><i class="fas fa-envelope-open-text show-local" style="font-size: 1.85em;" id="email_button" data-toggle="tooltip" data-placement="left" data-type="main" title="E-mail us"></i></a>
+    <span id="new_link"><a href="#"><i class="fas fa-plus-square show-local" style="font-size: 1.85em;" id="new_button" data-toggle="tooltip" data-placement="left" data-type="main" title=""></i></a>
         <span>&nbsp;</span>
     </span>
     <span id="help_link">
         <a href="#"><i class="fas fa-question show-local" style="font-size: 1.85em;" id="help_button" data-toggle="tooltip" data-placement="left" data-type="main" title="Help"></i></a>
     </span>
 </div>
+
+@await Html.PartialAsync("OsavotjaDetail")

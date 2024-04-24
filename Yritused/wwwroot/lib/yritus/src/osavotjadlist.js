@@ -1,4 +1,5 @@
-﻿$(() => {
+﻿
+$(() => {
     $('[data-toggle="tooltip"]').each(function () {
         var options = {
             html: true
@@ -20,6 +21,63 @@
         if (e.target.localName === 'input') return;
         if (e.target.localName === 'span') return;
 
-        alert($(this).find('td').find('span').html());
+        editOsavotja($(this).find('td').find('span').html());
     });
-})
+    $('#submit').on('click', function () {
+        const osavotja = {
+            Id: $('#osavotja-Id').val(),
+            Eesnimi: $('#osavotja-eesnimi').val(),
+            Perenimi: $('#osavotja-perenimi').val(),
+            Liik: $('#osavotja-liik').val(),
+            Makseviis: $('#osavotja-makseviis').val(),
+            Isikukood: $('#osavotja-isikukood').val(),
+            Lisainfo: $('#osavotja-lisainfo').val()
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: 'Osavotja/SaveOsavotja',
+            dataType: 'JSON',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(osavotja)
+        }).done(function (result) {
+            if (result === 'OK') {
+                $('#osavotja-detail').modal('hide');
+                location.reload(true);
+            }
+        });
+    });
+});
+function editOsavotja(osavotjaid) {
+    const options = { options: { backdrop: true, keyboard: true, focus: true, show: true } };
+
+    emptyosavotjaform();
+
+    $.ajax({
+        type: 'GET',
+        url: 'Osavotja/GetOsavotja',
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        data: {
+            'Id': osavotjaid
+        }
+    }).done(function (result) {
+        $('#osavotja-Id').val(result.id);
+        $('#osavotja-eesnimi').val(result.eesnimi);
+        $('#osavotja-perenimi').val(result.perenimi);
+        $('#osavotja-liik').val(result.liik);
+        $('#osavotja-makseviis').val(result.makseviis);
+        $('#osavotja-isikukood').val(result.isikukood);
+        $('#osavotja-lisainfo').val(result.lisainfo);
+    });
+
+    $('#osavotja-detail').modal(options).modal('show');
+}
+function emptyosavotjaform() {
+    $('#osavotja-eesnimi').val('');
+    $('#osavotja-perenimi').val('');
+    $('#osavotja-liik').val('');
+    $('#osavotja-makseviis').val('');
+    $('#osavotja-isikukood').val('');
+    $('#osavotja-lisainfo').val('');
+}
