@@ -20,6 +20,86 @@
         if (e.target.localName === 'input') return;
         if (e.target.localName === 'span') return;
 
-        alert($(this).find('td').find('span').html());
+        editYritus($(this).find('td').find('span').html());
+    });
+    $('#yritus-submit').on('click', function () {
+        const yritus = {
+            Id: $('#yritus-id').val(),
+            YrituseNimi: $('#yritus-yritusenimi').val(),
+            YrituseAeg: formatdatetimeback($('#yritus-yrituseaeg').val()),
+            YrituseKoht: $('#yritus-yritusekoht').val(),
+            Lisainfo: $('#yritus-lisainfo').val()
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: 'Yritus/SaveYritus',
+            dataType: 'JSON',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(yritus)
+        }).done(function (result) {
+            if (result === 'OK') {
+                $('#yritus-detail').modal('hide');
+                location.reload(true);
+            }
+        });
     });
 })
+function editYritus(yritusid) {
+    const options = { options: { backdrop: true, keyboard: true, focus: true, show: true } };
+
+    emptyyritusform();
+
+    $.ajax({
+        type: 'GET',
+        url: 'Yritus/GetYritus',
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        data: {
+            'Id': yritusid        }
+    }).done(function (result) {
+        $('#yritus-id').val(result.id);
+        $('#yritus-yritusenimi').val(result.yrituseNimi);
+        $('#yritus-yrituseaeg').val(formatdate(result.yrituseAeg));
+        $('#yritus-yritusekoht').val(result.yrituseKoht);
+        $('#yritus-lisainfo').val(result.lisainfo);
+    });
+
+    $('#yritus-detail-title').html('ÜRITUSE DETAILVAADE');
+
+    $('#yritus-detail').modal(options).modal('show');
+}
+function emptyyritusform() {
+    $('#yritus-id').val('');
+    $('#yritus-yritusenimi').val('');
+    $('#yritus-yrituseaeg').val('');
+    $('#yritus-yritusekoht').val('');
+    $('#yritus-lisainfo').val('');
+}
+function formatdate(datetime) {
+    const date = datetime.split('T')[0];
+    const time = datetime.split('T')[1];
+
+    const year = date.split('-')[0];
+    const month = date.split('-')[1];
+    const day = date.split('-')[2];
+
+    const hours = time.split(':')[0];
+    const minutes = time.split(':')[1];
+
+    return day + '.' + month + '.' + year + ' ' + hours + ':' + minutes;
+}
+function formatdatetimeback(datetime) {
+    const date = datetime.split(' ')[0];
+    const time = datetime.split(' ')[1];
+
+    const day = date.split('.')[0];
+    const month = date.split('.')[1];
+    const year = date.split('.')[2];
+
+    const hours = time.split(':')[0];
+    const minutes = time.split(':')[1];
+    const seconds = '00';
+
+    return year + '-' + month + '-' + day + 'T' + hours + ':' + minutes + ':' + seconds;
+}

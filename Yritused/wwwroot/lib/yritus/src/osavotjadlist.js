@@ -23,7 +23,7 @@ $(() => {
 
         editOsavotja($(this).find('td').find('span').html());
     });
-    $('#submit').on('click', function () {
+    $('#osavotja-submit').on('click', function () {
         const osavotja = {
             Id: $('#osavotja-id').val(),
             Eesnimi: $('#osavotja-eesnimi').val(),

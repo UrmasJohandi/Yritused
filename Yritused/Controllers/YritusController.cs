@@ -90,6 +90,19 @@ namespace Yritused.Controllers
 
             return yritusedListViewModel;
         }
+        public IActionResult GetYritus(int Id)
+        {
+            var yritus = yritusedRepository.Yritused.Where(y => y.Id == Id).SingleOrDefault();
+
+            return Json(yritus);
+        }
+        [HttpPost]
+        public IActionResult SaveYritus([FromBody]Yritus yritus)
+        {
+            yritusedRepository.SaveYritus(yritus);
+
+            return Json("OK");
+        }
         private IEnumerable<Yritus> FilteredYritused(string? filterField, string? filterValue, string? sortField, Utilites.Order listOrder)
         {
             return yritusedRepository.Yritused;

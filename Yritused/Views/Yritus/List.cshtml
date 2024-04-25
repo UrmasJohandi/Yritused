@@ -29,7 +29,7 @@
             {
                 <tr>
                     @{
-                        var yrituseaeg = CreatedDateTime(y.YrituseAeg);
+                        var yrituseaeg = CreatedDateTime((DateTime)y.YrituseAeg);
                         var loodud = CreatedDateTime(y.Loodud);
                         var muudetud = y.Muudetud == null ? string.Empty : CreatedDateTime((DateTime)y.Muudetud);
                     }

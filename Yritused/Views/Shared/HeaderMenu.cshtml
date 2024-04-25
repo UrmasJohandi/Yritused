@@ -84,7 +84,15 @@
         const cookieValue = Cookies.get('menu');
 
         if (cookieValue === 'yritused') {
+            $('#yritus-id').val('0');
+            $('#yritus-yritusenimi').val('');
+            $('#yritus-yrituseaeg').val('');
+            $('#yritus-yritusekoht').val('');
+            $('#yritus-lisainfo').val('');
 
+            $('#yritus-detail-title').html('UUS ÜRITUS');
+
+            $('#yritus-detail').modal(options).modal('show');
         } else if (cookieValue === 'osavotjad') {
             $('#osavotja-id').val('0');
             $('#osavotja-eesnimi').val('');
@@ -142,3 +150,5 @@
 </div>
 
 @await Html.PartialAsync("OsavotjaDetail")
+
+@await Html.PartialAsync("YritusDetail")

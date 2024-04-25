@@ -9569,6 +9569,22 @@
       "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-v4compatibility.woff2"
     },
     {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-datetimepicker\\jquery.datetimepicker.full.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-datetimepicker\\jquery.datetimepicker.full.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-datetimepicker\\jquery.datetimepicker.full.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-datetimepicker\\jquery.datetimepicker.full.min.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-datetimepicker\\jquery.datetimepicker.min.css",
+      "PackagePath": "staticwebassets\\lib\\jquery-datetimepicker\\jquery.datetimepicker.min.css"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-datetimepicker\\jquery.datetimepicker.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-datetimepicker\\jquery.datetimepicker.min.js"
+    },
+    {
       "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery\\AUTHORS.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\AUTHORS.txt"
     },
