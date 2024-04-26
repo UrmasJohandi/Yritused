@@ -10217,12 +10217,20 @@
       "PackagePath": "staticwebassets\\lib\\yritus\\css\\yritus.css"
     },
     {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\css\\yritusosavotjad.css",
+      "PackagePath": "staticwebassets\\lib\\yritus\\css\\yritusosavotjad.css"
+    },
+    {
       "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
       "PackagePath": "staticwebassets\\lib\\yritus\\src\\osavotjadlist.js"
     },
     {
       "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\yritusedlist.js",
       "PackagePath": "staticwebassets\\lib\\yritus\\src\\yritusedlist.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js",
+      "PackagePath": "staticwebassets\\lib\\yritus\\src\\yritusosavotjadlist.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Yritused.Microsoft.AspNetCore.StaticWebAssets.props",

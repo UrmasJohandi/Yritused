@@ -8,6 +8,9 @@
         $('#osavotjad_button').on('click', osavotjadcookies);
         $('#osavotjad_button').on('click', osavotjadmousedown);
 
+        $('#yritused_osavotjad_button').on('click', yritusedosavotjadcookies);
+        $('#yritused_osavotjad_button').on('click', yritusedosavotjadmousedown);
+
         $('#new_button').on('click', newitem);
 
         modifybuttons();
@@ -49,19 +52,45 @@
         }
     }
 
+    function yritusedosavotjadcookies() {
+        Cookies.set('menu', 'yritusedosavotjad');
+        Cookies.set('filter', '');
+
+        modifybuttons();
+        gotolink();
+    }
+
+    function yritusedosavotjadmousedown(e) {
+        if (e.which === 3) {
+            Cookies.set('menu', 'yritusedosavotjad');
+            Cookies.set('filter', '');
+
+            modifybuttons();
+            gotolink();
+        }
+    }
+
     function modifybuttons() {
         const cookieValue = Cookies.get('menu');
 
         if (cookieValue === 'yritused') {
             $('#yritused_button').addClass('show-selected');
             $('#osavotjad_button').removeClass('show-selected');
+            $('#yritused_osavotjad_button').removeClass('show-selected');
 
             $('#new_button').prop('title', 'Uus üritus');
         } else if (cookieValue === 'osavotjad') {
             $('#yritused_button').removeClass('show-selected');
             $('#osavotjad_button').addClass('show-selected');
+            $('#yritused_osavotjad_button').removeClass('show-selected');
 
             $('#new_button').prop('title', 'Uus osavõtja');
+        } else if (cookieValue === 'yritusedosavotjad') {
+            $('#yritused_button').removeClass('show-selected');
+            $('#osavotjad_button').removeClass('show-selected');
+            $('#yritused_osavotjad_button').addClass('show-selected');
+
+            $('#new_button').prop('title', 'Uus üritusest osavõtja');
         }
     }
 
@@ -74,6 +103,10 @@
             window.location.href = url;
         } else if (cookieValue === 'osavotjad') {
             const url = '@Url.Action("List", "Osavotja")';
+
+            window.location.href = url;
+        } else if (cookieValue === 'yritusedosavotjad') {
+            const url = '@Url.Action("List", "YritusOsavotja")';
 
             window.location.href = url;
         }

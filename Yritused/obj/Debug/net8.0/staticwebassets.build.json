@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Utdt5OgFmEKA/kkl/xznFrVo0m8kJoGWru2W+cyk6Ck=",
+  "Hash": "OnUx6fnFs0vBvI6MbqewAKjOewlY4R+yOilzHRJbtoo=",
   "Source": "Yritused",
   "BasePath": "_content/Yritused",
   "Mode": "Default",
@@ -48543,6 +48543,25 @@
       "OriginalItemSpec": "wwwroot\\lib\\yritus\\css\\yritus.css"
     },
     {
+      "Identity": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\css\\yritusosavotjad.css",
+      "SourceId": "Yritused",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\",
+      "BasePath": "_content/Yritused",
+      "RelativePath": "lib/yritus/css/yritusosavotjad.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\yritus\\css\\yritusosavotjad.css"
+    },
+    {
       "Identity": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
       "SourceId": "Yritused",
       "SourceType": "Discovered",
@@ -48579,6 +48598,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\yritus\\src\\yritusedlist.js"
+    },
+    {
+      "Identity": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js",
+      "SourceId": "Yritused",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\",
+      "BasePath": "_content/Yritused",
+      "RelativePath": "lib/yritus/src/yritusosavotjadlist.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js"
     }
   ]
 }

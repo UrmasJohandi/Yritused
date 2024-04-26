@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\urmas\\source\\repos\\Yritused\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|c:\\users\\urmas\\source\\repos\\yritused\\yritused\\views\\shared\\yritusdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|solutionrelative:yritused\\views\\shared\\yritusdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "YritusDetail.cshtml",
-              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\Shared\\YritusDetail.cshtml",
-              "RelativeDocumentMoniker": "Yritused\\Views\\Shared\\YritusDetail.cshtml",
-              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\Shared\\YritusDetail.cshtml",
-              "RelativeToolTip": "Yritused\\Views\\Shared\\YritusDetail.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-25T02:34:05.753Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
