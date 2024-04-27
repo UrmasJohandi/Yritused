@@ -74,6 +74,12 @@
     <input type="hidden" id="model_filtervalue" value="@Model.FilterValue" />
 </div>
 
+<paging total-records="@Model.PagingInfo.TotalRecords"
+    page-no="@Model.PagingInfo.PageNo"
+    page-size="@Model.PagingInfo.PageSize"
+    query-string-value="@("orderby=" + Model.OrderBy + "&" + "filterfield=" + Model.FilterField + "&" + "filterValue=" + Model.FilterValue)">
+</paging>
+
 @functions {
     private string? OrderHref(string field) => @Url.Action("List", "Osavotja",
         new

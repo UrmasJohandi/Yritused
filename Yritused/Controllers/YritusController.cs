@@ -96,12 +96,44 @@ namespace Yritused.Controllers
 
             return Json(yritus);
         }
+        public IActionResult GetYritusByYrituseNimi(string yrituseNimi)
+        {
+            Yritus yritus = new();
+
+            foreach (Yritus y in yritusedRepository.Yritused)
+            {
+                if ((y.YrituseNimi + " " + y.YrituseAeg.ToString("dd.MM.yyyy HH:mm") + " " + y.YrituseKoht).ToLower().IndexOf(yrituseNimi.ToLower()) != -1)
+                {
+                    yritus = y;
+                }
+            }
+
+            return Json(yritus);
+        }
         [HttpPost]
         public IActionResult SaveYritus([FromBody]Yritus yritus)
         {
             yritusedRepository.SaveYritus(yritus);
 
             return Json("OK");
+        }
+        public IActionResult GetAutocompleteByYrituseNimi(string yrituseNimi_fr)
+        {
+            List<string> yritused = [];
+
+            foreach (Yritus y in yritusedRepository.Yritused)
+            {
+                if (yrituseNimi_fr == null)
+                {
+                    yritused.Add(y.YrituseNimi + " " + y.YrituseAeg.ToString("dd.MM.yyyy HH:mm") + " " + y.YrituseKoht);
+                }
+                else if ((y.YrituseNimi + " " + y.YrituseAeg.ToString("dd.MM.yyyy HH:mm") + " " + y.YrituseKoht).ToLower().IndexOf(yrituseNimi_fr.ToLower()) != -1)
+                {
+                    yritused.Add(y.YrituseNimi + " " + y.YrituseAeg.ToString("dd.MM.yyyy HH:mm") + " " + y.YrituseKoht);
+                }
+            }
+
+            return Json(yritused);
         }
         private IEnumerable<Yritus> FilteredYritused(string? filterField, string? filterValue, string? sortField, Utilites.Order listOrder)
         {

@@ -11,7 +11,7 @@ namespace Yritused.Infrastructure
         }
         public static int GetPageSize(int s)
         {
-            return 41;
+            return 5;
         }
         public static IQueryable<T> OrderByDynamic<T>(this IQueryable<T> query, string orderByMember, Order direction)
         {

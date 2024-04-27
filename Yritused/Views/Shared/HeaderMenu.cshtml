@@ -73,7 +73,13 @@
     function modifybuttons() {
         const cookieValue = Cookies.get('menu');
 
-        if (cookieValue === 'yritused') {
+        if (cookieValue == null) {
+            $('#yritused_button').addClass('show-selected');
+            $('#osavotjad_button').removeClass('show-selected');
+            $('#yritused_osavotjad_button').removeClass('show-selected');
+
+            $('#new_button').prop('title', 'Uus üritus');
+        } else if (cookieValue === 'yritused') {
             $('#yritused_button').addClass('show-selected');
             $('#osavotjad_button').removeClass('show-selected');
             $('#yritused_osavotjad_button').removeClass('show-selected');
@@ -139,6 +145,25 @@
             $('#osavotja-detail-title').html('UUS OSAVÕTJA');
 
             $('#osavotja-detail').modal(options).modal('show');
+        } else if (cookieValue === 'yritusedosavotjad') {
+            $('#yritusosavotja-yritusenimi').val('');
+            $('#y-yritusenimi').html(' ');
+            $('#y-yrituseaeg').html(' ');
+            $('#y-yritusekoht').html(' ');
+            $('#yritusosavotja-osavotja').val('');
+            $('#yritusosavotja-isikukood').val('');
+            $('#o-eesnimi').html(' ');
+            $('#o-perenimi').html(' ');
+            $('#o-isikukood').html(' ');
+            $('#o-liik').html(' ');
+            $('#o-makseviis').html(' ');
+            $('#yritusosavotja-id').val('0');
+            $('#yritusosavotja-yritus-id').val('0');
+            $('#yritusosavotja-osavotja-id').val('0');
+
+            $('#yritusosavotja-detail-title').html('UUS ÜRITUSEST OSAVÕTJA');
+
+            $('#yritusosavotja-detail').modal(options).modal('show');
         }
     }
 </script>
@@ -185,3 +210,5 @@
 @await Html.PartialAsync("OsavotjaDetail")
 
 @await Html.PartialAsync("YritusDetail")
+
+@await Html.PartialAsync("YritusOsavotjaDetail")

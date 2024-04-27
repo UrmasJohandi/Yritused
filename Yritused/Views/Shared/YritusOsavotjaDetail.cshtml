@@ -1,0 +1,87 @@
+﻿
+<style>
+    .autocomplete-suggestions {
+        border: 1px solid #999;
+        background: #FFF;
+        overflow: auto;
+    }
+
+    .autocomplete-suggestion {
+        padding: 2px 5px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .autocomplete-selected {
+        background: #F0F0F0;
+    }
+
+    .autocomplete-suggestions strong {
+        font-weight: normal;
+        color: #3399FF;
+    }
+
+    .autocomplete-group {
+        padding: 2px 5px;
+    }
+
+    .autocomplete-group strong {
+        display: block;
+        border-bottom: 1px solid #000;
+    }
+
+    .liheight {
+        height: 37px;
+    }
+</style>
+
+<div class="modal fade" id="yritusosavotja-detail" data-backdrop="static" aria-hidden="true" aria-labelledby="yritusosavotja-detail-title" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="yritusosavotja-detail-title" style="width: 800px;">ÜRITUSEST OSAVÕTJA DETAILVAADE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" validate="true" id="yritusosavotja-detail-form">
+                    <div class="mb-3">
+                        <label for="yritusosavotja-yritusenimi" class="col-form-label">Üritus:</label>
+                        <input type="text" class="form-control fw-bold" id="yritusosavotja-yritusenimi" />
+                    </div>
+                    <div class="card" style="width: 768px;">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item liheight" id="y-yritusenimi"></li>
+                            <li class="list-group-item liheight" id="y-yrituseaeg"></li>
+                            <li class="list-group-item liheight" id="y-yritusekoht"></li>
+                        </ul>
+                    </div>
+                    <br />
+                    <div class="mb-3">
+                        <label for="yritusosavotja-osavotja" class="col-form-label">Osavõtja:</label>
+                        <input type="text" class="form-control fw-bold" id="yritusosavotja-osavotja" autocomplete="off" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="yritusosavotja-isikukood" class="col-form-label">Isikukood:</label>
+                        <input type="text" class="form-control fw-bold" id="yritusosavotja-isikukood" autocomplete="off" />
+                    </div>
+                    <div class="card" style="width: 768px;">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item liheight" id="o-eesnimi"></li>
+                            <li class="list-group-item liheight" id="o-perenimi"></li>
+                            <li class="list-group-item liheight" id="o-isikukood"></li>
+                            <li class="list-group-item liheight" id="o-liik"></li>
+                            <li class="list-group-item liheight" id="o-makseviis"></li>
+                        </ul>
+                    </div>
+                    <input type="hidden" id="yritusosavotja-id" value="" />
+                    <input type="hidden" id="yritusosavotja-yritus-id" value="" />
+                    <input type="hidden" id="yritusosavotja-osavotja-id" value="" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sulge</button>
+                <button type="button" id="yritusosavotja-submit" class="btn btn-primary">Salvesta</button>
+            </div>
+        </div>
+    </div>
+</div>

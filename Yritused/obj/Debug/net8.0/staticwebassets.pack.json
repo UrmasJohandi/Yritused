@@ -9569,6 +9569,122 @@
       "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-v4compatibility.woff2"
     },
     {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\.gitignore",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\.gitignore"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\content\\styles.css",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\content\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\devbridge-autocomplete.jquery.json",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\devbridge-autocomplete.jquery.json"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\dist\\jquery.autocomplete.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\dist\\jquery.autocomplete.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\dist\\jquery.autocomplete.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\dist\\jquery.autocomplete.min.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\dist\\license.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\dist\\license.txt"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\gruntfile.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\gruntfile.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\index.htm",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\index.htm"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\license.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\license.txt"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\package-lock.json",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\package-lock.json"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\package.json",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\package.json"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\readme.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\readme.md"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\scripts\\countries.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\scripts\\countries.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\scripts\\demo.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\scripts\\demo.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\spec\\autocompleteBehavior.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\spec\\autocompleteBehavior.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-1.3.1\\MIT.LICENSE",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-1.3.1\\MIT.LICENSE"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-1.3.1\\jasmine-html.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-1.3.1\\jasmine-html.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-1.3.1\\jasmine.css",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-1.3.1\\jasmine.css"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-1.3.1\\jasmine.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-1.3.1\\jasmine.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-2.0.1\\boot.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-2.0.1\\boot.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-2.0.1\\console.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-2.0.1\\console.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-2.0.1\\jasmine-html.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-2.0.1\\jasmine-html.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-2.0.1\\jasmine.css",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-2.0.1\\jasmine.css"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-2.0.1\\jasmine.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-2.0.1\\jasmine.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-2.0.1\\jasmine_favicon.png",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\spec\\lib\\jasmine-2.0.1\\jasmine_favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\spec\\runner.html",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\spec\\runner.html"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\src\\jquery.autocomplete.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\src\\jquery.autocomplete.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\typings\\jquery.autocomplete-tests.ts",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\typings\\jquery.autocomplete-tests.ts"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-autocomplete\\typings\\jquery.autocomplete.d.ts",
+      "PackagePath": "staticwebassets\\lib\\jquery-autocomplete\\typings\\jquery.autocomplete.d.ts"
+    },
+    {
       "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\jquery-datetimepicker\\jquery.datetimepicker.full.js",
       "PackagePath": "staticwebassets\\lib\\jquery-datetimepicker\\jquery.datetimepicker.full.js"
     },

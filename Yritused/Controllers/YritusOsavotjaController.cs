@@ -99,9 +99,37 @@ namespace Yritused.Controllers
 
             return Json(yritusOsavotja);
         }
+        public IActionResult GetYritusOsavotjaListViewModel(int Id)
+        {
+            var yritusOsavotja = yritusOsavotjadRepository.YritusOsavotjad.Where(YritusOsavotja => YritusOsavotja.Id == Id).SingleOrDefault() ?? new YritusOsavotja();
+
+            YritusOsavotjaListViewModel yritusOsavotjaListViewModel = new()
+            {
+                YritusOsavotja = yritusOsavotja,
+                Yritus = yritusedRepository.Yritused.Where(y => y.Id == yritusOsavotja.Yritus_Id).SingleOrDefault(),
+                Osavotja = osavotjadRepository.Osavotjad.Where(o => o.Id == yritusOsavotja.Osavotja_Id).SingleOrDefault()
+            };
+
+            return Json(yritusOsavotjaListViewModel);
+        }
         public IActionResult SaveYritusOsavotja([FromBody]YritusOsavotja yritusOsavotja)
         {
             yritusOsavotjadRepository.SaveYritusOsavotja(yritusOsavotja);
+
+            var yritus = yritusedRepository.Yritused.Where(y => y.Id == yritusOsavotja.Yritus_Id).SingleOrDefault();
+            if (yritus != null)
+            {
+                yritus.Osavotjaid = yritusOsavotjadRepository.GetYrituseOsavotjaid(yritus.Id);
+                yritusedRepository.SaveYritus(yritus);
+            }
+
+            var osavotja = osavotjadRepository.Osavotjad.Where(o => o.Id == yritusOsavotja.Osavotja_Id).SingleOrDefault();
+            if (osavotja != null)
+            {
+                osavotja.Yritusi = yritusOsavotjadRepository.GetOsavotjaYritusi(osavotja.Id);
+                osavotjadRepository.SaveOsavotja(osavotja);
+            }
+
 
             return Json("OK");
         }

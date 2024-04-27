@@ -104,6 +104,32 @@ namespace Yritused.Controllers
 
             return Json("OK");
         }
+        public IActionResult GetAutocompleteByOsavotjaNimi(string taisnimi_fr)
+        {
+            var osavotjad = taisnimi_fr == null ? osavotjadRepository.Osavotjad : 
+                osavotjadRepository.Osavotjad.Where(o => ((o.Taisnimi ?? string.Empty) + " " + o.Isikukood).Contains(taisnimi_fr, StringComparison.CurrentCultureIgnoreCase)).OrderBy(o => o.Taisnimi);
+
+            return Json(osavotjad.Select(o => o.Taisnimi + " " + o.Isikukood).ToList());
+        }
+        public IActionResult GetOsavotjaByNimi(string taisnimi)
+        {
+            var osavotja = osavotjadRepository.Osavotjad.Where(o => ((o.Taisnimi ?? string.Empty) + " " + o.Isikukood).Equals(taisnimi, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+
+            return Json(osavotja);
+        }
+        public IActionResult GetAutocompleteByIsikukood(string isikukood_fr)
+        {
+            var osavotjad = isikukood_fr == null ? osavotjadRepository.Osavotjad : 
+                osavotjadRepository.Osavotjad.Where(o => ((o.Isikukood ?? string.Empty) + " " + o.Taisnimi).Contains(isikukood_fr, StringComparison.CurrentCultureIgnoreCase)).OrderBy(o => o.Isikukood);
+
+            return Json(osavotjad.Select(o => o.Isikukood + " " + o.Taisnimi).ToList());
+        }
+        public IActionResult GetOsavotjaByIsikukood(string isikukood)
+        {
+            var osavotja = osavotjadRepository.Osavotjad.Where(o => ((o.Isikukood ?? string.Empty) + " " + o.Taisnimi).Equals(isikukood, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+
+            return Json(osavotja);
+        }
         private IEnumerable<Osavotja> FilteredOsavotjad(string? filterField, string? filterValue, string? sortField, Utilites.Order listOrder)
         {
             return osavotjadRepository.Osavotjad;

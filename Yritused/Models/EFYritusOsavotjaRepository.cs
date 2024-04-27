@@ -1,4 +1,6 @@
-﻿namespace Yritused.Models
+﻿using Yritused.Models.Viewmodels;
+
+namespace Yritused.Models
 {
     public class EFYritusOsavotjaRepository(ApplicationDbContext ctx) : IYritusOsavotjaRepository
     {
@@ -24,6 +26,14 @@
             }
 
             context.SaveChanges();
+        }
+        public int GetYrituseOsavotjaid(int YrituseId)
+        {
+            return context.YritusOsavotjad.Where(yo => yo.Yritus_Id == YrituseId).Count();
+        }
+        public int GetOsavotjaYritusi(int OsavotjaId)
+        {
+            return context.YritusOsavotjad.Where(yo => yo.Osavotja_Id == OsavotjaId).Count();
         }
     }
 }
