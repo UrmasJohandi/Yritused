@@ -104,29 +104,75 @@ namespace Yritused.Controllers
 
             return Json("OK");
         }
+        public IActionResult DeleteOsavotja(int Id, int pageNr)
+        {
+            osavotjadRepository.DeleteOsavotja(Id);
+
+            return RedirectToAction("List", new { p = pageNr});
+        }
         public IActionResult GetAutocompleteByOsavotjaNimi(string taisnimi_fr)
         {
-            var osavotjad = taisnimi_fr == null ? osavotjadRepository.Osavotjad : 
-                osavotjadRepository.Osavotjad.Where(o => ((o.Taisnimi ?? string.Empty) + " " + o.Isikukood).Contains(taisnimi_fr, StringComparison.CurrentCultureIgnoreCase)).OrderBy(o => o.Taisnimi);
+            List<string> osavotjad = [];
 
-            return Json(osavotjad.Select(o => o.Taisnimi + " " + o.Isikukood).ToList());
+            foreach (Osavotja o in osavotjadRepository.Osavotjad.OrderBy(o => o.Taisnimi).ThenBy(o => o.Isikukood))
+            {
+                if (taisnimi_fr == null)
+                {
+                    osavotjad.Add(o.Taisnimi + " " + o.Isikukood);
+                }
+                else if ((o.Taisnimi + " " + o.Isikukood).ToLower().Contains(taisnimi_fr.ToLower(), StringComparison.CurrentCulture))
+                {
+                    osavotjad.Add(o.Taisnimi + " " + o.Isikukood);
+                }
+            }
+
+            return Json(osavotjad);
         }
         public IActionResult GetOsavotjaByNimi(string taisnimi)
         {
-            var osavotja = osavotjadRepository.Osavotjad.Where(o => ((o.Taisnimi ?? string.Empty) + " " + o.Isikukood).Equals(taisnimi, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+            Osavotja osavotja = new();
+
+            foreach (Osavotja o in osavotjadRepository.Osavotjad)
+            {
+                if ((o.Taisnimi + " " + o.Isikukood).ToLower().Contains(taisnimi.ToLower(), StringComparison.CurrentCulture))
+                {
+                    osavotja = o;
+                    break;
+                }
+            }
 
             return Json(osavotja);
         }
         public IActionResult GetAutocompleteByIsikukood(string isikukood_fr)
         {
-            var osavotjad = isikukood_fr == null ? osavotjadRepository.Osavotjad : 
-                osavotjadRepository.Osavotjad.Where(o => ((o.Isikukood ?? string.Empty) + " " + o.Taisnimi).Contains(isikukood_fr, StringComparison.CurrentCultureIgnoreCase)).OrderBy(o => o.Isikukood);
+            List<string> osavotjad = [];
 
-            return Json(osavotjad.Select(o => o.Isikukood + " " + o.Taisnimi).ToList());
+            foreach (Osavotja o in osavotjadRepository.Osavotjad.OrderBy(o => o.Isikukood).ThenBy(o => o.Taisnimi))
+            {
+                if (isikukood_fr == null)
+                {
+                    osavotjad.Add(o.Isikukood + " " + o.Taisnimi);
+                }
+                else if ((o.Isikukood + " " + o.Taisnimi).ToLower().Contains(isikukood_fr.ToLower(), StringComparison.CurrentCulture))
+                {
+                    osavotjad.Add(o.Isikukood + " " + o.Taisnimi);
+                }
+            }
+
+            return Json(osavotjad);
         }
         public IActionResult GetOsavotjaByIsikukood(string isikukood)
         {
-            var osavotja = osavotjadRepository.Osavotjad.Where(o => ((o.Isikukood ?? string.Empty) + " " + o.Taisnimi).Equals(isikukood, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+            Osavotja osavotja = new();
+
+            foreach (Osavotja o in osavotjadRepository.Osavotjad)
+            {
+                if ((o.Isikukood + " " + o.Taisnimi).ToLower().Contains(isikukood.ToLower(), StringComparison.CurrentCulture))
+                {
+                    osavotja = o;
+                    break;
+                }
+            }
 
             return Json(osavotja);
         }

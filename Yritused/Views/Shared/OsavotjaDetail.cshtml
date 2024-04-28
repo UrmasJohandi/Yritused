@@ -10,15 +10,15 @@
                 <form method="post" validate="true" id="osavotja-detail-form">
                     <div class="mb-3">
                         <label for="osavotja-eesnimi" class="col-form-label">Eesnimi:</label>
-                        <input type="text" class="form-control fw-bold" id="osavotja-eesnimi" />
+                        <input type="text" class="form-control fw-bold" id="osavotja-eesnimi" autocomplete="off" />
                     </div>
                     <div class="mb-3">
                         <label for="osavotja-perenimi" class="col-form-label">Perekonnanimi:</label>
-                        <input type="text" class="form-control fw-bold" id="osavotja-perenimi" />
+                        <input type="text" class="form-control fw-bold" id="osavotja-perenimi" autocomplete="off" />
                     </div>
                     <div class="mb-3">
                         <label for="osavotja-liik" class="col-form-label">Füüsiline/Juriidiline isik:</label>
-                        <select class="form-control fw-bold" autocomplete="off" id="osavotja-liik">
+                        <select class="form-control fw-bold" autocomplete="off" id="osavotja-liik" autocomplete="off">
                             <option value=""></option>
                             <option value="F">Füüsiline isik</option>
                             <option value="J">Juriidiline isik</option>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="osavotja-makseviis" class="col-form-label">Makseviis:</label>
-                        <select class="form-control fw-bold" autocomplete="off" id="osavotja-makseviis">
+                        <select class="form-control fw-bold" autocomplete="off" id="osavotja-makseviis" autocomplete="off">
                             <option value=""></option>
                             <option value="P">Pangaülekandega</option>
                             <option value="S">Sularahas</option>
@@ -34,11 +34,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="osavotja-isikukood" class="col-form-label">Isikukood:</label>
-                        <input type="text" class="form-control fw-bold" id="osavotja-isikukood" />
+                        <input type="text" class="form-control fw-bold" id="osavotja-isikukood" autocomplete="off" />
                     </div>
                     <div class="mb-3">
                         <label for="osavotja-lisainfo" class="col-form-label">Lisainfo:</label>
-                        <textarea class="form-control fw-bold" rows="10" id="osavotja-lisainfo"></textarea>
+                        <textarea class="form-control fw-bold" rows="10" id="osavotja-lisainfo" autocomplete="off"></textarea>
                     </div>
                     <input type="hidden" id="osavotja-id" value="" />
                 </form>

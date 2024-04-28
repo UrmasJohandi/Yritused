@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Yritused")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c613538ada0c41e07a3683a20c0d8810c5709c9e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5cb9829891edb408328992ad9c76af4f59fe4ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("Yritused")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Yritused")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

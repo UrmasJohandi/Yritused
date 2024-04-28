@@ -27,6 +27,15 @@ namespace Yritused.Models
 
             context.SaveChanges();
         }
+        public void DeleteYritusOsavotja(int Id)
+        {
+            YritusOsavotja dbEntry = context.YritusOsavotjad.Where(yo => yo.Id == Id).FirstOrDefault() ?? new YritusOsavotja();
+            if (dbEntry.Id != 0)
+            {
+                context.YritusOsavotjad.Remove(dbEntry);
+                context.SaveChanges();
+            }
+        }
         public int GetYrituseOsavotjaid(int YrituseId)
         {
             return context.YritusOsavotjad.Where(yo => yo.Yritus_Id == YrituseId).Count();

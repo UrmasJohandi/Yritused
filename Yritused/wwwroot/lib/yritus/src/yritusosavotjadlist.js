@@ -15,6 +15,10 @@ $(() => {
 
         $(this).tooltip(options);
     });
+
+    var orderbys = orderBy.split(' ');
+    var span = '#sp' + orderbys[0];
+    $(span).addClass('darksalmon');
     $('tr').on('click', function (e) {
         if (e.target.localName === 'i') return;
         if (e.target.localName === 'th') return;
@@ -129,6 +133,9 @@ $(() => {
             }
         });
     });
+    $('#yesno-submit').on('click', function () {
+        window.location.href = deleteUrl + '?Id=' + yritusOsavotjaId + '&pageNr=' + pageNr;
+    })
 });
 function editYritusOsavotja(yritusosavotjaid) {
     const options = { options: { backdrop: true, keyboard: true, focus: true, show: true } };
@@ -186,4 +193,18 @@ function formatdate(datetime) {
 
     return day + '.' + month + '.' + year + ' ' + hours + ':' + minutes;
 }
+function kustutaYritusOsavotja(id) {
+    const options = { options: { backdrop: true, keyboard: true, focus: true, show: true } };
 
+    emptyyesno();
+    yritusOsavotjaId = id;
+
+    $('#yesnomodallabel').html('Üritusest osavõtja kustutamine');
+    $('#yesnomodalcontent').html('Kas kustutada üritusest osavõtja ' + id + '?');
+
+    $('#yesnomodal').modal(options).modal('show');
+}
+function emptyyesno() {
+    $('#yesnomodallabel').html('');
+    $('#yesnomodalcontent').html('');
+}

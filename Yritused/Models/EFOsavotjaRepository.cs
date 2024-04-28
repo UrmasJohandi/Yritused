@@ -31,5 +31,14 @@
 
             context.SaveChanges();
         }
+        public void DeleteOsavotja(int Id)
+        {
+            Osavotja dbEntry = context.Osavotjad.Where(o => o.Id == Id).FirstOrDefault() ?? new Osavotja();
+            if (dbEntry.Id != 0)
+            {
+                context.Osavotjad.Remove(dbEntry);
+                context.SaveChanges();
+            }
+        }
     }
 }

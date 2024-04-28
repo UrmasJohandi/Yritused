@@ -14,6 +14,11 @@
 
         $(this).tooltip(options);
     });
+
+    var orderbys = orderBy.split(' ');
+    var span = '#sp' + orderbys[0];
+    $(span).addClass('darksalmon');
+
     $('tr').on('click', function (e) {
         if (e.target.localName === 'i') return;
         if (e.target.localName === 'th') return;
@@ -44,6 +49,9 @@
             }
         });
     });
+    $('#yesno-submit').on('click', function () {
+        window.location.href = deleteUrl + '?Id=' + yritusId + '&pageNr=' + pageNr;
+    })
 })
 function editYritus(yritusid) {
     const options = { options: { backdrop: true, keyboard: true, focus: true, show: true } };
@@ -102,4 +110,19 @@ function formatdatetimeback(datetime) {
     const seconds = '00';
 
     return year + '-' + month + '-' + day + 'T' + hours + ':' + minutes + ':' + seconds;
+}
+function kustutaYritus(id) {
+    const options = { options: { backdrop: true, keyboard: true, focus: true, show: true } };
+
+    emptyyesno();
+    yritusId = id;
+
+    $('#yesnomodallabel').html('Ürituse kustutamine');
+    $('#yesnomodalcontent').html('Kas kustutada üritus ' + id + '?');
+
+    $('#yesnomodal').modal(options).modal('show');
+}
+function emptyyesno() {
+    $('#yesnomodallabel').html('');
+    $('#yesnomodalcontent').html('');
 }

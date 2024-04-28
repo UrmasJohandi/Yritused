@@ -28,5 +28,14 @@
 
             context.SaveChanges();
         }
+        public void DeleteYritus(int Id)
+        {
+            Yritus dbEntry = context.Yritused.Where(y => y.Id == Id).FirstOrDefault() ?? new Yritus();
+            if (dbEntry.Id != 0)
+            {
+                context.Yritused.Remove(dbEntry);
+                context.SaveChanges();
+            }
+        }
     }
 }

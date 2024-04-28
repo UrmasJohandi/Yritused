@@ -130,8 +130,29 @@ namespace Yritused.Controllers
                 osavotjadRepository.SaveOsavotja(osavotja);
             }
 
-
             return Json("OK");
+        }
+        public IActionResult DeleteYritusOsavotja(int Id, int pageNr)
+        {
+            var yritusOsavotja = yritusOsavotjadRepository.GetYritusOsavotja(Id);
+
+            var yritus = yritusedRepository.Yritused.Where(y => y.Id == yritusOsavotja.Yritus_Id).SingleOrDefault();
+            if (yritus != null)
+            {
+                yritus.Osavotjaid = yritusOsavotjadRepository.GetYrituseOsavotjaid(yritus.Id);
+                yritusedRepository.SaveYritus(yritus);
+            }
+
+            var osavotja = osavotjadRepository.Osavotjad.Where(o => o.Id == yritusOsavotja.Osavotja_Id).SingleOrDefault();
+            if (osavotja != null)
+            {
+                osavotja.Yritusi = yritusOsavotjadRepository.GetOsavotjaYritusi(osavotja.Id);
+                osavotjadRepository.SaveOsavotja(osavotja);
+            }
+
+            yritusOsavotjadRepository.DeleteYritusOsavotja(Id);
+
+            return RedirectToAction("List", new { p = pageNr });
         }
         private IEnumerable<YritusOsavotja> FilteredYritusOsavotjad(string? filterField, string? filterValue, string? sortField, Utilites.Order listOrder)
         {

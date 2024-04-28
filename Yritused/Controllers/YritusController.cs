@@ -102,9 +102,10 @@ namespace Yritused.Controllers
 
             foreach (Yritus y in yritusedRepository.Yritused)
             {
-                if ((y.YrituseNimi + " " + y.YrituseAeg.ToString("dd.MM.yyyy HH:mm") + " " + y.YrituseKoht).ToLower().IndexOf(yrituseNimi.ToLower()) != -1)
+                if ((y.YrituseNimi + " " + y.YrituseAeg.ToString("dd.MM.yyyy HH:mm") + " " + y.YrituseKoht).ToLower().Contains(yrituseNimi.ToLower(), StringComparison.CurrentCulture))
                 {
                     yritus = y;
+                    break;
                 }
             }
 
@@ -117,11 +118,17 @@ namespace Yritused.Controllers
 
             return Json("OK");
         }
+        public IActionResult DeleteYritus(int Id, int pageNr)
+        {
+            yritusedRepository.DeleteYritus(Id);
+
+            return RedirectToAction("List", new { p = pageNr });
+        }
         public IActionResult GetAutocompleteByYrituseNimi(string yrituseNimi_fr)
         {
             List<string> yritused = [];
 
-            foreach (Yritus y in yritusedRepository.Yritused)
+            foreach (Yritus y in yritusedRepository.Yritused.OrderBy(o => o.YrituseNimi).ThenBy(o => o.YrituseAeg).ThenBy(o => o.YrituseKoht))
             {
                 if (yrituseNimi_fr == null)
                 {

@@ -6,6 +6,13 @@
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 
+<script>
+    var yritusOsavotjaId = "";
+    var deleteUrl = '@Url.Action("DeleteYritusOsavotja", "YritusOsavotja")';
+    var orderBy = '@Model.OrderBy';
+    var pageNr = '@(Model.PagingInfo == null ? 1 : Model.PagingInfo.PageNo)';
+</script>
+
 <link rel="stylesheet" href="/lib/yritus/css/yritusosavotjad.css" />
 <script src="/lib/yritus/src/yritusosavotjadlist.js"></script>
 
@@ -63,15 +70,15 @@
         </tbody>
     </table>
     <input type="hidden" id="model_orderby" value="@Model.OrderBy" />
-    <input type="hidden" id="model_pageno" value="@(Model.PagingInfo.PageNo)" />
-    <input type="hidden" id="model_pagesize" value="@Model.PagingInfo.PageSize" />
+    <input type="hidden" id="model_pageno" value="@(Model.PagingInfo == null ? 1 : Model.PagingInfo.PageNo)" />
+    <input type="hidden" id="model_pagesize" value="@(Model.PagingInfo == null ? 5 : Model.PagingInfo.PageSize)" />
     <input type="hidden" id="model_filterfield" value="@Model.FilterField" />
     <input type="hidden" id="model_filtervalue" value="@Model.FilterValue" />
 </div>
 
-<paging total-records="@Model.PagingInfo.TotalRecords"
-    page-no="@Model.PagingInfo.PageNo"
-    page-size="@Model.PagingInfo.PageSize"
+<paging total-records="@(Model.PagingInfo == null ? 1 : Model.PagingInfo.TotalRecords)"
+    page-no="@(Model.PagingInfo == null ? 1 :Model.PagingInfo.PageNo)"
+    page-size="@(Model.PagingInfo == null ? 1 : Model.PagingInfo.PageSize)"
     query-string-value="@("orderby=" + Model.OrderBy + "&" + "filterfield=" + Model.FilterField + "&" + "filterValue=" + Model.FilterValue)">
 </paging>
 
@@ -81,8 +88,8 @@
     {
         orderby = field,
         orderbybefore = Model.OrderBy,
-        p = Model.PagingInfo.PageNo,
-        s = Model.PagingInfo.PageSize,
+        p = Model.PagingInfo == null ? 1 : Model.PagingInfo.PageNo,
+        s = Model.PagingInfo == null ? 1 : Model.PagingInfo.PageSize,
         filterField = Model.FilterField,
         filterValue = Model.FilterValue
     });

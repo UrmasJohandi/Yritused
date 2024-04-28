@@ -661,6 +661,10 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\src\\util\\template-factory.js"
     },
     {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\bootstrap\\package-lock.json",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\package-lock.json"
+    },
+    {
       "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\bootstrap\\package.json",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\package.json"
     },
