@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\urmas\\source\\repos\\Yritused\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|c:\\users\\urmas\\source\\repos\\yritused\\yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|solutionrelative:yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|c:\\users\\urmas\\source\\repos\\yritused\\yritused\\controllers\\yritusosavotjacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|solutionrelative:yritused\\controllers\\yritusosavotjacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|c:\\users\\urmas\\source\\repos\\yritused\\yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|solutionrelative:yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|c:\\users\\urmas\\source\\repos\\yritused\\yritused\\views\\yritusosavotja\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|solutionrelative:yritused\\views\\yritusosavotja\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|c:\\users\\urmas\\source\\repos\\yritused\\yritused\\wwwroot\\lib\\yritus\\src\\yritusedlist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|solutionrelative:yritused\\wwwroot\\lib\\yritus\\src\\yritusedlist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|c:\\users\\urmas\\source\\repos\\yritused\\yritused\\views\\yritus\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|solutionrelative:yritused\\views\\yritus\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|c:\\users\\urmas\\source\\repos\\yritused\\yritused\\views\\osavotja\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|solutionrelative:yritused\\views\\osavotja\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,87 +21,39 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "YritusOsavotjaController.cs",
-              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Controllers\\YritusOsavotjaController.cs",
-              "RelativeDocumentMoniker": "Yritused\\Controllers\\YritusOsavotjaController.cs",
-              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Controllers\\YritusOsavotjaController.cs",
-              "RelativeToolTip": "Yritused\\Controllers\\YritusOsavotjaController.cs",
-              "ViewState": "AQIAAIUAAAAAAAAAAAAAwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T11:02:14.39Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "yritusosavotjadlist.js",
-              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js",
-              "RelativeDocumentMoniker": "Yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js",
-              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js",
-              "RelativeToolTip": "Yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAqwIgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-28T10:36:00.731Z",
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\Yritus\\List.cshtml",
+              "RelativeDocumentMoniker": "Yritused\\Views\\Yritus\\List.cshtml",
+              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\Yritus\\List.cshtml",
+              "RelativeToolTip": "Yritused\\Views\\Yritus\\List.cshtml",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAAkAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-29T07:38:27.865Z",
               "EditorCaption": ""
             }
           ]
         },
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\YritusOsavotja\\List.cshtml",
-              "RelativeDocumentMoniker": "Yritused\\Views\\YritusOsavotja\\List.cshtml",
-              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\YritusOsavotja\\List.cshtml",
-              "RelativeToolTip": "Yritused\\Views\\YritusOsavotja\\List.cshtml",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\Osavotja\\List.cshtml",
+              "RelativeDocumentMoniker": "Yritused\\Views\\Osavotja\\List.cshtml",
+              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\Osavotja\\List.cshtml",
+              "RelativeToolTip": "Yritused\\Views\\Osavotja\\List.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-28T10:55:13.818Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\Yritus\\List.cshtml",
-              "RelativeDocumentMoniker": "Yritused\\Views\\Yritus\\List.cshtml",
-              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\Yritus\\List.cshtml",
-              "RelativeToolTip": "Yritused\\Views\\Yritus\\List.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-28T10:54:50.952Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "osavotjadlist.js",
-              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
-              "RelativeDocumentMoniker": "Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
-              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
-              "RelativeToolTip": "Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
-              "ViewState": "AQIAABYAAAAAAAAAAAAzwC0AAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-28T10:53:53.569Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "yritusedlist.js",
-              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\yritusedlist.js",
-              "RelativeDocumentMoniker": "Yritused\\wwwroot\\lib\\yritus\\src\\yritusedlist.js",
-              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\yritusedlist.js",
-              "RelativeToolTip": "Yritused\\wwwroot\\lib\\yritus\\src\\yritusedlist.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-28T10:36:05.281Z",
+              "WhenOpened": "2024-04-29T07:39:05.668Z",
               "EditorCaption": ""
             }
           ]

@@ -1037,6 +1037,34 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\vendor\\_rfs.scss"
     },
     {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\contextmenu\\context.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\contextmenu\\context.bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\contextmenu\\context.js",
+      "PackagePath": "staticwebassets\\lib\\contextmenu\\context.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\contextmenu\\context.standalone.css",
+      "PackagePath": "staticwebassets\\lib\\contextmenu\\context.standalone.css"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\contextmenu\\demo.css",
+      "PackagePath": "staticwebassets\\lib\\contextmenu\\demo.css"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\contextmenu\\demo.js",
+      "PackagePath": "staticwebassets\\lib\\contextmenu\\demo.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\contextmenu\\filter.js",
+      "PackagePath": "staticwebassets\\lib\\contextmenu\\filter.js"
+    },
+    {
+      "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\contextmenu\\index.html",
+      "PackagePath": "staticwebassets\\lib\\contextmenu\\index.html"
+    },
+    {
       "Id": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\fontawesome\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\fontawesome\\LICENSE.txt"
     },

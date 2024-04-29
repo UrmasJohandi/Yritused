@@ -1,5 +1,6 @@
 ﻿
 <link rel="stylesheet" href="/lib/yritus/css/headermenu.css" />
+
 <script>
     $(() => {
         $('#yritused_button').on('click', yritusedcookies);
@@ -12,8 +13,16 @@
         $('#yritused_osavotjad_button').on('click', yritusedosavotjadmousedown);
 
         $('#new_button').on('click', newitem);
+        $('#filter_off_button').on('click', function () {
+            Cookies.set('filter', '');
+            gotolink();
+        });
 
         modifybuttons();
+
+        if (Cookies.get('filter')) {
+            show('#filter_off_button');
+        }
     })
 
     function yritusedcookies() {
@@ -103,7 +112,7 @@
     function gotolink() {
         const cookieValue = Cookies.get('menu');
 
-        if (cookieValue === 'yritused') {
+        if (cookieValue == null || cookieValue === 'yritused') {
             const url = '@Url.Action("List", "Yritus")';
 
             window.location.href = url;
@@ -122,7 +131,7 @@
         const options = { options: { backdrop: true, keyboard: true, focus: true, show: true } };
         const cookieValue = Cookies.get('menu');
 
-        if (cookieValue === 'yritused') {
+        if (cookieValue == null || cookieValue === 'yritused') {
             $('#yritus-id').val('0');
             $('#yritus-yritusenimi').val('');
             $('#yritus-yrituseaeg').val('');
@@ -166,6 +175,12 @@
             $('#yritusosavotja-detail').modal(options).modal('show');
         }
     }
+
+    function show(id) {
+        $(id).removeClass('hide-local');
+        $(id).addClass('show-local');
+        $(id).show();
+    }
 </script>
 
 <div class="col-6 text-left percent60 zeropadding-2">
@@ -196,7 +211,7 @@
     <span id="quote_text" class="currentuser show-shopping-cart-not-empty"></span>
     <span id="quote_text_buffer">&nbsp;&nbsp;&nbsp;</span>
     <span id="filter_off_link">
-        <a href="#"><i class="fas fa-filter show-local" style="font-size: 1.85em;" id="filter_off_button" data-toggle="tooltip" data-placement="left" data-type="main" title="Filtreerimata andmed"></i></a>
+        <a href="#"><i class="fas fa-filter hide-local" style="font-size: 1.85em;" id="filter_off_button" data-toggle="tooltip" data-placement="left" data-type="main" title="Eemaldada filter"></i></a>
         <span>&nbsp;</span>
     </span>
     <span id="new_link"><a href="#"><i class="fas fa-plus-square show-local" style="font-size: 1.85em;" id="new_button" data-toggle="tooltip" data-placement="left" data-type="main" title=""></i></a>

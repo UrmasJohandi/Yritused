@@ -5,12 +5,16 @@ using Yritused.Models.Viewmodels;
 
 namespace Yritused.Controllers
 {
-    public class YritusOsavotjaController(IHttpContextAccessor httpContextAcc, IYritusOsavotjaRepository yritusOsavotjadRepo, IYritusRepository yritusedRepo, IOsavotjaRepository osavotjadRepo) : Controller
+    public class YritusOsavotjaController(IHttpContextAccessor httpContextAcc, IYritusOsavotjaRepository yritusOsavotjadRepo, IYritusRepository yritusedRepo, IOsavotjaRepository osavotjadRepo, 
+        ISeadistusRepository seadistusedRepo) : Controller
     {
+        private const string module = "yritusedosavotjad";
+
         private readonly IHttpContextAccessor httpContextAccessor = httpContextAcc;
         private readonly IYritusOsavotjaRepository yritusOsavotjadRepository = yritusOsavotjadRepo;
         private readonly IYritusRepository yritusedRepository = yritusedRepo;
         private readonly IOsavotjaRepository osavotjadRepository = osavotjadRepo;
+        private readonly ISeadistusRepository seadistusedRepository = seadistusedRepo;
         public IActionResult List(int p = 1, string? orderby = null, string? orderbybefore = null, int s = 0, string? filterField = null, string? filterValue = null)
         {
             return View("List", GetViewModel(p, orderby, orderbybefore, s, filterField, filterValue));
@@ -45,7 +49,7 @@ namespace Yritused.Controllers
                     ascDescBefore == "asc" ? Utilites.Order.Asc : Utilites.Order.Desc;
             }
 
-            int pageSize = Utilites.GetPageSize(s);
+            int pageSize = GetPageSize(s);
 
             string[] filterFields = [];
             string[] filterValues = [];
@@ -153,6 +157,19 @@ namespace Yritused.Controllers
             yritusOsavotjadRepository.DeleteYritusOsavotja(Id);
 
             return RedirectToAction("List", new { p = pageNr });
+        }
+        private int GetPageSize(int s)
+        {
+            var seadistus = seadistusedRepository.GetSeadistusByMoodulAndLylitus(module, "RiduLehel");
+            var pageSize = s != 0 ? s : Convert.ToInt32(seadistus.Vaartus);
+
+            if (pageSize != Convert.ToInt32(seadistus.Vaartus))
+            {
+                seadistus.Vaartus = Convert.ToString(pageSize);
+                seadistusedRepository.SaveSeadistus(seadistus);
+            }
+
+            return pageSize;
         }
         private IEnumerable<YritusOsavotja> FilteredYritusOsavotjad(string? filterField, string? filterValue, string? sortField, Utilites.Order listOrder)
         {

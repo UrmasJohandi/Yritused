@@ -9,6 +9,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(opts => { opts.UseSqlServer(
 builder.Services.AddScoped<IYritusRepository, EFYritusRepository>();
 builder.Services.AddScoped<IOsavotjaRepository, EFOsavotjaRepository>();
 builder.Services.AddScoped<IYritusOsavotjaRepository, EFYritusOsavotjaRepository>();
+builder.Services.AddScoped<ISeadistusRepository, EFSeadistusRepository>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
@@ -27,5 +28,4 @@ app.UseMvc(routes => {
         }
     );
 });
-
 app.Run();

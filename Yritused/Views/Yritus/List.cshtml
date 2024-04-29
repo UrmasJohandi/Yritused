@@ -7,12 +7,15 @@
 }
 
 <script>
+    var activeElement = '';
     var yritusId = "";
     var deleteUrl = '@Url.Action("DeleteYritus", "Yritus")';
     var orderBy = '@Model.OrderBy';
     var pageNr = '@(Model.PagingInfo == null ? 1 : Model.PagingInfo.PageNo)';
 </script>
 
+<script src="/lib/contextmenu/context.js"></script>
+<script src="/lib/contextmenu/filter.js"></script>
 <script src="/lib/yritus/src/yritusedlist.js"></script>
 <link rel="stylesheet" href="/lib/yritus/css/yritus.css" />
 
@@ -25,7 +28,7 @@
                 <th class="th-align-right"><a href='@OrderHref("YrituseAeg")'><span id="spYrituseAeg" class="alink">Ürituse aeg</span></a></th>
                 <th class="th-align-left"><a href='@OrderHref("YrituseKoht")'><span id="spYrituseKoht" class="alink">Ürituse koht</span></a></th>
                 <th class="th-align-left"><a href='@OrderHref("Lisainfo")'><span id="spLisainfo" class="alink">Lisainfo</span></a></th>
-                <th class="th-align-right"><a href='@OrderHref("Osavõtjaid")'><span id="spOsavotjaid" class="alink">Osavõtjaid</span></a></th>
+                <th class="th-align-right"><a href='@OrderHref("Osavotjaid")'><span id="spOsavotjaid" class="alink">Osavõtjaid</span></a></th>
                 <th class="th-align-right"><a href='@OrderHref("Loodud")'><span id="spLoodud" class="alink">Loodud</span></a></th>
                 <th class="th-align-right"><a href='@OrderHref("Muudetud")'><span id="spMuudetud" class="alink">Muudetud</span></a></th>
                 <th class="th-align-center">Toimingud</th>
@@ -42,21 +45,13 @@
                     }
                     <filtercell class="yritus-right-justified input-Id" name="Id" id="@y.Id" value="@y.Id" />
                     <filtercell class="yritus-left-justified input-YrituseNimi" name="YrituseNimi" id="@y.Id" value="@y.YrituseNimi" />
-                    <td class="yritus-right-justified" id="YrituseAeg_cell_@y.Id">
-                        @yrituseaeg
-                    </td>
+                    <filtercell class="yritus-right-justified input-YrituseAeg" name="YrituseAeg" id="@y.Id" value="@yrituseaeg" />
                     <filtercell class="yritus-left-justified input-YrituseKoht" name="YrituseKoht" id="@y.Id" value="@y.YrituseKoht" />
                     <filtercelltooltip class="yritus-results-left-justified input-Lisainfo" name="Lisainfo" id="@y.Id" value="@GetLisainfo(y.Lisainfo)" 
                         toggle="tooltip" placement="top" title="@y.Lisainfo" />
-                    <td class="yritus-right-justified input-Osavotjaid" id="Osavotjaid_cell_@y.Id">
-                        @y.Osavotjaid
-                    </td>
-                    <td class="yritus-right-justified input-Loodud" id="Loodud_cell_@y.Id">
-                        @loodud
-                    </td>
-                    <td class="yritus-right-justified input-Muudetud" id="Muudetud_cell_@y.Id">
-                        @muudetud
-                    </td>
+                    <filtercell class="yritus-right-justified input-Osavotjaid" name="Osavotjaid" id="@y.Id" value="@y.Osavotjaid" />
+                    <filtercell class="yritus-right-justified input-Loodud" name="Loodud" id="@y.Id" value="@loodud" />
+                    <filtercell class="yritus-right-justified input-Muudetud" name="Muudetud" id="@y.Id" value="@muudetud" />
                     <td class="yritus-center-justified">
                         @{
                             if (y.Osavotjaid == null || y.Osavotjaid == 0)
@@ -71,7 +66,6 @@
             }
         </tbody>
     </table>
-
     <input type="hidden" id="model_orderby" value="@Model.OrderBy" />
     <input type="hidden" id="model_pageno" value="@(Model.PagingInfo == null ? 1 : Model.PagingInfo.PageNo)" />
     <input type="hidden" id="model_pagesize" value="@(Model.PagingInfo == null ? 5 : Model.PagingInfo.PageSize)" />

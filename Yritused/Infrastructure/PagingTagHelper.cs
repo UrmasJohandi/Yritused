@@ -169,13 +169,13 @@ namespace Yritused.Infrastructure
 
                     if (ShowTotalPages == true)
                     {
-                        var totalPagesInfo = AddDisplayInfo(TotalPages, TotalPages > 1 ? TextTotalPages : "page", ClassTotalPages);
+                        var totalPagesInfo = AddDisplayInfo(TotalPages, TotalPages > 1 ? TextTotalPages : "lehekülg", ClassTotalPages);
                         infoDiv.InnerHtml.AppendHtml(totalPagesInfo);
                     }
 
                     if (ShowTotalRecords == true)
                     {
-                        var totalRecordsInfo = AddDisplayInfo(TotalRecords, TotalRecords > 1 ? TextTotalRecords : "record", ClassTotalRecords);
+                        var totalRecordsInfo = AddDisplayInfo(TotalRecords, TotalRecords > 1 ? TextTotalRecords : "kirje", ClassTotalRecords);
                         infoDiv.InnerHtml.AppendHtml(totalRecordsInfo);
                     }
 
@@ -220,8 +220,8 @@ namespace Yritused.Infrastructure
             QueryStringKeyPageSize ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:query-string-key-page-size"] ?? "s";
             QueryStringValue ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:query-string-value"] ?? "";
             ShowFirstLast = ShowFirstLast == null ?
-                bool.TryParse(Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:show-first-last"], out bool _sfl) ? _sfl : false : ShowFirstLast;
-            ShowPrevNext = ShowPrevNext == null ? bool.TryParse(Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:show-prev-next"], out bool _sprn) ? _sprn : false : ShowPrevNext;
+                bool.TryParse(Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:show-first-last"], out bool _sfl) && _sfl : ShowFirstLast;
+            ShowPrevNext = ShowPrevNext == null ? bool.TryParse(Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:show-prev-next"], out bool _sprn) && _sprn : ShowPrevNext;
             ShowPageSizeNav = ShowPageSizeNav == null ? bool.TryParse(Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:show-page-size-nav"], out bool _spsn) ? _spsn : false : ShowPageSizeNav;
             ShowTotalPages = ShowTotalPages == null ? bool.TryParse(Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:show-total-pages"], out bool _stp) ? _stp : false : ShowTotalPages;
             ShowTotalRecords = ShowTotalRecords == null ? bool.TryParse(Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:show-total-records"], out bool _str) ? _str : false : ShowTotalRecords;
@@ -234,19 +234,19 @@ namespace Yritused.Infrastructure
             TextNext ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:text-next"] ?? "&rsaquo;";
             TextTotalPages ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:text-total-pages"] ?? "pages";
             TextTotalRecords ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:text-total-records"] ?? "records";
-            SrTextFirst = SrTextFirst ?? Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:sr-text-first"] ?? "First";
-            SrTextLast = SrTextLast ?? Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:sr-text-last"] ?? "Last";
-            SrTextPrevious = SrTextPrevious ?? Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:sr-text-previous"] ?? "Previous";
-            SrTextNext = SrTextNext ?? Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:sr-text-next"] ?? "Next";
-            Class = Class ?? Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class"] ?? "row";
-            ClassActivePage = ClassActivePage ?? Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-active-page"] ?? "active";
-            ClassDisabledJumpingButton = ClassDisabledJumpingButton ?? Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-disabled-jumping-button"] ?? "disabled";
-            ClassInfoDiv = ClassInfoDiv ?? Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-info-div"] ?? "col";
-            ClassPageSizeDiv = ClassPageSizeDiv ?? Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-page-size-div"] ?? "col";
-            ClassPagingControlDiv = ClassPagingControlDiv ?? Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-paging-control-div"] ?? "col";
-            ClassPagingControl = ClassPagingControl ?? Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-paging-control"] ?? "pagination";
-            ClassTotalPages = ClassTotalPages ?? Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-total-pages"] ?? "badge badge-secondary";
-            ClassTotalRecords ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-total-records"] ?? "badge badge-info";
+            SrTextFirst ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:sr-text-first"] ?? "First";
+            SrTextLast ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:sr-text-last"] ?? "Last";
+            SrTextPrevious ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:sr-text-previous"] ?? "Previous";
+            SrTextNext ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:sr-text-next"] ?? "Next";
+            Class ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class"] ?? "row";
+            ClassActivePage ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-active-page"] ?? "active";
+            ClassDisabledJumpingButton ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-disabled-jumping-button"] ?? "disabled";
+            ClassInfoDiv ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-info-div"] ?? "col";
+            ClassPageSizeDiv ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-page-size-div"] ?? "col";
+            ClassPagingControlDiv ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-paging-control-div"] ?? "col";
+            ClassPagingControl ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-paging-control"] ?? "pagination";
+            ClassTotalPages ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-total-pages"] ?? "badge bg-secondary";
+            ClassTotalRecords ??= Configuration[$"Paginator:PagingTagHelper:{_settingsJson}:class-total-records"] ?? "badge bg-primary";
 
             _logger.LogInformation($"----> PagingTagHelper - " +
                 $"{nameof(PageNo)}: {PageNo}, " +
@@ -262,7 +262,7 @@ namespace Yritused.Infrastructure
         {
             var span = new TagBuilder("span");
             span.AddCssClass($"{cssClassName}");
-            span.InnerHtml.AppendHtml($"{count.ToString("N0")} {itemName}");
+            span.InnerHtml.AppendHtml($"{count:N0} {itemName}");
 
             return span;
         }
@@ -326,7 +326,7 @@ namespace Yritused.Infrastructure
         private TagBuilder CreatePageSizeControl()
         {
             var dropDown = new TagBuilder("select");
-            dropDown.AddCssClass($"form-control");
+            dropDown.AddCssClass($"form-control-sm");
             dropDown.Attributes.Add("name", QueryStringKeyPageSize);
             dropDown.Attributes.Add("onchange", $"{PageSizeNavOnChange}");
 
@@ -342,7 +342,7 @@ namespace Yritused.Infrastructure
             }
 
             var fGroup = new TagBuilder("div");
-            fGroup.AddCssClass("form-group");
+            fGroup.AddCssClass("form-group-sm");
 
             var label = new TagBuilder("label");
             label.Attributes.Add("for", "pageSizeControl");
@@ -351,7 +351,7 @@ namespace Yritused.Infrastructure
             fGroup.InnerHtml.AppendHtml(dropDown);
 
             var form = new TagBuilder("form");
-            form.AddCssClass("form-inline");
+            form.AddCssClass("form-inline-sm");
             form.Attributes.Add("method", PageSizeNavFormMethod);
             form.InnerHtml.AppendHtml(fGroup);
 

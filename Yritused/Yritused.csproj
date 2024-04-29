@@ -67,6 +67,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\lib\jquery-autocomplete\" />
+    <Folder Include="wwwroot\lib\contextmenu\" />
   </ItemGroup>
 
 </Project>
