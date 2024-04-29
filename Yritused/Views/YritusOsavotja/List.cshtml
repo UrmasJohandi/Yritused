@@ -13,6 +13,8 @@
     var pageNr = '@(Model.PagingInfo == null ? 1 : Model.PagingInfo.PageNo)';
 </script>
 
+<script src="/lib/contextmenu/context.js"></script>
+<script src="/lib/contextmenu/filter.js"></script>
 <link rel="stylesheet" href="/lib/yritus/css/yritusosavotjad.css" />
 <script src="/lib/yritus/src/yritusosavotjadlist.js"></script>
 
@@ -38,24 +40,19 @@
                     @{
                         var yritus = GetYritus(yo.Yritus_Id);
                         var osavotja = GetOsavotja(yo.Osavotja_Id);
+                        var yrituseaeg = @CreatedDateTime(yritus.YrituseAeg);
 
                         var loodud = CreatedDateTime(yo.Loodud);
                         var muudetud = yo.Muudetud == null ? string.Empty : CreatedDateTime((DateTime)yo.Muudetud);
                     }
                     <filtercell class="yritusosavotja-right-justified input-Id" name="Id" id="@yo.Id" value="@yo.Id" />
                     <filtercell class="yritusosavotja-left-justified input-YrituseNimi" name="YrituseNimi" id="@yo.Id" value="@yritus.YrituseNimi" />
-                    <td class="yritusosavotja-right-justified input-YrituseAeg" id="YrituseAeg_cell_@yo.Id">
-                        @CreatedDateTime(yritus.YrituseAeg)
-                    </td>
+                    <filtercell class="yritusosavotja-right-justified input-YrituseAeg" name="YrituseAeg" id="@yo.Id" value="@yrituseaeg" />
                     <filtercell class="yritusosavotja-left-justified input-YrituseKoht" name="YrituseKoht" id="@yo.Id" value="@yritus.YrituseKoht" />
                     <filtercell class="yritusosavotja-left-justified input-OsavotjaTaisnimi" name="OsavotjaTaisnimi" id="@yo.Id" value="@osavotja.Taisnimi" />
                     <filtercell class="yritusosavotja-left-justified input-OsavotjaIsikukood" name="OsavotjaIsikukood" id="@yo.Id" value="@osavotja.Isikukood" />
-                    <td class="yritusosavotja-right-justified input-Loodud" id="Loodud_cell_@yo.Id">
-                        @loodud
-                    </td>
-                    <td class="yritusosavotja-right-justified input-Muudetud" id="Muudetud_cell_@yo.Id">
-                        @muudetud
-                    </td>
+                    <filtercell class="yritusosavotja-right-justified input-Loodud" name="Loodud" id="@yo.Id" value="@loodud" />
+                    <filtercell class="yritusosavotja-right-justified input-Loodud" name="Muudetud" id="@yo.Id" value="@muudetud" />
                     <td class="yritusosavotja-center-justified">
                         @{
                             var tooltipTitle = string.Format("Kustutada üritusest osavõtja {0}", yo.Id);

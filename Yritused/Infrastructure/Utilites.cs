@@ -9,10 +9,6 @@ namespace Yritused.Infrastructure
             Asc,
             Desc
         }
-        public static int GetPageSize(int s)
-        {
-            return 5;
-        }
         public static IQueryable<T> OrderByDynamic<T>(this IQueryable<T> query, string orderByMember, Order direction)
         {
             var queryElementTypeParam = Expression.Parameter(typeof(T));

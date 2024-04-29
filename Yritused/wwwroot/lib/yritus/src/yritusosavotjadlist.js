@@ -27,6 +27,36 @@ $(() => {
 
         editYritusOsavotja($(this).find('td').find('span').html());
     });
+    $('td[id^="Id_cell_"], td[id^="YrituseNimi_cell_"], td[id^="YrituseAeg_cell_"], td[id^="YrituseKoht_cell_"], td[id^="OsavotjaTaisnimi_cell_"], td[id^="OsavotjaIsikukood_cell_"], td[id^="Loodud_cell_"], td[id^="Muudetud_cell_"]').on('mousedown', function (e) {
+        var cellId = $(this).attr('id').replace('cell_', '');
+
+        if ($('#input_' + cellId).is(':visible')) return;
+
+        e.preventDefault();
+        if (e.which == 3) {
+            $('#' + cellId).hide();
+            $('#span_' + cellId).show();
+            $('#input_' + cellId).trigger('focus').trigger('select');
+
+            activeElementId = cellId;
+        }
+    });
+
+    $('td[id^="Id_cell_"], td[id^="YrituseNimi_cell_"], td[id^="YrituseAeg_cell_"], td[id^="YrituseKoht_cell_"], td[id^="OsavotjaTaisnimi_cell_"], td[id^="OsavotjaIsikukood_cell_"], td[id^="Loodud_cell_"], td[id^="Muudetud_cell_"]').on('focusout', function (e) {
+        var cellId = $(this).attr('id').replace('cell_', '');
+
+        $('#span_' + cellId).hide();
+        $('#' + cellId).show();
+    });
+
+    $('td[id^="Id_cell_"], td[id^="YrituseNimi_cell_"], td[id^="YrituseAeg_cell_"], td[id^="YrituseKoht_cell_"], td[id^="OsavotjaTaisnimi_cell_"], td[id^="OsavotjaIsikukood_cell_"], td[id^="Loodud_cell_"], td[id^="Muudetud_cell_"]').on('keyup', function (e) {
+        if (e.keyCode == 13) {
+            Cookies.set('filter', 'yritused');
+            window.location.href = getFilterHref();
+        } else if (e.keyCode == 27 || e.keyCode == 9) {
+            $(this).trigger('focusout');
+        }
+    });
 
     $('#yritusosavotja-yritusenimi').autocomplete({
         serviceUrl: 'Yritus/GetAutocompleteByYrituseNimi',
@@ -207,4 +237,14 @@ function kustutaYritusOsavotja(id) {
 function emptyyesno() {
     $('#yesnomodallabel').html('');
     $('#yesnomodalcontent').html('');
+}
+function getFilterHref() {
+    var href = window.location.href.indexOf('?') != -1 ? window.location.href.split('?')[0] : window.location.href;
+    var filterfield = $('#model_filterfield').val();
+    var filtervalue = $('#model_filtervalue').val();
+
+    filterfield = filterfield == '' ? activeElementId : filterfield + ';' + activeElementId;
+    filtervalue = filtervalue == '' ? $('#' + 'input_' + activeElementId).val() : filtervalue + ';' + $('#' + 'input_' + activeElementId).val();
+
+    return href + '?' + 'orderby=' + $('#model_orderby').val() + '&' + 'filterfield=' + filterfield + '&' + 'filtervalue=' + filtervalue + '&' + 'p=' + '1' + '&' + 's=' + $('#model_pagesize').val();
 }

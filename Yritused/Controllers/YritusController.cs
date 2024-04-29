@@ -85,7 +85,7 @@ namespace Yritused.Controllers
 
             YritusedListViewModel yritusedListViewModel = new()
             {
-                Yritused = (yritused ?? new List<Yritus>())
+                Yritused = (yritused ?? [])
                     .Skip((p - 1) * pageSize)
                     .Take(pageSize),
                 PagingInfo = new PagingModel
@@ -178,138 +178,138 @@ namespace Yritused.Controllers
             }
             else if (filterField != null && filterField.StartsWith("YrituseNimi_"))
             {
-                return yritusedRepository.Yritused.Where(y => !string.IsNullOrEmpty(y.YrituseNimi) && (y.YrituseNimi ?? "").ToLower().Contains((filterValue ?? "").ToLower())).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => !string.IsNullOrEmpty(y.YrituseNimi) && (y.YrituseNimi ?? "").ToLower().Contains((filterValue ?? "").ToLower())).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("YrituseKoht_"))
             {
-                return yritusedRepository.Yritused.Where(y => !string.IsNullOrEmpty(y.YrituseKoht) && (y.YrituseKoht ?? "").ToLower().Contains((filterValue ?? "").ToLower())).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => !string.IsNullOrEmpty(y.YrituseKoht) && (y.YrituseKoht ?? "").ToLower().Contains((filterValue ?? "").ToLower())).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Lisainfo_"))
             {
-                return yritusedRepository.Yritused.Where(y => !string.IsNullOrEmpty(y.Lisainfo) && (y.Lisainfo ?? "").ToLower().Contains((filterValue ?? "").ToLower())).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => !string.IsNullOrEmpty(y.Lisainfo) && (y.Lisainfo ?? "").ToLower().Contains((filterValue ?? "").ToLower())).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Osavotjaid_") && (filterValue ?? "").StartsWith(">="))
             {
                 var osavotjaid = Convert.ToInt32((filterValue ?? "").Replace(">=", "").Replace(" ", ""));
 
-                return yritusedRepository.Yritused.Where(y => y.Osavotjaid >= osavotjaid).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Osavotjaid >= osavotjaid).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Osavotjaid_") && (filterValue ?? "").StartsWith(">"))
             {
                 var osavotjaid = Convert.ToInt32((filterValue ?? "").Replace(">", "").Replace(" ", ""));
 
-                return yritusedRepository.Yritused.Where(y => y.Osavotjaid > osavotjaid).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Osavotjaid > osavotjaid).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Osavotjaid_") && (filterValue ?? "").StartsWith("<="))
             {
                 var osavotjaid = Convert.ToInt32((filterValue ?? "").Replace("<=", "").Replace(" ", ""));
 
-                return yritusedRepository.Yritused.Where(y => y.Osavotjaid <= osavotjaid).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Osavotjaid <= osavotjaid).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Osavotjaid_") && (filterValue ?? "").StartsWith("<"))
             {
                 var osavotjaid = Convert.ToInt32((filterValue ?? "").Replace("<", "").Replace(" ", ""));
 
-                return yritusedRepository.Yritused.Where(y => y.Osavotjaid <= osavotjaid).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Osavotjaid <= osavotjaid).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Osavotjaid_"))
             {
                 var osavotjaid = Convert.ToInt32((filterValue ?? "").Replace("<", "").Replace(" ", ""));
 
-                return yritusedRepository.Yritused.Where(y => y.Osavotjaid == osavotjaid).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Osavotjaid == osavotjaid).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("YrituseAeg_") && (filterValue ?? "").StartsWith(">="))
             {
                 var yrituseaeg = Convert.ToDateTime((filterValue ?? "").Replace(">=", "").Trim());
 
-                return yritusedRepository.Yritused.Where(y => y.YrituseAeg >= yrituseaeg).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.YrituseAeg >= yrituseaeg).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("YrituseAeg_") && (filterValue ?? "").StartsWith(">"))
             {
                 var yrituseaeg = Convert.ToDateTime((filterValue ?? "").Replace(">", "").Trim());
 
-                return yritusedRepository.Yritused.Where(y => y.YrituseAeg > yrituseaeg).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.YrituseAeg > yrituseaeg).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("YrituseAeg_") && (filterValue ?? "").StartsWith("<="))
             {
                 var yrituseaeg = Convert.ToDateTime((filterValue ?? "").Replace("<=", "").Trim());
 
-                return yritusedRepository.Yritused.Where(y => y.YrituseAeg <= yrituseaeg).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.YrituseAeg <= yrituseaeg).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("YrituseAeg_") && (filterValue ?? "").StartsWith("<"))
             {
                 var yrituseaeg = Convert.ToDateTime((filterValue ?? "").Replace("<", "").Trim());
 
-                return yritusedRepository.Yritused.Where(y => y.YrituseAeg < yrituseaeg).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.YrituseAeg < yrituseaeg).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("YrituseAeg_"))
             {
                 var yrituseaeg = Convert.ToDateTime(filterValue ?? "");
 
-                return yritusedRepository.Yritused.Where(y => y.YrituseAeg == yrituseaeg).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.YrituseAeg == yrituseaeg).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Loodud_") && (filterValue ?? "").StartsWith(">="))
             {
                 var loodud = Convert.ToDateTime((filterValue ?? "").Replace(">=", "").Trim());
 
-                return yritusedRepository.Yritused.Where(y => y.Loodud >= loodud).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Loodud >= loodud).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Loodud_") && (filterValue ?? "").StartsWith(">"))
             {
                 var loodud = Convert.ToDateTime((filterValue ?? "").Replace(">", "").Trim());
 
-                return yritusedRepository.Yritused.Where(y => y.Loodud > loodud).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Loodud > loodud).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Loodud_") && (filterValue ?? "").StartsWith("<="))
             {
                 var loodud = Convert.ToDateTime((filterValue ?? "").Replace("<=", "").Trim());
 
-                return yritusedRepository.Yritused.Where(y => y.Loodud <= loodud).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Loodud <= loodud).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Loodud_") && (filterValue ?? "").StartsWith("<"))
             {
                 var loodud = Convert.ToDateTime((filterValue ?? "").Replace("<", "").Trim());
 
-                return yritusedRepository.Yritused.Where(y => y.Loodud < loodud).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Loodud < loodud).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Loodud_"))
             {
                 var loodud = Convert.ToDateTime(filterValue ?? "");
 
-                return yritusedRepository.Yritused.Where(y => y.Loodud == loodud).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Loodud == loodud).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Muudetud_") && (filterValue ?? "").StartsWith(">="))
             {
                 var muudetud = Convert.ToDateTime((filterValue ?? "").Replace(">=", "").Trim());
 
-                return yritusedRepository.Yritused.Where(y => y.Muudetud >= muudetud).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Muudetud >= muudetud).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Muudetud_") && (filterValue ?? "").StartsWith(">"))
             {
                 var muudetud = Convert.ToDateTime((filterValue ?? "").Replace(">", "").Trim());
 
-                return yritusedRepository.Yritused.Where(y => y.Muudetud > muudetud).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Muudetud > muudetud).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Muudetud_") && (filterValue ?? "").StartsWith("<="))
             {
                 var muudetud = Convert.ToDateTime((filterValue ?? "").Replace("<=", "").Trim());
 
-                return yritusedRepository.Yritused.Where(y => y.Muudetud <= muudetud).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Muudetud <= muudetud).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Muudetud_") && (filterValue ?? "").StartsWith("<"))
             {
                 var muudetud = Convert.ToDateTime((filterValue ?? "").Replace("<", "").Trim());
 
-                return yritusedRepository.Yritused.Where(y => y.Muudetud < muudetud).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Muudetud < muudetud).OrderByDynamic(sortField ?? "Id", listOrder);
             }
             else if (filterField != null && filterField.StartsWith("Muudetud_"))
             {
                 var muudetud = Convert.ToDateTime(filterValue ?? "");
 
-                return yritusedRepository.Yritused.Where(y => y.Muudetud == muudetud).OrderByDynamic(sortField ?? "Id", listOrder); ;
+                return yritusedRepository.Yritused.Where(y => y.Muudetud == muudetud).OrderByDynamic(sortField ?? "Id", listOrder);
             }
 
-            return yritusedRepository.Yritused.OrderByDynamic(sortField ?? "Id", listOrder); ;
+            return yritusedRepository.Yritused.OrderByDynamic(sortField ?? "Id", listOrder);
         }
         private IEnumerable<Yritus> FilteredYritusedSecondRound(IEnumerable<Yritus>? yritused, string? filterField, string? filterValue)
         {

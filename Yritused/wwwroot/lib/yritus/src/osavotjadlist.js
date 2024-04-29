@@ -137,3 +137,13 @@ function emptyyesno() {
     $('#yesnomodallabel').html('');
     $('#yesnomodalcontent').html('');
 }
+function getFilterHref() {
+    var href = window.location.href.indexOf('?') != -1 ? window.location.href.split('?')[0] : window.location.href;
+    var filterfield = $('#model_filterfield').val();
+    var filtervalue = $('#model_filtervalue').val();
+
+    filterfield = filterfield == '' ? activeElementId : filterfield + ';' + activeElementId;
+    filtervalue = filtervalue == '' ? $('#' + 'input_' + activeElementId).val() : filtervalue + ';' + $('#' + 'input_' + activeElementId).val();
+
+    return href + '?' + 'orderby=' + $('#model_orderby').val() + '&' + 'filterfield=' + filterfield + '&' + 'filtervalue=' + filtervalue + '&' + 'p=' + '1' + '&' + 's=' + $('#model_pagesize').val();
+}
