@@ -118,6 +118,13 @@ namespace Yritused.Controllers
         }
         public IActionResult SaveYritusOsavotja([FromBody]YritusOsavotja yritusOsavotja)
         {
+            var yritusosavotjad = yritusOsavotjadRepository.YritusOsavotjad.Where(yo => yo.Yritus_Id == yritusOsavotja.Yritus_Id && yo.Osavotja_Id == yritusOsavotja.Osavotja_Id).ToList();
+
+            if (yritusosavotjad.Count() > 0)
+            {
+                return Json("Üritusest osavõtja juba eksisteerib!");
+            }
+
             yritusOsavotjadRepository.SaveYritusOsavotja(yritusOsavotja);
 
             var yritus = yritusedRepository.Yritused.Where(y => y.Id == yritusOsavotja.Yritus_Id).SingleOrDefault();

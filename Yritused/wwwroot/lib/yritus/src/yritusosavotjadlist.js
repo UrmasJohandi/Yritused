@@ -160,7 +160,10 @@ $(() => {
             if (result === 'OK') {
                 $('#yritusosavotja-detail').modal('hide');
                 location.reload(true);
+            } else {
+                $('#yritusosavotja-error').html(result);
             }
+
         });
     });
     $('#yesno-submit').on('click', function () {
@@ -209,6 +212,8 @@ function emptyyritusosavotjaform() {
     $('#yritusosavotja-yritusenimi').val('');
     $('#yritusosavotja-osavotja').val('');
     $('#yritusosavotja-isikukood').val('');
+    $('#yritusosavotja-error').html('');
+    $('#yritusosavotja-error').html('');
 }
 function formatdate(datetime) {
     const date = datetime.split('T')[0];

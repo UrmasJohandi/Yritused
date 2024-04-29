@@ -55,11 +55,13 @@
                     <filtercell class="yritusosavotja-right-justified input-Loodud" name="Muudetud" id="@yo.Id" value="@muudetud" />
                     <td class="yritusosavotja-center-justified">
                         @{
-                            var tooltipTitle = string.Format("Kustutada üritusest osavõtja {0}", yo.Id);
-                            <a href="#">
-                                <i class="fas fa-trash" style="font-size: 1.25em; color: #140c30;" onclick="kustutaYritusOsavotja('@yo.Id')"
-                                    data-toggle="tooltip" data-placement="left" data-type="info" title="@tooltipTitle"></i>
-                            </a>
+                            if (yritus.YrituseAeg > DateTime.Now) {
+                                var tooltipTitle = string.Format("Kustutada üritusest osavõtja {0}", yo.Id);
+                                <a href="#">
+                                    <i class="fas fa-trash" style="font-size: 1.25em; color: #140c30;" onclick="kustutaYritusOsavotja('@yo.Id')"
+                                       data-toggle="tooltip" data-placement="left" data-type="info" title="@tooltipTitle"></i>
+                                </a>
+                            }
                         }
                     </td>
                 </tr>

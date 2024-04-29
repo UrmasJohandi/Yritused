@@ -127,6 +127,14 @@ namespace Yritused.Controllers
         [HttpPost]
         public IActionResult SaveYritus([FromBody]Yritus yritus)
         {
+            var yritused_baasis = yritusedRepository.Yritused.Where(y => (y.YrituseNimi ?? string.Empty).ToLower() == (yritus.YrituseNimi ?? string.Empty)
+                .ToLower() && y.YrituseAeg == yritus.YrituseAeg && (y.YrituseKoht ?? string.Empty).ToLower() == (yritus.YrituseKoht ?? string.Empty).ToLower() && y.Id != yritus.Id).ToList();
+
+            if (yritused_baasis.Count() > 0)
+            {
+                return Json("Üritus juba eksisteerib!");
+            }
+
             yritusedRepository.SaveYritus(yritus);
 
             return Json("OK");

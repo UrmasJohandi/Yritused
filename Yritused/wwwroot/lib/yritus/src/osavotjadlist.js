@@ -81,6 +81,9 @@ $(() => {
                 $('#osavotja-detail').modal('hide');
                 location.reload(true);
             }
+            else {
+                $('#osavotja-error').html(result);
+            }
         });
     });
     $('#yesno-submit').on('click', function () {
@@ -121,6 +124,7 @@ function emptyosavotjaform() {
     $('#osavotja-makseviis').val('');
     $('#osavotja-isikukood').val('');
     $('#osavotja-lisainfo').val('');
+    $('#osavotja-error').html('');
 }
 function kustutaOsavotja(id) {
     const options = { options: { backdrop: true, keyboard: true, focus: true, show: true } };

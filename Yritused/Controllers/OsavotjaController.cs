@@ -103,6 +103,13 @@ namespace Yritused.Controllers
         [HttpPost]
         public IActionResult SaveOsavotja([FromBody]Osavotja osavotja)
         {
+            var osavotjad = osavotjadRepository.Osavotjad.Where(o => o.Isikukood == osavotja.Isikukood && o.Id != osavotja.Id).ToList();
+
+            if (osavotjad.Count() > 0)
+            {
+                return Json("Isikukood juba eksisteerib!");
+            }
+
             osavotjadRepository.SaveOsavotja(osavotja);
 
             return Json("OK");

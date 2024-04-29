@@ -78,6 +78,9 @@
                 $('#yritus-detail').modal('hide');
                 location.reload(true);
             }
+            else {
+                $('#yritus-error').html(result);
+            }
         });
     });
     $('#yesno-submit').on('click', function () {
@@ -114,6 +117,7 @@ function emptyyritusform() {
     $('#yritus-yrituseaeg').val('');
     $('#yritus-yritusekoht').val('');
     $('#yritus-lisainfo').val('');
+    $('#yritus-error').html('');
 }
 function formatdate(datetime) {
     const date = datetime.split('T')[0];

@@ -54,7 +54,7 @@
                     <filtercell class="yritus-right-justified input-Muudetud" name="Muudetud" id="@y.Id" value="@muudetud" />
                     <td class="yritus-center-justified">
                         @{
-                            if (y.Osavotjaid == null || y.Osavotjaid == 0)
+                            if ((y.Osavotjaid == null || y.Osavotjaid == 0) && y.YrituseAeg > DateTime.Now)
                             {
                                 var tooltipTitle = string.Format("Kustutada üritus {0}", y.Id);
                                 <a href="#"><i class="fas fa-trash" style="font-size: 1.25em; color: #140c30;" onclick="kustutaYritus('@y.Id')" 
