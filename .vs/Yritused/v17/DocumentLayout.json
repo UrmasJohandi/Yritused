@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\urmas\\source\\repos\\Yritused\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|c:\\users\\urmas\\source\\repos\\yritused\\yritused\\views\\yritus\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|solutionrelative:yritused\\views\\yritus\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|c:\\users\\urmas\\source\\repos\\yritused\\yritused\\views\\osavotja\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|solutionrelative:yritused\\views\\osavotja\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,43 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\Yritus\\List.cshtml",
-              "RelativeDocumentMoniker": "Yritused\\Views\\Yritus\\List.cshtml",
-              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\Yritus\\List.cshtml",
-              "RelativeToolTip": "Yritused\\Views\\Yritus\\List.cshtml",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAAAAkAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-29T07:38:27.865Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\Osavotja\\List.cshtml",
-              "RelativeDocumentMoniker": "Yritused\\Views\\Osavotja\\List.cshtml",
-              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\Views\\Osavotja\\List.cshtml",
-              "RelativeToolTip": "Yritused\\Views\\Osavotja\\List.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-29T07:39:05.668Z",
-              "EditorCaption": ""
             }
           ]
         }

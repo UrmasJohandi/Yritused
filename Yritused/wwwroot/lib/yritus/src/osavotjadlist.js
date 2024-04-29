@@ -28,6 +28,37 @@ $(() => {
 
         editOsavotja($(this).find('td').find('span').html());
     });
+    $('td[id^="Id_cell_"], td[id^="Eesnimi_cell_"], td[id^="Perenimi_cell_"], td[id^="Liik_cell_"], td[id^="Isikukood_cell_"], td[id^="Makseviis_cell_"], td[id^="Lisainfo_cell_"], td[id^="Yritusi_cell_"], td[id^="Loodud_cell_"], td[id^="Muudetud_cell_"]').on('mousedown', function (e) {
+        var cellId = $(this).attr('id').replace('cell_', '');
+
+        if ($('#input_' + cellId).is(':visible')) return;
+
+        e.preventDefault();
+        if (e.which == 3) {
+            $('#' + cellId).hide();
+            $('#span_' + cellId).show();
+            $('#input_' + cellId).trigger('focus').trigger('select');
+
+            activeElementId = cellId;
+        }
+    });
+
+    $('td[id^="Id_cell_"], td[id^="Eesnimi_cell_"], td[id^="Perenimi_cell_"], td[id^="Liik_cell_"], td[id^="Isikukood_cell_"], td[id^="Makseviis_cell_"], td[id^="Lisainfo_cell_"], td[id^="Yritusi_cell_"], td[id^="Loodud_cell_"], td[id^="Muudetud_cell_"]').on('focusout', function (e) {
+        var cellId = $(this).attr('id').replace('cell_', '');
+
+        $('#span_' + cellId).hide();
+        $('#' + cellId).show();
+    });
+
+    $('td[id^="Id_cell_"], td[id^="Eesnimi_cell_"], td[id^="Perenimi_cell_"], td[id^="Liik_cell_"], td[id^="Isikukood_cell_"], td[id^="Makseviis_cell_"], td[id^="Lisainfo_cell_"], td[id^="Yritusi_cell_"], td[id^="Loodud_cell_"], td[id^="Muudetud_cell_"]').on('keyup', function (e) {
+        if (e.keyCode == 13) {
+            Cookies.set('filter', 'yritused');
+            window.location.href = getFilterHref();
+        } else if (e.keyCode == 27 || e.keyCode == 9) {
+            $(this).trigger('focusout');
+        }
+    });
+
     $('#osavotja-submit').on('click', function () {
         const osavotja = {
             Id: $('#osavotja-id').val(),
