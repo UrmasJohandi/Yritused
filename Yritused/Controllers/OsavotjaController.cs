@@ -110,9 +110,29 @@ namespace Yritused.Controllers
                 return Json("Isikukood juba eksisteerib!");
             }
 
+            if (!KoodKontroll(osavotja))
+            {
+                return Json("Vigane isiku / registrikood!");
+            }
+
             osavotjadRepository.SaveOsavotja(osavotja);
 
             return Json("OK");
+        }
+        private bool KoodKontroll(Osavotja osavotja)
+        {
+            if (osavotja.Liik == "F" && (osavotja.Isikukood ?? string.Empty).Length != 11) { return false; }
+
+            if (osavotja.Liik == "J" && (osavotja.Isikukood ?? string.Empty).Length != 8) { return false; }
+
+            for (var j = 0; j < (osavotja.Isikukood ?? string.Empty).Length; j++)
+            {
+                if (!"0123456789".Contains((osavotja.Isikukood ?? string.Empty).Substring(j, 1))) {
+                    return false;
+                }
+            }
+
+            return true;
         }
         public IActionResult DeleteOsavotja(int Id, int pageNr)
         {
