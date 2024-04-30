@@ -118,7 +118,8 @@ namespace Yritused.Controllers
         }
         public IActionResult SaveYritusOsavotja([FromBody]YritusOsavotja yritusOsavotja)
         {
-            var yritusosavotjad = yritusOsavotjadRepository.YritusOsavotjad.Where(yo => yo.Yritus_Id == yritusOsavotja.Yritus_Id && yo.Osavotja_Id == yritusOsavotja.Osavotja_Id).ToList();
+            var yritusosavotjad = yritusOsavotjadRepository.YritusOsavotjad
+                .Where(yo => yo.Yritus_Id == yritusOsavotja.Yritus_Id && yo.Osavotja_Id == yritusOsavotja.Osavotja_Id && yo.Id != yritusOsavotja.Id).ToList();
 
             if (yritusosavotjad.Count() > 0)
             {
@@ -132,6 +133,11 @@ namespace Yritused.Controllers
             {
                 yritus.Osavotjaid = yritusOsavotjadRepository.GetYrituseOsavotjaid(yritus.Id);
                 yritusedRepository.SaveYritus(yritus);
+            }
+
+            if ((yritus ?? new Yritus()).YrituseAeg < DateTime.Now)
+            {
+                return Json("Ürituse toimumise aeg on juba möödunud!");
             }
 
             var osavotja = osavotjadRepository.Osavotjad.Where(o => o.Id == yritusOsavotja.Osavotja_Id).SingleOrDefault();

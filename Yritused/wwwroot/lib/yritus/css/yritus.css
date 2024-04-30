@@ -130,3 +130,44 @@
 .input-Muudetud {
     width: 150px;
 }
+
+.input-Id-deprecated {
+    width: 80px;
+    color: blueviolet !important;
+}
+
+.input-YrituseNimi-deprecated {
+    width: 300px;
+    color: blueviolet !important;
+}
+
+.input-YrituseAeg-deprecated {
+    width: 150px;
+    color: blueviolet !important;
+}
+
+.input-YrituseKoht-deprecated {
+    width: 300px;
+    color: blueviolet !important;
+}
+
+.input-Lisainfo-deprecated {
+    width: 900px;
+    color: blueviolet !important;
+}
+
+.input-Osavotjaid-deprecated {
+    width: 150px;
+    color: blueviolet !important;
+}
+
+.input-Loodud-deprecated {
+    width: 150px;
+    color: blueviolet !important;
+}
+
+.input-Muudetud-deprecated {
+    width: 150px;
+    color: blueviolet !important;
+}
+

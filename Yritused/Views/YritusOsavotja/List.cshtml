@@ -44,15 +44,41 @@
 
                         var loodud = CreatedDateTime(yo.Loodud);
                         var muudetud = yo.Muudetud == null ? string.Empty : CreatedDateTime((DateTime)yo.Muudetud);
+
+                        var displayClass = "";
                     }
-                    <filtercell class="yritusosavotja-right-justified input-Id" name="Id" id="@yo.Id" value="@yo.Id" />
-                    <filtercell class="yritusosavotja-left-justified input-YrituseNimi" name="YrituseNimi" id="@yo.Id" value="@yritus.YrituseNimi" />
-                    <filtercell class="yritusosavotja-right-justified input-YrituseAeg" name="YrituseAeg" id="@yo.Id" value="@yrituseaeg" />
-                    <filtercell class="yritusosavotja-left-justified input-YrituseKoht" name="YrituseKoht" id="@yo.Id" value="@yritus.YrituseKoht" />
-                    <filtercell class="yritusosavotja-left-justified input-OsavotjaTaisnimi" name="OsavotjaTaisnimi" id="@yo.Id" value="@osavotja.Taisnimi" />
-                    <filtercell class="yritusosavotja-left-justified input-OsavotjaIsikukood" name="OsavotjaIsikukood" id="@yo.Id" value="@osavotja.Isikukood" />
-                    <filtercell class="yritusosavotja-right-justified input-Loodud" name="Loodud" id="@yo.Id" value="@loodud" />
-                    <filtercell class="yritusosavotja-right-justified input-Loodud" name="Muudetud" id="@yo.Id" value="@muudetud" />
+                    @{
+                        displayClass = yritus.YrituseAeg > DateTime.Now ? "input-Id" : "input-Id-deprecated";
+                    }
+                    <filtercell class="yritusosavotja-right-justified @displayClass" name="Id" id="@yo.Id" value="@yo.Id" />
+                    @{
+                        displayClass = yritus.YrituseAeg > DateTime.Now ? "input-YrituseNimi" : "input-YrituseNimi-deprecated";
+                    }
+                    <filtercell class="yritusosavotja-left-justified @displayClass" name="YrituseNimi" id="@yo.Id" value="@yritus.YrituseNimi" />
+                    @{
+                        displayClass = yritus.YrituseAeg > DateTime.Now ? "input-YrituseAeg" : "input-YrituseAeg-deprecated";
+                    }
+                    <filtercell class="yritusosavotja-right-justified @displayClass" name="YrituseAeg" id="@yo.Id" value="@yrituseaeg" />
+                    @{
+                        displayClass = yritus.YrituseAeg > DateTime.Now ? "input-YrituseKoht" : "input-YrituseKoht-deprecated";
+                    }
+                    <filtercell class="yritusosavotja-left-justified @displayClass" name="YrituseKoht" id="@yo.Id" value="@yritus.YrituseKoht" />
+                    @{
+                        displayClass = yritus.YrituseAeg > DateTime.Now ? "input-OsavotjaTaisnimi" : "input-OsavotjaTaisnimi-deprecated";
+                    }
+                    <filtercell class="yritusosavotja-left-justified @displayClass" name="OsavotjaTaisnimi" id="@yo.Id" value="@osavotja.Taisnimi" />
+                    @{
+                        displayClass = yritus.YrituseAeg > DateTime.Now ? "input-OsavotjaIsikukood" : "input-OsavotjaIsikukood-deprecated";
+                    }
+                    <filtercell class="yritusosavotja-left-justified @displayClass" name="OsavotjaIsikukood" id="@yo.Id" value="@osavotja.Isikukood" />
+                    @{
+                        displayClass = yritus.YrituseAeg > DateTime.Now ? "input-Loodud" : "input-Loodud-deprecated";
+                    }
+                    <filtercell class="yritusosavotja-right-justified @displayClass" name="Loodud" id="@yo.Id" value="@loodud" />
+                    @{
+                        displayClass = yritus.YrituseAeg > DateTime.Now ? "input-Muudetud" : "input-Muudetud-deprecated";
+                    }
+                    <filtercell class="yritusosavotja-right-justified @displayClass" name="Muudetud" id="@yo.Id" value="@muudetud" />
                     <td class="yritusosavotja-center-justified">
                         @{
                             if (yritus.YrituseAeg > DateTime.Now) {

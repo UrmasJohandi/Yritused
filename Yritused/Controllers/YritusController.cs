@@ -25,6 +25,12 @@ namespace Yritused.Controllers
                 return RedirectToAction("List", "YritusOsavotja");
             }
 
+            /* if (orderby == null && orderbybefore == null && filterField == null && filterValue == null)
+            {
+                filterField = "YrituseAeg_1";
+                filterValue = ">" + Convert.ToString(DateTime.Now);
+            } */
+
             return View("List", GetViewModel(p, orderby, orderbybefore, s, filterField, filterValue));
         }
         private YritusedListViewModel GetViewModel(int p, string? orderby, string? orderbybefore, int s, string? filterField, string? filterValue)
@@ -135,6 +141,16 @@ namespace Yritused.Controllers
                 return Json("Üritus juba eksisteerib!");
             }
 
+            if (yritus.Id != 0)
+            {
+                var yritus_baasis = yritusedRepository.Yritused.Where(y => y.Id == yritus.Id).SingleOrDefault();
+
+                if ((yritus_baasis ?? new Yritus()).YrituseAeg < DateTime.Now)
+                {
+                    return Json("Ürituse toimumise aeg on juba möödunud!");
+                }
+            }
+
             yritusedRepository.SaveYritus(yritus);
 
             return Json("OK");
@@ -151,11 +167,12 @@ namespace Yritused.Controllers
 
             foreach (Yritus y in yritusedRepository.Yritused.OrderBy(o => o.YrituseNimi).ThenBy(o => o.YrituseAeg).ThenBy(o => o.YrituseKoht))
             {
-                if (yrituseNimi_fr == null)
+                if (yrituseNimi_fr == null && y.YrituseAeg > DateTime.Now)
                 {
                     yritused.Add(y.YrituseNimi + " " + y.YrituseAeg.ToString("dd.MM.yyyy HH:mm") + " " + y.YrituseKoht);
                 }
-                else if ((y.YrituseNimi + " " + y.YrituseAeg.ToString("dd.MM.yyyy HH:mm") + " " + y.YrituseKoht).ToLower().Contains(yrituseNimi_fr.ToLower(), StringComparison.CurrentCulture))
+                else if (y.YrituseAeg > DateTime.Now && (y.YrituseNimi + " " + y.YrituseAeg.ToString("dd.MM.yyyy HH:mm") + " " + y.YrituseKoht).ToLower()
+                    .Contains((yrituseNimi_fr ?? string.Empty).ToLower(), StringComparison.CurrentCulture))
                 {
                     yritused.Add(y.YrituseNimi + " " + y.YrituseAeg.ToString("dd.MM.yyyy HH:mm") + " " + y.YrituseKoht);
                 }

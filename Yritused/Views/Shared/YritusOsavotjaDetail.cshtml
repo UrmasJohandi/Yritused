@@ -46,7 +46,10 @@
                 <form method="post" validate="true" id="yritusosavotja-detail-form">
                     <div class="mb-3">
                         <label for="yritusosavotja-yritusenimi" class="col-form-label">Üritus:</label>
-                        <input type="text" class="form-control fw-bold" id="yritusosavotja-yritusenimi" autocomplete="off" />
+                        <input type="text" class="form-control fw-bold is-valid" id="yritusosavotja-yritusenimi" autocomplete="off" required />
+                        <div class="invalid-feedback">
+                            Üritus peab olema määratud!
+                        </div>
                     </div>
                     <div class="card" style="width: 768px;">
                         <ul class="list-group list-group-flush">
@@ -58,11 +61,17 @@
                     <br />
                     <div class="mb-3">
                         <label for="yritusosavotja-osavotja" class="col-form-label">Osavõtja:</label>
-                        <input type="text" class="form-control fw-bold" id="yritusosavotja-osavotja" autocomplete="off" />
+                        <input type="text" class="form-control fw-bold is-valid" id="yritusosavotja-osavotja" autocomplete="off" required />
+                        <div class="invalid-feedback">
+                            Üritusest osavõtja peab olema määratud!
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="yritusosavotja-isikukood" class="col-form-label">Isikukood:</label>
-                        <input type="text" class="form-control fw-bold" id="yritusosavotja-isikukood" autocomplete="off" />
+                        <input type="text" class="form-control fw-bold is-valid" id="yritusosavotja-isikukood" autocomplete="off" required />
+                        <div class="invalid-feedback">
+                            Osavõtja isikukood peab olema määratud!
+                        </div>
                     </div>
                     <div class="card" style="width: 768px;">
                         <ul class="list-group list-group-flush">

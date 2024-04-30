@@ -7,34 +7,49 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="post" validate="true" id="osavotja-detail-form">
+                <form method="post" class="row g-3 needs-validation" id="osavotja-detail-form" novalidate>
                     <div class="mb-3">
                         <label for="osavotja-eesnimi" class="col-form-label">Eesnimi:</label>
-                        <input type="text" class="form-control fw-bold" id="osavotja-eesnimi" autocomplete="off" />
+                        <input type="text" class="form-control fw-bold is-valid" id="osavotja-eesnimi" autocomplete="off" required />
+                        <div class="invalid-feedback">
+                            Osavõtja eesnimi peab olema määratud!
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="osavotja-perenimi" class="col-form-label">Perekonnanimi:</label>
-                        <input type="text" class="form-control fw-bold" id="osavotja-perenimi" autocomplete="off" />
+                        <input type="text" class="form-control fw-bold is-valid" id="osavotja-perenimi" autocomplete="off" required />
+                        <div class="invalid-feedback">
+                            Osavõtja perekonnanimi peab olema määratud!
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="osavotja-liik" class="col-form-label">Füüsiline/Juriidiline isik:</label>
-                        <select class="form-control fw-bold" autocomplete="off" id="osavotja-liik" autocomplete="off">
+                        <select class="form-control fw-bold is-valid" autocomplete="off" id="osavotja-liik" required>
                             <option value=""></option>
                             <option value="F">Füüsiline isik</option>
                             <option value="J">Juriidiline isik</option>
                         </select>
+                        <div class="invalid-feedback">
+                            Osavõtja isiku tüüp peab olema määratud!
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="osavotja-makseviis" class="col-form-label">Makseviis:</label>
-                        <select class="form-control fw-bold" autocomplete="off" id="osavotja-makseviis" autocomplete="off">
+                        <select class="form-control fw-bold is-valid" autocomplete="off" id="osavotja-makseviis" autocomplete="off" required>
                             <option value=""></option>
                             <option value="P">Pangaülekandega</option>
                             <option value="S">Sularahas</option>
                         </select>
+                        <div class="invalid-feedback">
+                            Osavõtja makseviis tüüp peab olema määratud!
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="osavotja-isikukood" class="col-form-label">Isikukood:</label>
-                        <input type="text" class="form-control fw-bold" id="osavotja-isikukood" autocomplete="off" />
+                        <input type="text" class="form-control fw-bold is-valid" id="osavotja-isikukood" autocomplete="off" />
+                        <div class="invalid-feedback">
+                            Osavõtja isikukood peab olema määratud!
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="osavotja-lisainfo" class="col-form-label">Lisainfo:</label>

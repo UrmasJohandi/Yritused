@@ -10,11 +10,17 @@
                 <form method="post" validate="true" id="yritus-detail-form">
                     <div class="mb-3">
                         <label for="yritus-yritusenimi" class="col-form-label">Ürituse nimetus:</label>
-                        <input type="text" class="form-control fw-bold" id="yritus-yritusenimi" autocomplete="off" />
+                        <input type="text" class="form-control fw-bold is-valid" id="yritus-yritusenimi" autocomplete="off" required />
+                        <div class="invalid-feedback">
+                            Ürituse nimetus peab olema määratud!
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="yritus-yrituseaeg" class="col-form-label">Toimumise aeg:</label>
-                        <input type="text" class="form-control fw-bold" id="yritus-yrituseaeg" autocomplete="off" />
+                        <input type="text" class="form-control fw-bold is-valid" id="yritus-yrituseaeg" autocomplete="off" required />
+                        <div class="invalid-feedback">
+                            Ürituse toimumise aeg peab olema määratud!
+                        </div>
                     </div>
                     <script>
                         $('#yritus-yrituseaeg').datetimepicker({
@@ -26,7 +32,10 @@
                     </script>
                     <div class="mb-3">
                         <label for="yritus-yritusekoht" class="col-form-label">Toimumise koht:</label>
-                        <input type="text" class="form-control fw-bold" id="yritus-yritusekoht" autocomplete="off" />
+                        <input type="text" class="form-control fw-bold is-valid" id="yritus-yritusekoht" autocomplete="off" required />
+                        <div class="invalid-feedback">
+                            Ürituse toimumise koht peab olema määratud!
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="yritus-lisainfo" class="col-form-label">Lisainfo:</label>

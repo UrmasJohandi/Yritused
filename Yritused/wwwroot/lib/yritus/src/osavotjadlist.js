@@ -60,6 +60,40 @@ $(() => {
     });
 
     $('#osavotja-submit').on('click', function () {
+        var error = false;
+
+        if ($('#osavotja-eesnimi').val() === '') {
+            $('#osavotja-eesnimi').removeClass('is-valid').addClass('is-invalid');
+
+            error = true;
+        }
+
+        if ($('#osavotja-perenimi').val() === '') {
+            $('#osavotja-perenimi').removeClass('is-valid').addClass('is-invalid');
+
+            error = true;
+        }
+
+        if ($('#osavotja-liik').val() === '') {
+            $('#osavotja-liik').removeClass('is-valid').addClass('is-invalid');
+
+            error = true;
+        }
+
+        if ($('#osavotja-makseviis').val() === '') {
+            $('#osavotja-makseviis').removeClass('is-valid').addClass('is-invalid');
+
+            error = true;
+        }
+
+        if ($('#osavotja-isikukood').val() === '') {
+            $('#osavotja-isikukood').removeClass('is-valid').addClass('is-invalid');
+
+            error = true;
+        }
+
+        if (error) return;
+
         const osavotja = {
             Id: $('#osavotja-id').val(),
             Eesnimi: $('#osavotja-eesnimi').val(),
@@ -89,6 +123,41 @@ $(() => {
     $('#yesno-submit').on('click', function () {
         window.location.href = deleteUrl + '?Id=' + osavotjaId + '&pageNr=' + pageNr;
     })
+    $('#osavotja-eesnimi').on('blur', function() {
+        if ($('#osavotja-eesnimi').val() !== '') {
+            $('#osavotja-eesnimi').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#osavotja-eesnimi').removeClass('is-valid').addClass('is-invalid');
+        }
+    })
+    $('#osavotja-perenimi').on('blur', function () {
+        if ($('#osavotja-perenimi').val() !== '') {
+            $('#osavotja-perenimi').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#osavotja-perenimi').removeClass('is-valid').addClass('is-invalid');
+        }
+    })
+    $('#osavotja-liik').on('change', function () {
+        if ($('#osavotja-liik').val() !== '') {
+            $('#osavotja-liik').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#osavotja-liik').removeClass('is-valid').addClass('is-invalid');
+        }
+    })
+    $('#osavotja-makseviis').on('change', function () {
+        if ($('#osavotja-makseviis').val() !== '') {
+            $('#osavotja-makseviis').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#osavotja-makseviis').removeClass('is-valid').addClass('is-invalid');
+        }
+    })
+    $('#osavotja-isikukood').on('blur', function () {
+        if ($('#osavotja-isikukood').val() !== '') {
+            $('#osavotja-isikukood').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#osavotja-isikukood').removeClass('is-valid').addClass('is-invalid');
+        }
+    })
 });
 function editOsavotja(osavotjaid) {
     const options = { options: { backdrop: true, keyboard: true, focus: true, show: true } };
@@ -106,10 +175,44 @@ function editOsavotja(osavotjaid) {
     }).done(function (result) {
         $('#osavotja-id').val(result.id);
         $('#osavotja-eesnimi').val(result.eesnimi);
+        if ($('#osavotja-eesnimi').val() !== '') {
+            $('#osavotja-eesnimi').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#osavotja-eesnimi').removeClass('is-valid').addClass('is-invalid');
+        }
+
         $('#osavotja-perenimi').val(result.perenimi);
+        if ($('#osavotja-perenimi').val() !== '') {
+            $('#osavotja-perenimi').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#osavotja-perenimi').removeClass('is-valid').addClass('is-invalid');
+        }
+
         $('#osavotja-liik').val(result.liik);
+        if ($('#osavotja-liik').val() !== '') {
+            $('#osavotja-liik').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#osavotja-liik').removeClass('is-valid').addClass('is-invalid');
+        }
+
         $('#osavotja-makseviis').val(result.makseviis);
+        $('#osavotja-makseviis').on('change', function () {
+            if ($('#osavotja-makseviis').val() !== '') {
+                $('#osavotja-makseviis').removeClass('is-invalid').addClass('is-valid');
+            } else {
+                $('#osavotja-makseviis').removeClass('is-valid').addClass('is-invalid');
+            }
+        })
+
         $('#osavotja-isikukood').val(result.isikukood);
+        $('#osavotja-isikukood').on('blur', function () {
+            if ($('#osavotja-isikukood').val() !== '') {
+                $('#osavotja-isikukood').removeClass('is-invalid').addClass('is-valid');
+            } else {
+                $('#osavotja-isikukood').removeClass('is-valid').addClass('is-invalid');
+            }
+        })
+
         $('#osavotja-lisainfo').val(result.lisainfo);
     });
 
@@ -119,10 +222,15 @@ function editOsavotja(osavotjaid) {
 }
 function emptyosavotjaform() {
     $('#osavotja-eesnimi').val('');
+    $('#osavotja-eesnimi').removeClass('is-invalid').addClass('is-valid');
     $('#osavotja-perenimi').val('');
+    $('#osavotja-perenimi').removeClass('is-invalid').addClass('is-valid');
     $('#osavotja-liik').val('');
+    $('#osavotja-liiki').removeClass('is-invalid').addClass('is-valid');
     $('#osavotja-makseviis').val('');
+    $('#osavotja-makseviis').removeClass('is-invalid').addClass('is-valid');
     $('#osavotja-isikukood').val('');
+    $('#osavotja-isikukood').removeClass('is-invalid').addClass('is-valid');
     $('#osavotja-lisainfo').val('');
     $('#osavotja-error').html('');
 }

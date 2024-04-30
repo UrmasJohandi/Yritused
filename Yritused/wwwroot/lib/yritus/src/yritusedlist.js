@@ -59,6 +59,28 @@
     });
 
     $('#yritus-submit').on('click', function () {
+        var error = false;
+
+        if ($('#yritus-yritusenimi').val() === '') {
+            $('#yritus-yritusenimi').removeClass('is-valid').addClass('is-invalid');
+
+            error = true;
+        }
+
+        if ($('#yritus-yrituseaeg').val() === '') {
+            $('#yritus-yrituseaeg').removeClass('is-valid').addClass('is-invalid');
+
+            error = true;
+        }
+
+        if ($('#yritus-yritusekoht').val() === '') {
+            $('#yritus-yritusekoht').removeClass('is-valid').addClass('is-invalid');
+
+            error = true;
+        }
+
+        if (error) return;
+
         const yritus = {
             Id: $('#yritus-id').val(),
             YrituseNimi: $('#yritus-yritusenimi').val(),
@@ -86,6 +108,27 @@
     $('#yesno-submit').on('click', function () {
         window.location.href = deleteUrl + '?Id=' + yritusId + '&pageNr=' + pageNr;
     })
+    $('#yritus-yritusenimi').on('blur', function () {
+        if ($('#yritus-yritusenimi').val() !== '') {
+            $('#yritus-yritusenimi').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#yritus-yritusenimi').removeClass('is-valid').addClass('is-invalid');
+        }
+    })
+    $('#yritus-yrituseaeg').on('blur', function () {
+        if ($('#yritus-yrituseaeg').val() !== '') {
+            $('#yritus-yrituseaeg').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#yritus-yrituseaeg').removeClass('is-valid').addClass('is-invalid');
+        }
+    })
+    $('#yritus-yritusekoht').on('blur', function () {
+        if ($('#yritus-yritusekoht').val() !== '') {
+            $('#yritus-yritusekoht').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#yritus-yritusekoht').removeClass('is-valid').addClass('is-invalid');
+        }
+    })
 })
 function editYritus(yritusid) {
     const options = { options: { backdrop: true, keyboard: true, focus: true, show: true } };
@@ -102,8 +145,26 @@ function editYritus(yritusid) {
     }).done(function (result) {
         $('#yritus-id').val(result.id);
         $('#yritus-yritusenimi').val(result.yrituseNimi);
+        if ($('#yritus-yritusenimi').val() !== '') {
+            $('#yritus-yritusenimi').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#yritus-yritusenimi').removeClass('is-valid').addClass('is-invalid');
+        }
+
         $('#yritus-yrituseaeg').val(formatdate(result.yrituseAeg));
+        if ($('#yritus-yrituseaeg').val() !== '') {
+            $('#yritus-yrituseaeg').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#yritus-yrituseaeg').removeClass('is-valid').addClass('is-invalid');
+        }
+
         $('#yritus-yritusekoht').val(result.yrituseKoht);
+        if ($('#yritus-yritusekoht').val() !== '') {
+            $('#yritus-yritusekoht').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#yritus-yritusekoht').removeClass('is-valid').addClass('is-invalid');
+        }
+
         $('#yritus-lisainfo').val(result.lisainfo);
     });
 
@@ -114,12 +175,17 @@ function editYritus(yritusid) {
 function emptyyritusform() {
     $('#yritus-id').val('');
     $('#yritus-yritusenimi').val('');
+    $('#yritus-yritusenimi').removeClass('is-invalid').addClass('is-valid');
     $('#yritus-yrituseaeg').val('');
+    $('#yritus-yrituseaeg').removeClass('is-invalid').addClass('is-valid');
     $('#yritus-yritusekoht').val('');
+    $('#yritus-yritusekoht').removeClass('is-invalid').addClass('is-valid');
     $('#yritus-lisainfo').val('');
     $('#yritus-error').html('');
 }
 function formatdate(datetime) {
+    if (datetime === '') return;
+
     const date = datetime.split('T')[0];
     const time = datetime.split('T')[1];
 
@@ -133,6 +199,8 @@ function formatdate(datetime) {
     return day + '.' + month + '.' + year + ' ' + hours + ':' + minutes;
 }
 function formatdatetimeback(datetime) {
+    if (datetime === '') return;
+
     const date = datetime.split(' ')[0];
     const time = datetime.split(' ')[1];
 
@@ -171,4 +239,3 @@ function getFilterHref() {
 
     return href + '?' + 'orderby=' + $('#model_orderby').val() + '&' + 'filterfield=' + filterfield + '&' + 'filtervalue=' + filtervalue + '&' + 'p=' + '1' + '&' + 's=' + $('#model_pagesize').val();
 }
-

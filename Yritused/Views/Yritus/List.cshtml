@@ -42,16 +42,41 @@
                         var yrituseaeg = CreatedDateTime((DateTime)y.YrituseAeg);
                         var loodud = CreatedDateTime(y.Loodud);
                         var muudetud = y.Muudetud == null ? string.Empty : CreatedDateTime((DateTime)y.Muudetud);
+                        var displayClass = "";
                     }
-                    <filtercell class="yritus-right-justified input-Id" name="Id" id="@y.Id" value="@y.Id" />
-                    <filtercell class="yritus-left-justified input-YrituseNimi" name="YrituseNimi" id="@y.Id" value="@y.YrituseNimi" />
-                    <filtercell class="yritus-right-justified input-YrituseAeg" name="YrituseAeg" id="@y.Id" value="@yrituseaeg" />
-                    <filtercell class="yritus-left-justified input-YrituseKoht" name="YrituseKoht" id="@y.Id" value="@y.YrituseKoht" />
-                    <filtercelltooltip class="yritus-results-left-justified input-Lisainfo" name="Lisainfo" id="@y.Id" value="@GetLisainfo(y.Lisainfo)" 
+                    @{
+                        displayClass = y.YrituseAeg > DateTime.Now ? "input-Id" : "input-Id-deprecated";
+                    }
+                    <filtercell class="yritus-right-justified @displayClass" name="Id" id="@y.Id" value="@y.Id" />
+                    @{
+                        displayClass = y.YrituseAeg > DateTime.Now ? "input-YrituseNimi" : "input-YrituseNimi-deprecated";
+                    }
+                    <filtercell class="yritus-left-justified @displayClass" name="YrituseNimi" id="@y.Id" value="@y.YrituseNimi" />
+                    @{
+                        displayClass = y.YrituseAeg > DateTime.Now ? "input-YrituseAeg" : "input-YrituseAeg-deprecated";
+                    }
+                    <filtercell class="yritus-right-justified @displayClass" name="YrituseAeg" id="@y.Id" value="@yrituseaeg" />
+                    @{
+                        displayClass = y.YrituseAeg > DateTime.Now ? "input-YrituseKoht" : "input-YrituseKoht-deprecated";
+                    }
+                    <filtercell class="yritus-left-justified @displayClass" name="YrituseKoht" id="@y.Id" value="@y.YrituseKoht" />
+                    @{
+                        displayClass = y.YrituseAeg > DateTime.Now ? "input-Lisainfo" : "input-Lisainfo-deprecated";
+                    }
+                    <filtercelltooltip class="yritus-results-left-justified @displayClass" name="Lisainfo" id="@y.Id" value="@GetLisainfo(y.Lisainfo)" 
                         toggle="tooltip" placement="top" title="@y.Lisainfo" />
-                    <filtercell class="yritus-right-justified input-Osavotjaid" name="Osavotjaid" id="@y.Id" value="@y.Osavotjaid" />
-                    <filtercell class="yritus-right-justified input-Loodud" name="Loodud" id="@y.Id" value="@loodud" />
-                    <filtercell class="yritus-right-justified input-Muudetud" name="Muudetud" id="@y.Id" value="@muudetud" />
+                    @{
+                        displayClass = y.YrituseAeg > DateTime.Now ? "input-Osavotjaid" : "input-Osavotjaid-deprecated";
+                    }
+                    <filtercell class="yritus-right-justified @displayClass" name="Osavotjaid" id="@y.Id" value="@y.Osavotjaid" />
+                    @{
+                        displayClass = y.YrituseAeg > DateTime.Now ? "input-Loodud" : "input-Loodud-deprecated";
+                    }
+                    <filtercell class="yritus-right-justified @displayClass" name="Loodud" id="@y.Id" value="@loodud" />
+                    @{
+                        displayClass = y.YrituseAeg > DateTime.Now ? "input-Muudetud" : "input-Muudetud-deprecated";
+                    }
+                    <filtercell class="yritus-right-justified @displayClass" name="Muudetud" id="@y.Id" value="@muudetud" />
                     <td class="yritus-center-justified">
                         @{
                             if ((y.Osavotjaid == null || y.Osavotjaid == 0) && y.YrituseAeg > DateTime.Now)

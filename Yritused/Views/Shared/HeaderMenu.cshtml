@@ -13,9 +13,10 @@
         $('#yritused_osavotjad_button').on('click', yritusedosavotjadmousedown);
 
         $('#new_button').on('click', newitem);
+
         $('#filter_off_button').on('click', function () {
             Cookies.set('filter', '');
-            gotolink();
+            _gotolink();
         });
 
         modifybuttons();
@@ -115,6 +116,29 @@
         if (cookieValue == null || cookieValue === 'yritused') {
             const url = '@Url.Action("List", "Yritus")';
 
+            var dt = new Date();
+            var filterDate = normdate(dt.getDate()) + '.' + normdate((dt.getMonth() + 1)) + '.' + dt.getFullYear() + ' ' + normdate(dt.getHours()) + ':' + normdate(dt.getMinutes()) + ':' + normdate(dt.getSeconds());
+
+            Cookies.set('filter', 'yritused');
+
+            window.location.href = url + '?filterfield=YrituseAeg_1&filtervalue=>' + filterDate + '&p=1';
+        } else if (cookieValue === 'osavotjad') {
+            const url = '@Url.Action("List", "Osavotja")';
+
+            window.location.href = url;
+        } else if (cookieValue === 'yritusedosavotjad') {
+            const url = '@Url.Action("List", "YritusOsavotja")';
+
+            window.location.href = url;
+        }
+    }
+
+    function _gotolink() {
+        const cookieValue = Cookies.get('menu');
+
+        if (cookieValue == null || cookieValue === 'yritused') {
+            const url = '@Url.Action("List", "Yritus")';
+
             window.location.href = url;
         } else if (cookieValue === 'osavotjad') {
             const url = '@Url.Action("List", "Osavotja")';
@@ -134,8 +158,11 @@
         if (cookieValue == null || cookieValue === 'yritused') {
             $('#yritus-id').val('0');
             $('#yritus-yritusenimi').val('');
+            $('#yritus-yritusenimi').removeClass('is-invalid').addClass('is-valid');
             $('#yritus-yrituseaeg').val('');
+            $('#yritus-yrituseaeg').removeClass('is-invalid').addClass('is-valid');
             $('#yritus-yritusekoht').val('');
+            $('#yritus-yritusekoht').removeClass('is-invalid').addClass('is-valid');
             $('#yritus-lisainfo').val('');
             $('#yritus-error').html('');
 
@@ -145,10 +172,15 @@
         } else if (cookieValue === 'osavotjad') {
             $('#osavotja-id').val('0');
             $('#osavotja-eesnimi').val('');
+            $('#osavotja-eesnimi').removeClass('is-invalid').addClass('is-valid');
             $('#osavotja-perenimi').val('');
+            $('#osavotja-perenimi').removeClass('is-invalid').addClass('is-valid');
             $('#osavotja-liik').val('');
+            $('#osavotja-liik').removeClass('is-invalid').addClass('is-valid');
             $('#osavotja-makseviis').val('');
+            $('#osavotja-makseviis').removeClass('is-invalid').addClass('is-valid');
             $('#osavotja-isikukood').val('');
+            $('#osavotja-isikukood').removeClass('is-invalid').addClass('is-valid');
             $('#osavotja-lisainfo').val('');
             $('#osavotja-error').html('');
 
@@ -157,11 +189,14 @@
             $('#osavotja-detail').modal(options).modal('show');
         } else if (cookieValue === 'yritusedosavotjad') {
             $('#yritusosavotja-yritusenimi').val('');
+            $('#yritusosavotja-yritusenimi').removeClass('is-invalid').addClass('is-valid');
             $('#y-yritusenimi').html(' ');
             $('#y-yrituseaeg').html(' ');
             $('#y-yritusekoht').html(' ');
             $('#yritusosavotja-osavotja').val('');
+            $('#yritusosavotja-osavotja').removeClass('is-invalid').addClass('is-valid');
             $('#yritusosavotja-isikukood').val('');
+            $('#yritusosavotja-isikukood').removeClass('is-invalid').addClass('is-valid');
             $('#o-eesnimi').html(' ');
             $('#o-perenimi').html(' ');
             $('#o-isikukood').html(' ');
@@ -182,6 +217,14 @@
         $(id).removeClass('hide-local');
         $(id).addClass('show-local');
         $(id).show();
+    }
+
+    function normdate(dp) {
+        if (dp * 1 < 10) {
+            return '0' + dp + '';
+        }
+
+        return dp;
     }
 </script>
 

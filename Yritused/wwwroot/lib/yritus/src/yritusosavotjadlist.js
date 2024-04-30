@@ -81,6 +81,12 @@ $(() => {
                 $('#y-yrituseaeg').html(formatdate(result.yrituseAeg));
                 $('#y-yritusekoht').html(result.yrituseKoht);
                 $('#yritusosavotja-yritus-id').val(result.id);
+
+                if ($('#yritusosavotja-yritusenimi').val() !== '') {
+                    $('#yritusosavotja-yritusenimi').removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $('#yritusosavotja-yritusenimi').removeClass('is-valid').addClass('is-invalid');
+                }
             });
         }
     });
@@ -111,6 +117,20 @@ $(() => {
                 $('#o-liik').html(result.liik === 'F' ? 'Füüsiline isik' : result.liik === 'J' ? 'Juriidiline isik' : '');
                 $('#o-makseviis').html(result.makseviis === 'P' ? 'Pangaülekandega' : result.makseviis === 'S' ? 'Sularahas' : '');
                 $('#yritusosavotja-osavotja-id').val(result.id);
+
+                $('#yritusosavotja-osavotja').val(result.taisnimi + ' ' + result.isikukood);
+                if ($('#yritusosavotja-osavotja').val() !== '') {
+                    $('#yritusosavotja-osavotja').removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $('#yritusosavotja-osavotja').removeClass('is-valid').addClass('is-invalid');
+                }
+
+                $('#yritusosavotja-isikukood').val(result.isikukood + ' ' + result.taisnimi);
+                if ($('#yritusosavotja-isikukood').val() !== '') {
+                    $('#yritusosavotja-isikukood').removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $('#yritusosavotja-isikukood').removeClass('is-valid').addClass('is-invalid');
+                }
             });
         }
     });
@@ -141,10 +161,46 @@ $(() => {
                 $('#o-liik').html(result.liik === 'F' ? 'Füüsiline isik' : result.liik === 'J' ? 'Juriidiline isik' : '');
                 $('#o-makseviis').html(result.makseviis === 'P' ? 'Pangaülekandega' : result.makseviis === 'S' ? 'Sularahas' : '');
                 $('#yritusosavotja-osavotja-id').val(result.id);
+
+                $('#yritusosavotja-osavotja').val(result.taisnimi + ' ' + result.isikukood);
+                if ($('#yritusosavotja-osavotja').val() !== '') {
+                    $('#yritusosavotja-osavotja').removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $('#yritusosavotja-osavotja').removeClass('is-valid').addClass('is-invalid');
+                }
+
+                $('#yritusosavotja-isikukood').val(result.isikukood + ' ' + result.taisnimi);
+                if ($('#yritusosavotja-isikukood').val() !== '') {
+                    $('#yritusosavotja-isikukood').removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $('#yritusosavotja-isikukood').removeClass('is-valid').addClass('is-invalid');
+                }
             });
         }
     });
     $('#yritusosavotja-submit').on('click', function () {
+        var error = false;
+
+        if ($('#yritusosavotja-yritusenimi').val() === '') {
+            $('#yritusosavotja-yritusenimi').removeClass('is-valid').addClass('is-invalid');
+
+            error = true;
+        }
+
+        if ($('#yritusosavotja-osavotja').val() === '') {
+            $('#yritusosavotja-osavotja').removeClass('is-valid').addClass('is-invalid');
+
+            error = true;
+        }
+
+        if ($('#yritusosavotja-isikukood').val() === '') {
+            $('#yritusosavotja-isikukood').removeClass('is-valid').addClass('is-invalid');
+
+            error = true;
+        }
+
+        if (error) return;
+
         const yritusosavotja = {
             Id: $('#yritusosavotja-id').val(),
             Yritus_Id: $('#yritusosavotja-yritus-id').val(),
@@ -169,6 +225,47 @@ $(() => {
     $('#yesno-submit').on('click', function () {
         window.location.href = deleteUrl + '?Id=' + yritusOsavotjaId + '&pageNr=' + pageNr;
     })
+    $('#yritusosavotja-yritusenimi').on('blur', function () {
+        if ($('#yritusosavotja-yritusenimi').val() !== '') {
+            $('#yritusosavotja-yritusenimi').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#yritusosavotja-yritusenimi').removeClass('is-valid').addClass('is-invalid');
+        }
+    })
+    $('#yritusosavotja-osavotja').on('blur', function () {
+        if ($('#yritusosavotja-osavotja').val() !== '') {
+            $('#yritusosavotja-osavotja').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#yritusosavotja-osavotja').removeClass('is-valid').addClass('is-invalid');
+        }
+
+        if ($('#yritusosavotja-osavotja').val() === '') {
+            $('#yritusosavotja-isikukood').val('');
+
+            $('#o-eesnimi').html('');
+            $('#o-perenimi').html('');
+            $('#o-isikukood').html('');
+            $('#o-liik').html('');
+            $('#o-makseviis').html('');
+        }
+    })
+    $('#yritusosavotja-isikukood').on('blur', function () {
+        if ($('#yritusosavotja-isikukood').val() !== '') {
+            $('#yritusosavotja-isikukood').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#yritusosavotja-isikukood').removeClass('is-valid').addClass('is-invalid');
+        }
+
+        if ($('#yritusosavotja-isikukood').val() === '') {
+            $('#yritusosavotja-osavotja').val('');
+
+            $('#o-eesnimi').html('');
+            $('#o-perenimi').html('');
+            $('#o-isikukood').html('');
+            $('#o-liik').html('');
+            $('#o-makseviis').html('');
+        }
+    })
 });
 function editYritusOsavotja(yritusosavotjaid) {
     const options = { options: { backdrop: true, keyboard: true, focus: true, show: true } };
@@ -185,8 +282,26 @@ function editYritusOsavotja(yritusosavotjaid) {
         }
     }).done(function (result) {
         $('#yritusosavotja-yritusenimi').val(result.yritus.yrituseNimi + ' ' + formatdate(result.yritus.yrituseAeg) + ' ' + result.yritus.yrituseKoht);
+        if ($('#yritusosavotja-yritusenimi').val() !== '') {
+            $('#yritusosavotja-yritusenimi').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#yritusosavotja-yritusenimi').removeClass('is-valid').addClass('is-invalid');
+        }
+
         $('#yritusosavotja-osavotja').val(result.osavotja.taisnimi + ' ' + result.osavotja.isikukood);
+        if ($('#yritusosavotja-osavotja').val() !== '') {
+            $('#yritusosavotja-osavotja').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#yritusosavotja-osavotja').removeClass('is-valid').addClass('is-invalid');
+        }
+
         $('#yritusosavotja-isikukood').val(result.osavotja.isikukood + ' ' + result.osavotja.taisnimi);
+        if ($('#yritusosavotja-isikukood').val() !== '') {
+            $('#yritusosavotja-isikukood').removeClass('is-invalid').addClass('is-valid');
+        } else {
+            $('#yritusosavotja-isikukood').removeClass('is-valid').addClass('is-invalid');
+        }
+
         $('#yritusosavotja-id').val(result.yritusOsavotja.id);
         $('#yritusosavotja-yritus-id').val(result.yritusOsavotja.yritus_Id);
         $('#yritusosavotja-osavotja-id').val(result.yritusOsavotja.osavotja_Id);
@@ -210,8 +325,11 @@ function editYritusOsavotja(yritusosavotjaid) {
 }
 function emptyyritusosavotjaform() {
     $('#yritusosavotja-yritusenimi').val('');
+    $('#yritusosavotja-yritusenimi').removeClass('is-invalid').addClass('is-valid');
     $('#yritusosavotja-osavotja').val('');
+    $('#yritusosavotja-osavotja').removeClass('is-invalid').addClass('is-valid');
     $('#yritusosavotja-isikukood').val('');
+    $('#yritusosavotja-isikukood').removeClass('is-invalid').addClass('is-valid');
     $('#yritusosavotja-error').html('');
     $('#yritusosavotja-error').html('');
 }
