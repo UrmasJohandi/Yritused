@@ -62,7 +62,13 @@ $(() => {
     $('#osavotja-submit').on('click', function () {
         var error = false;
 
-        if ($('#osavotja-eesnimi').val() === '') {
+        if ($('#osavotja-liik').val() === '') {
+            $('#osavotja-liik').removeClass('is-valid').addClass('is-invalid');
+
+            error = true;
+        }
+
+        if ($('#osavotja-eesnimi').val() === '' && $('#osavotja-liik').val() === 'F') {
             $('#osavotja-eesnimi').removeClass('is-valid').addClass('is-invalid');
 
             error = true;
@@ -70,12 +76,6 @@ $(() => {
 
         if ($('#osavotja-perenimi').val() === '') {
             $('#osavotja-perenimi').removeClass('is-valid').addClass('is-invalid');
-
-            error = true;
-        }
-
-        if ($('#osavotja-liik').val() === '') {
-            $('#osavotja-liik').removeClass('is-valid').addClass('is-invalid');
 
             error = true;
         }
@@ -140,9 +140,15 @@ $(() => {
     $('#osavotja-liik').on('change', function () {
         if ($('#osavotja-liik').val() !== '') {
             $('#osavotja-liik').removeClass('is-invalid').addClass('is-valid');
+
+            if ('#osavotja-liik' === 'J') {
+                $('#osavotja-eesnimi').removeClass('is-invalid').addClass('is-valid');
+            }
         } else {
             $('#osavotja-liik').removeClass('is-valid').addClass('is-invalid');
         }
+
+        $('#osavotja-isikukood').val() = '';
     })
     $('#osavotja-makseviis').on('change', function () {
         if ($('#osavotja-makseviis').val() !== '') {

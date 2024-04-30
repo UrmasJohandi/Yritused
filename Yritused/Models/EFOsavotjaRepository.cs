@@ -21,7 +21,7 @@
                 {
                     dbEntry.Eesnimi = osavotja.Eesnimi;
                     dbEntry.Perenimi = osavotja.Perenimi;
-                    dbEntry.Taisnimi = string.Format("{0} {1}", osavotja.Eesnimi, osavotja.Perenimi);
+                    dbEntry.Taisnimi = osavotja.Liik == "F" ? string.Format("{0} {1}", osavotja.Eesnimi, osavotja.Perenimi) : osavotja.Perenimi;
                     dbEntry.Liik = osavotja.Liik;
                     dbEntry.Isikukood = osavotja.Isikukood;
                     dbEntry.Makseviis = osavotja.Makseviis;

@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\urmas\\source\\repos\\Yritused\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|c:\\users\\urmas\\source\\repos\\yritused\\yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|solutionrelative:yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|c:\\users\\urmas\\source\\repos\\yritused\\yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{FC378325-B81E-40A0-BA53-FA121C40EA06}|Yritused\\Yritused.csproj|solutionrelative:yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "yritusosavotjadlist.js",
-              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js",
-              "RelativeDocumentMoniker": "Yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js",
-              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js",
-              "RelativeToolTip": "Yritused\\wwwroot\\lib\\yritus\\src\\yritusosavotjadlist.js",
-              "ViewState": "AQIAAMQAAAAAAAAAAAAqwPIAAAAzAAAA",
+              "Title": "osavotjadlist.js",
+              "DocumentMoniker": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
+              "RelativeDocumentMoniker": "Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
+              "ToolTip": "C:\\Users\\urmas\\source\\repos\\Yritused\\Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
+              "RelativeToolTip": "Yritused\\wwwroot\\lib\\yritus\\src\\osavotjadlist.js",
+              "ViewState": "AQIAADgAAAAAAAAAAAAuwJkAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-30T07:47:23.008Z",
+              "WhenOpened": "2024-04-30T09:35:05.868Z",
               "EditorCaption": ""
             }
           ]
